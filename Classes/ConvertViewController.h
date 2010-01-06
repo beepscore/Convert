@@ -7,19 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+@class Converter;
 
 @interface ConvertViewController : UIViewController <UITextFieldDelegate> {
+    Converter *converter;
     UITextField *convertFromField;
     UILabel *convertToLabel;
-    NSNumber *inputValue;
-    NSNumber *outputValue;
+
 }
 #pragma mark -
 #pragma mark properties
 
+@property(nonatomic,retain) Converter *converter;
 @property(nonatomic,retain)IBOutlet UITextField *convertFromField;
 @property(nonatomic,retain)IBOutlet UILabel *convertToLabel;
-@property(nonatomic,retain)NSNumber *inputValue;
-@property(nonatomic,retain)NSNumber *outputValue;
+
 
 @end

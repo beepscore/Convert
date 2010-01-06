@@ -7,24 +7,24 @@
 //
 
 #import "ConvertViewController.h"
+#import "Converter.h"
 
 @implementation ConvertViewController
 
 #pragma mark -
 #pragma mark properties
 
+@synthesize converter;
 @synthesize convertFromField;
 @synthesize convertToLabel;
-@synthesize inputValue;
-@synthesize outputValue;
+
 
 #pragma mark -
 #pragma mark destructors and memory cleanUp
 - (void)cleanUp {
+    [converter release], converter = nil;
     [convertFromField release], convertFromField = nil;
     [convertToLabel release], convertToLabel = nil;
-    [inputValue release], inputValue = nil;
-    [outputValue release], outputValue = nil;    
 }
 
 
@@ -48,48 +48,20 @@
     [self cleanUp];
 }
 
-
-#pragma mark -
-#pragma mark initializers
-/*
-// The designated initializer. Override to perform setup that is required before the view is loaded.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
 #pragma mark -
 
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
-}
-*/
-
-
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-    [super viewDidLoad];
+    converter = [[Converter alloc] init];
 }
-*/
 
 
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
-
--(void)convertInputToOutput {
-    // property setter + alloc increments retain count by 2
-    self.convertToLabel.text = [[NSString alloc] initWithString:@"converted output"];
-    // release decrements retain count by 1
-    [self.convertToLabel.text release];
+- (void)updateOutput {
+    
+//    float myC = [self.converter temperatureCFromK:[self.converter.temperatureK floatValue]];
+//    self.convertToLabel.text = [NSString stringWithFormat:@"%1.2f", myC];
+    
+    float myF = [self.converter temperatureFFromK:[self.converter.temperatureK floatValue]];
+    self.convertToLabel.text = [NSString stringWithFormat:@"%1.2f", myF];
 }
 
 
@@ -104,12 +76,14 @@
 
 // ref Dudney sec 4.6 pg 67
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-        [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-        self.inputValue = 
-        [formatter numberFromString:self.convertFromField.text];
-        [formatter release];
-    [self convertInputToOutput];
+    
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    self.converter.temperatureK = [formatter numberFromString:self.convertFromField.text];
+    [formatter release];
+    [self updateOutput];
 }
+
+
 
 @end
