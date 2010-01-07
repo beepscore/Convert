@@ -25,8 +25,4 @@
 - (NSNumber *)convertTemperature:(NSNumber *)aTemperatureInK
                 fromKToUnit:(NSString *)toTemperatureUnit;
 
-- (NSNumber *)convertTemperature:(NSNumber *)aTemperature
-                   fromUnit:(NSString *)fromTemperatureUnit
-                     toUnit:(NSString *)toTemperatureUnit;
-
 @end
