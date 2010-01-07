@@ -17,7 +17,8 @@
 @synthesize converter;
 @synthesize convertFromField;
 @synthesize convertToLabel;
-
+@synthesize fromTemperatureUnitSegment;
+@synthesize toTemperatureUnitSegment;
 
 #pragma mark -
 #pragma mark destructors and memory cleanUp
@@ -25,6 +26,8 @@
     [converter release], converter = nil;
     [convertFromField release], convertFromField = nil;
     [convertToLabel release], convertToLabel = nil;
+    [fromTemperatureUnitSegment release], fromTemperatureUnitSegment = nil;
+    [toTemperatureUnitSegment release], toTemperatureUnitSegment = nil;
 }
 
 
@@ -55,13 +58,21 @@
 }
 
 
-- (void)updateOutput {
+- (void)updateTemperatures {
+
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    NSNumber *fromTemperature = [formatter numberFromString:self.convertFromField.text];    
+    [formatter release];    
     
-//    float myC = [self.converter temperatureCFromK:[self.converter.temperatureK floatValue]];
-//    self.convertToLabel.text = [NSString stringWithFormat:@"%1.2f", myC];
+    self.converter.temperatureK = [self.converter convertTemperature:fromTemperature
+                                                         toKFromUnit:BS_UNIT_DEG_C];
     
-    float myF = [self.converter temperatureFFromK:[self.converter.temperatureK floatValue]];
-    self.convertToLabel.text = [NSString stringWithFormat:@"%1.2f", myF];
+    NSNumber *toTemperature = [self.converter convertTemperature:self.converter.temperatureK
+                                                     fromKtoUnit:BS_UNIT_DEG_C];
+
+    self.convertToLabel.text = [NSString stringWithFormat:@"%1.2f", [toTemperature floatValue]];   
+
 }
 
 
@@ -77,11 +88,7 @@
 // ref Dudney sec 4.6 pg 67
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    self.converter.temperatureK = [formatter numberFromString:self.convertFromField.text];
-    [formatter release];
-    [self updateOutput];
+    [self updateTemperatures];
 }
 
 

@@ -12,7 +12,9 @@
 @interface ConvertViewController : UIViewController <UITextFieldDelegate> {
     Converter *converter;
     UITextField *convertFromField;
+    UISegmentedControl *fromTemperatureUnitSegment;
     UILabel *convertToLabel;
+    UISegmentedControl *toTemperatureUnitSegment;
 
 }
 #pragma mark -
@@ -21,6 +23,7 @@
 @property(nonatomic,retain) Converter *converter;
 @property(nonatomic,retain)IBOutlet UITextField *convertFromField;
 @property(nonatomic,retain)IBOutlet UILabel *convertToLabel;
-
+@property(nonatomic,retain)IBOutlet UISegmentedControl *fromTemperatureUnitSegment;
+@property(nonatomic,retain)IBOutlet UISegmentedControl *toTemperatureUnitSegment;
 
 @end

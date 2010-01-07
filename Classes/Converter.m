@@ -8,13 +8,18 @@
 
 #import "Converter.h"
 
+//const NSString *BS_UNIT_DEG_C = @"degC";
+//const NSString *BS_UNIT_DEG_F = @"degF";
+//const NSString *BS_UNIT_DEG_K = @"degK";
+//const NSString *BS_UNIT_DEG_R = @"degR";
+
 // conversion factors for Kelvin to Celsius, Farenheit, Rankine
-const float BSKToCSlope = 1.0;
-const float BSKToCOffset = -273.15;
-const float BSKToFSlope = 1.8;
-const float BSKToFOffset = -459.67;
-const float BSKToRSlope = 1.8;
-const float BSKToROffset = 0.0;
+const float BS_K_TO_C_SLOPE = 1.0;
+const float BS_K_TO_C_OFFSET = -273.15;
+const float BS_K_TO_F_SLOPE = 1.8;
+const float BS_K_TO_F_OFFSET = -459.67;
+const float BS_K_TO_R_SLOPE = 1.8;
+const float BS_K_TO_R_OFFSET = 0.0;
 
 @implementation Converter
 
@@ -27,7 +32,7 @@ const float BSKToROffset = 0.0;
 #pragma mark -
 #pragma mark destructors and memory cleanUp
 - (void)cleanUp {
-  // [myIvar release], myIvar = nil;
+    // [myIvar release], myIvar = nil;
     [temperatureK release], temperatureK = nil;
 }
 
@@ -39,33 +44,56 @@ const float BSKToROffset = 0.0;
 }
 
 
-- (float)linearTransform:(float)anInput
-                   slope:(float)aSlope
-                  offset:(float)anOffset {
+- (NSNumber *)convertTemperature:(NSNumber *)aTemperature
+                     toKFromUnit:(NSString *)fromTemperatureUnit {
     
-    return (aSlope * anInput) + anOffset;
+    if (BS_UNIT_DEG_C == fromTemperatureUnit) {
+        return [NSNumber numberWithFloat:
+                ([aTemperature floatValue] - BS_K_TO_C_OFFSET)];
+    }
+    if (BS_UNIT_DEG_F == fromTemperatureUnit) {
+        return [NSNumber numberWithFloat:
+                (([aTemperature floatValue] - BS_K_TO_F_OFFSET)/BS_K_TO_F_SLOPE)];
+    }
+    if (BS_UNIT_DEG_K == fromTemperatureUnit) {
+        return aTemperature;
+    }
+    if (BS_UNIT_DEG_R == fromTemperatureUnit) {
+        return [NSNumber numberWithFloat:
+                ([aTemperature floatValue]/BS_K_TO_R_SLOPE)];
+    }
+    return nil;    
 }
 
 
-- (float)temperatureKFromC:(float)temperatureC {
+- (NSNumber *)convertTemperature:(NSNumber *)aTemperatureInK
+                     fromKtoUnit:(NSString *)toTemperatureUnit {
     
-    return [self linearTransform:temperatureC
-                           slope:(1.0/BSKToCSlope)
-                          offset:-BSKToCOffset];
+    if (BS_UNIT_DEG_C == toTemperatureUnit) {
+        return [NSNumber numberWithFloat:
+                ([aTemperatureInK floatValue] + BS_K_TO_C_OFFSET)];
+    }
+    if (BS_UNIT_DEG_F == toTemperatureUnit) {
+        return [NSNumber numberWithFloat:
+                ((BS_K_TO_F_SLOPE*[aTemperatureInK floatValue]) + BS_K_TO_F_OFFSET)];
+    }
+    if (BS_UNIT_DEG_K == toTemperatureUnit) {
+        return aTemperatureInK;
+    }
+    if (BS_UNIT_DEG_R == toTemperatureUnit) {
+        return [NSNumber numberWithFloat:
+                ([aTemperatureInK floatValue]/BS_K_TO_R_SLOPE)];
+    }
+    return nil;    
 }
 
-- (float)temperatureCFromK:(float)aTemperatureK {
-    
-    return [self linearTransform:aTemperatureK
-                           slope:BSKToCSlope
-                          offset:BSKToCOffset];
+
+- (NSNumber *)convertTemperature:(NSNumber *)aTemperature
+                        fromUnit:(NSString *)fromTemperatureUnit
+                          toUnit:(NSString *)toTemperatureUnit {
+    return [NSNumber numberWithFloat:99.0];    
 }
 
-- (float)temperatureFFromK:(float)aTemperatureK {
-    
-    return [self linearTransform:aTemperatureK
-                           slope:BSKToFSlope
-                          offset:BSKToFOffset];
-}
+
 
 @end
