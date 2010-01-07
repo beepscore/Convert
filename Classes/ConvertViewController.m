@@ -18,7 +18,10 @@
 @synthesize convertFromField;
 @synthesize convertToLabel;
 @synthesize fromTemperatureUnitSegment;
+@synthesize toKFromUnit;
 @synthesize toTemperatureUnitSegment;
+@synthesize fromKToUnit;
+
 
 #pragma mark -
 #pragma mark destructors and memory cleanUp
@@ -27,7 +30,9 @@
     [convertFromField release], convertFromField = nil;
     [convertToLabel release], convertToLabel = nil;
     [fromTemperatureUnitSegment release], fromTemperatureUnitSegment = nil;
+    [toKFromUnit release], toKFromUnit = nil;
     [toTemperatureUnitSegment release], toTemperatureUnitSegment = nil;
+    [fromKToUnit release], fromKToUnit = nil;
 }
 
 
@@ -58,21 +63,36 @@
 }
 
 
-- (void)updateTemperatures {
+- (IBAction)updateTemperatures:(id)sender {
 
+    // read "From" temperature units
+    if (0 == [fromTemperatureUnitSegment selectedSegmentIndex])
+        self.toKFromUnit = BS_UNIT_DEG_C;    
+    if (1 == [fromTemperatureUnitSegment selectedSegmentIndex])
+        self.toKFromUnit = BS_UNIT_DEG_F;    
+    if (2 == [fromTemperatureUnitSegment selectedSegmentIndex])
+        self.toKFromUnit = BS_UNIT_DEG_K;    
+    if (3 == [fromTemperatureUnitSegment selectedSegmentIndex])
+        self.toKFromUnit = BS_UNIT_DEG_R;
+    
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
     NSNumber *fromTemperature = [formatter numberFromString:self.convertFromField.text];    
-    [formatter release];    
-    
+    [formatter release];
     self.converter.temperatureK = [self.converter convertTemperature:fromTemperature
-                                                         toKFromUnit:BS_UNIT_DEG_C];
+                                                         toKFromUnit:self.toKFromUnit];
+    // read "To" temperature units   
+    if (0 == [toTemperatureUnitSegment selectedSegmentIndex])
+        self.fromKToUnit = BS_UNIT_DEG_C;    
+    if (1 == [toTemperatureUnitSegment selectedSegmentIndex])
+        self.fromKToUnit = BS_UNIT_DEG_F;    
+    if (2 == [toTemperatureUnitSegment selectedSegmentIndex])
+        self.fromKToUnit = BS_UNIT_DEG_K;    
+    if (3 == [toTemperatureUnitSegment selectedSegmentIndex])
+        self.fromKToUnit = BS_UNIT_DEG_R;    
     
-    NSNumber *toTemperature = [self.converter convertTemperature:self.converter.temperatureK
-                                                     fromKtoUnit:BS_UNIT_DEG_C];
-
-    self.convertToLabel.text = [NSString stringWithFormat:@"%1.2f", [toTemperature floatValue]];   
-
+    self.convertToLabel.text = [[self.converter convertTemperature:self.converter.temperatureK
+                                                       fromKToUnit:self.fromKToUnit] stringValue];   
 }
 
 
@@ -88,9 +108,8 @@
 // ref Dudney sec 4.6 pg 67
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     
-    [self updateTemperatures];
+    [self updateTemperatures:self];
 }
-
 
 
 @end
