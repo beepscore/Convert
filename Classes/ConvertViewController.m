@@ -131,6 +131,16 @@
     return YES;
 }
 
+// Dismiss keyboard if user taps container view background.
+// Note:  In IB, Changed container view's class from UIView to UIControl, so it will send Touch Down event.
+// In IB, connected Touch Down event to IBAction backgroundTap
+// Ref Mark and LaMarche "Beginning iPhone 3 Development" Ch 4 pg 75
+- (IBAction)backgroundTap:(id)sender {
+    // It's ok to send message resignFirstResponder even if reciever isn't first responder.
+    [self.convertFromField resignFirstResponder];
+}
+
+
 // ref Dudney sec 4.6 pg 67
 - (void)textFieldDidEndEditing:(UITextField *)textField {
         

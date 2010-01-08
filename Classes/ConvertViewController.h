@@ -32,7 +32,7 @@
 @property(nonatomic,retain) NSString *fromUnit;
 @property(nonatomic,retain) NSString *toUnit;
 
-
 - (IBAction)updateTemperatures:(id)sender;
+- (IBAction)backgroundTap:(id)sender;
 
 @end
