@@ -14,7 +14,7 @@
 #define BS_UNIT_DEG_R @"degR"
 
 @interface Converter : NSObject { 
-    // temperature in degrees Kelvin
+    // temperature in degrees Kelvin.  Minimum value = 0 (absolute zero).
     NSNumber *temperatureK;
 }
 @property(nonatomic,retain) NSNumber *temperatureK;

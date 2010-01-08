@@ -37,26 +37,34 @@ const double BS_K_TO_R_OFFSET = 0.0;
     [super dealloc];
 }
 
-
+// Converts temperature to Kelvin, which can't be less than 0 degrees K (absolute 0).
+// TODO: implement error code for invalid input?  For now, just return 0.
 - (NSNumber *)convertTemperature:(NSNumber *)aTemperature
                      toKFromUnit:(NSString *)fromTemperatureUnit {
     
+    double temperatureDegK = 0.0;
+    
     if (BS_UNIT_DEG_C == fromTemperatureUnit) {
-        return [NSNumber numberWithDouble:
-                ([aTemperature doubleValue] - BS_K_TO_C_OFFSET)];
+        temperatureDegK = ([aTemperature doubleValue] - BS_K_TO_C_OFFSET);
     }
     if (BS_UNIT_DEG_F == fromTemperatureUnit) {
-        return [NSNumber numberWithDouble:
-                (([aTemperature doubleValue] - BS_K_TO_F_OFFSET)/BS_K_TO_F_SLOPE)];
+        temperatureDegK = (([aTemperature doubleValue] - BS_K_TO_F_OFFSET)/BS_K_TO_F_SLOPE);
     }
     if (BS_UNIT_DEG_K == fromTemperatureUnit) {
-        return aTemperature;
+        temperatureDegK = [aTemperature doubleValue];
     }
     if (BS_UNIT_DEG_R == fromTemperatureUnit) {
-        return [NSNumber numberWithDouble:
-                ([aTemperature doubleValue]/BS_K_TO_R_SLOPE)];
+        temperatureDegK = ([aTemperature doubleValue]/BS_K_TO_R_SLOPE);
     }
-    return nil;    
+    if (temperatureDegK < 0.0) {
+        // could set an error flag here.  For now, just silently convert to 0.
+        temperatureDegK = 0.0;
+    }
+    // ????: Homework goal is minimize use of autoreleased objects.
+    // I don't see an easy way to avoid using one here.
+    // Could re-write method to not return NSNumber object,
+    // instead return type double or set property temperatureK.
+    return [NSNumber numberWithDouble:temperatureDegK];
 }
 
 

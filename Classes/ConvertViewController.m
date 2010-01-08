@@ -62,10 +62,10 @@
     converter = [[Converter alloc] init];
 }
 
-
+// This method is called by the input field and by both segmented controls.
 - (IBAction)updateTemperatures:(id)sender {
     
-    // read temperature units we are converting "from" to degrees Kelvin
+    // read temperature units we are converting "from"
     if (0 == [fromTemperatureUnitSegment selectedSegmentIndex])
         self.toKFromUnit = BS_UNIT_DEG_C;    
     if (1 == [fromTemperatureUnitSegment selectedSegmentIndex])
@@ -78,22 +78,26 @@
     // Use a number formatter on text fields to handle localization and user prefs
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     
-    // This prevents rounding to integer
+    // This prevents rounding away the decimal portion
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
     
     // don't use this.  For example it would cause 0.003 to display as 0.00
     // [formatter setMaximumFractionDigits:2];
-    
-    // doesn't work?  only for CFNumberFormatter?
-    [formatter setMaximumSignificantDigits:4]; 
-    
-    // Convert input temperature to degrees Kelvin, then store in model property temperatureK.
+
+    // Convert input to a valid temperature greater than or equal to absolute 0.
+    // convertTemperature returns a valid temperature.
+    // Store result in model property temperatureK.
     // TODO: replace autoreleased object with explicit init, release?
     NSNumber *fromTemperature = [formatter numberFromString:self.convertFromField.text];    
     self.converter.temperatureK = [self.converter convertTemperature:fromTemperature
                                                          toKFromUnit:self.toKFromUnit];
     
-    // read temperature units we are converting from degrees Kelvin "to"  
+    // Convert temperatureK back to input units, refill input field with validated value.
+    self.convertFromField.text = [formatter stringFromNumber:
+                                  [self.converter convertTemperature:self.converter.temperatureK
+                                                         fromKToUnit:self.toKFromUnit]];
+    
+    // read temperature units we are converting "to"  
     if (0 == [toTemperatureUnitSegment selectedSegmentIndex])
         self.fromKToUnit = BS_UNIT_DEG_C;    
     if (1 == [toTemperatureUnitSegment selectedSegmentIndex])
