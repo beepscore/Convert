@@ -64,8 +64,8 @@
 
 
 - (IBAction)updateTemperatures:(id)sender {
-
-    // read "From" temperature units
+    
+    // read temperature units we are converting "from" to degrees Kelvin
     if (0 == [fromTemperatureUnitSegment selectedSegmentIndex])
         self.toKFromUnit = BS_UNIT_DEG_C;    
     if (1 == [fromTemperatureUnitSegment selectedSegmentIndex])
@@ -75,19 +75,25 @@
     if (3 == [fromTemperatureUnitSegment selectedSegmentIndex])
         self.toKFromUnit = BS_UNIT_DEG_R;
     
-    // set model temperatureK property in degrees K.
+    // Use a number formatter on text fields to handle localization and user prefs
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    
+    // This prevents rounding to integer
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    [formatter setMaximumFractionDigits:2];    
+    
+    // don't use this.  For example it would cause 0.003 to display as 0.00
+    // [formatter setMaximumFractionDigits:2];
+    
+    // doesn't work?  only for CFNumberFormatter?
+    [formatter setMaximumSignificantDigits:4]; 
+    
+    // Convert input temperature to degrees Kelvin, then store in model property temperatureK.
+    // TODO: replace autoreleased object with explicit init, release?
     NSNumber *fromTemperature = [formatter numberFromString:self.convertFromField.text];    
-    [formatter release];
     self.converter.temperatureK = [self.converter convertTemperature:fromTemperature
                                                          toKFromUnit:self.toKFromUnit];
-    // refill input field using model property
-    self.convertFromField.text = [[self.converter convertTemperature:self.converter.temperatureK
-                                                        fromKToUnit:self.toKFromUnit] stringValue];   
     
-    // read "To" temperature units   
+    // read temperature units we are converting from degrees Kelvin "to"  
     if (0 == [toTemperatureUnitSegment selectedSegmentIndex])
         self.fromKToUnit = BS_UNIT_DEG_C;    
     if (1 == [toTemperatureUnitSegment selectedSegmentIndex])
@@ -97,9 +103,12 @@
     if (3 == [toTemperatureUnitSegment selectedSegmentIndex])
         self.fromKToUnit = BS_UNIT_DEG_R;    
     
-    // fill output label
-    self.convertToLabel.text = [[self.converter convertTemperature:self.converter.temperatureK
-                                                       fromKToUnit:self.fromKToUnit] stringValue];   
+    // Convert model property temperatureK to output units, then fill output label
+    self.convertToLabel.text = [formatter stringFromNumber:
+                                [self.converter convertTemperature:self.converter.temperatureK
+                                                       fromKToUnit:self.fromKToUnit]];
+    
+    [formatter release];
 }
 
 
@@ -114,16 +123,7 @@
 
 // ref Dudney sec 4.6 pg 67
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    
-
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    [formatter setMaximumFractionDigits:2];    
-    NSNumber *fromTemperature = [formatter numberFromString:self.convertFromField.text];    
-    
-    self.convertFromField.text = [formatter stringFromNumber:fromTemperature];
-    [formatter release];
-
+        
     [self updateTemperatures:self];
 }
 
