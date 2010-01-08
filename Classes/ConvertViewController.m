@@ -21,6 +21,7 @@
 @synthesize fromUnit;
 @synthesize toTemperatureUnitSegment;
 @synthesize toUnit;
+@synthesize raisedTemperatureToAbsoluteZeroLabel;
 
 
 #pragma mark -
@@ -33,6 +34,7 @@
     [fromUnit release], fromUnit = nil;
     [toTemperatureUnitSegment release], toTemperatureUnitSegment = nil;
     [toUnit release], toUnit = nil;
+    [raisedTemperatureToAbsoluteZeroLabel release], raisedTemperatureToAbsoluteZeroLabel = nil;
 }
 
 
@@ -84,19 +86,24 @@
     // don't use this.  For example it would cause 0.003 to display as 0.00
     // [formatter setMaximumFractionDigits:2];
 
-    // Convert input to a valid temperature greater than or equal to absolute 0.
-    // convertTemperature returns a valid temperature.
-    // Store result in model property temperatureK.
+    // Convert input to a valid temperature.  Store result in model property temperatureK.
     // TODO: replace autoreleased object with explicit init, release?
     NSNumber *fromTemperature = [formatter numberFromString:self.convertFromField.text];    
     self.converter.temperatureK = [self.converter convertTemperature:fromTemperature
                                                          toKFromUnit:self.fromUnit];
+
+    // Notify user if model raised their input temperature to a physically valid value.
+    if (self.converter.raisedTemperatureToAbsoluteZero) {
+        self.raisedTemperatureToAbsoluteZeroLabel.text = @"Raised temperature to absolute zero";
+    } else {
+        self.raisedTemperatureToAbsoluteZeroLabel.text = @"";
+    }
     
     // Convert model temperatureK back to view input units, refill input field with validated value.
     self.convertFromField.text = [formatter stringFromNumber:
                                   [self.converter convertTemperature:self.converter.temperatureK
                                                          fromKToUnit:self.fromUnit]];
-    
+
     // read temperature units we are converting "to"  
     if (0 == [toTemperatureUnitSegment selectedSegmentIndex])
         self.toUnit = BS_UNIT_DEG_C;    

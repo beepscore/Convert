@@ -17,6 +17,7 @@
     NSString *fromUnit;
     UISegmentedControl *toTemperatureUnitSegment;
     NSString *toUnit;
+    UILabel *raisedTemperatureToAbsoluteZeroLabel;
 }
 #pragma mark -
 #pragma mark properties
@@ -26,6 +27,7 @@
 @property(nonatomic,retain)IBOutlet UILabel *convertToLabel;
 @property(nonatomic,retain)IBOutlet UISegmentedControl *fromTemperatureUnitSegment;
 @property(nonatomic,retain)IBOutlet UISegmentedControl *toTemperatureUnitSegment;
+@property(nonatomic,retain)IBOutlet UILabel *raisedTemperatureToAbsoluteZeroLabel;
 
 @property(nonatomic,retain) NSString *fromUnit;
 @property(nonatomic,retain) NSString *toUnit;

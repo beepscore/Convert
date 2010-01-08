@@ -19,7 +19,7 @@ const double BS_K_TO_R_OFFSET = 0.0;
 @implementation Converter
 
 @synthesize temperatureK;
-
+@synthesize raisedTemperatureToAbsoluteZero;
 
 #pragma mark initializers
 
@@ -37,8 +37,7 @@ const double BS_K_TO_R_OFFSET = 0.0;
     [super dealloc];
 }
 
-// Converts temperature to Kelvin, which can't be less than 0 degrees K (absolute 0).
-// TODO: implement error code for invalid input?  For now, just return 0.
+
 - (NSNumber *)convertTemperature:(NSNumber *)aTemperature
                      toKFromUnit:(NSString *)fromTemperatureUnit {
     
@@ -56,10 +55,14 @@ const double BS_K_TO_R_OFFSET = 0.0;
     if (BS_UNIT_DEG_R == fromTemperatureUnit) {
         temperatureDegK = ([aTemperature doubleValue]/BS_K_TO_R_SLOPE);
     }
+    
     if (temperatureDegK < 0.0) {
-        // could set an error flag here.  For now, just silently convert to 0.
         temperatureDegK = 0.0;
+        raisedTemperatureToAbsoluteZero = YES;
+    } else {
+        raisedTemperatureToAbsoluteZero = NO;
     }
+
     // ????: Homework goal is minimize use of autoreleased objects.
     // I don't see an easy way to avoid using one here.
     // Could re-write method to not return NSNumber object,
@@ -70,21 +73,28 @@ const double BS_K_TO_R_OFFSET = 0.0;
 
 - (NSNumber *)convertTemperature:(NSNumber *)aTemperatureInK
                      fromKToUnit:(NSString *)toTemperatureUnit {
+
+    double temperatureDegK = [aTemperatureInK doubleValue];
+
+    if (temperatureDegK < 0.0) {
+        temperatureDegK = 0.0;
+        raisedTemperatureToAbsoluteZero = YES;
+    } else {
+        raisedTemperatureToAbsoluteZero = NO;
+    }
     
     if (BS_UNIT_DEG_C == toTemperatureUnit) {
-        return [NSNumber numberWithDouble:
-                ([aTemperatureInK doubleValue] + BS_K_TO_C_OFFSET)];
+        return [NSNumber numberWithDouble:(temperatureDegK + BS_K_TO_C_OFFSET)];
     }
     if (BS_UNIT_DEG_F == toTemperatureUnit) {
         return [NSNumber numberWithDouble:
-                ((BS_K_TO_F_SLOPE * [aTemperatureInK doubleValue]) + BS_K_TO_F_OFFSET)];
+                ((BS_K_TO_F_SLOPE * temperatureDegK) + BS_K_TO_F_OFFSET)];
     }
     if (BS_UNIT_DEG_K == toTemperatureUnit) {
-        return aTemperatureInK;
+        return [NSNumber numberWithDouble:temperatureDegK];
     }
     if (BS_UNIT_DEG_R == toTemperatureUnit) {
-        return [NSNumber numberWithDouble:
-                (BS_K_TO_R_SLOPE * [aTemperatureInK doubleValue])];
+        return [NSNumber numberWithDouble:(BS_K_TO_R_SLOPE * temperatureDegK)];
     }
     return nil;    
 }
