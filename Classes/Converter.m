@@ -8,7 +8,7 @@
 
 #import "Converter.h"
 
-// conversion factors for Kelvin to Celsius, Farenheit, Rankine
+// conversion factors for Kelvin to Celsius, Fahrenheit, Rankine
 const double BS_K_TO_C_SLOPE = 1.0;
 const double BS_K_TO_C_OFFSET = -273.15;
 const double BS_K_TO_F_SLOPE = 1.8;

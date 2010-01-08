@@ -18,9 +18,9 @@
 @synthesize convertFromField;
 @synthesize convertToLabel;
 @synthesize fromTemperatureUnitSegment;
-@synthesize toKFromUnit;
+@synthesize fromUnit;
 @synthesize toTemperatureUnitSegment;
-@synthesize fromKToUnit;
+@synthesize toUnit;
 
 
 #pragma mark -
@@ -30,9 +30,9 @@
     [convertFromField release], convertFromField = nil;
     [convertToLabel release], convertToLabel = nil;
     [fromTemperatureUnitSegment release], fromTemperatureUnitSegment = nil;
-    [toKFromUnit release], toKFromUnit = nil;
+    [fromUnit release], fromUnit = nil;
     [toTemperatureUnitSegment release], toTemperatureUnitSegment = nil;
-    [fromKToUnit release], fromKToUnit = nil;
+    [toUnit release], toUnit = nil;
 }
 
 
@@ -67,13 +67,13 @@
     
     // read temperature units we are converting "from"
     if (0 == [fromTemperatureUnitSegment selectedSegmentIndex])
-        self.toKFromUnit = BS_UNIT_DEG_C;    
+        self.fromUnit = BS_UNIT_DEG_C;    
     if (1 == [fromTemperatureUnitSegment selectedSegmentIndex])
-        self.toKFromUnit = BS_UNIT_DEG_F;    
+        self.fromUnit = BS_UNIT_DEG_F;    
     if (2 == [fromTemperatureUnitSegment selectedSegmentIndex])
-        self.toKFromUnit = BS_UNIT_DEG_K;    
+        self.fromUnit = BS_UNIT_DEG_K;    
     if (3 == [fromTemperatureUnitSegment selectedSegmentIndex])
-        self.toKFromUnit = BS_UNIT_DEG_R;
+        self.fromUnit = BS_UNIT_DEG_R;
     
     // Use a number formatter on text fields to handle localization and user prefs
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
@@ -90,28 +90,27 @@
     // TODO: replace autoreleased object with explicit init, release?
     NSNumber *fromTemperature = [formatter numberFromString:self.convertFromField.text];    
     self.converter.temperatureK = [self.converter convertTemperature:fromTemperature
-                                                         toKFromUnit:self.toKFromUnit];
+                                                         toKFromUnit:self.fromUnit];
     
-    // Convert temperatureK back to input units, refill input field with validated value.
+    // Convert model temperatureK back to view input units, refill input field with validated value.
     self.convertFromField.text = [formatter stringFromNumber:
                                   [self.converter convertTemperature:self.converter.temperatureK
-                                                         fromKToUnit:self.toKFromUnit]];
+                                                         fromKToUnit:self.fromUnit]];
     
     // read temperature units we are converting "to"  
     if (0 == [toTemperatureUnitSegment selectedSegmentIndex])
-        self.fromKToUnit = BS_UNIT_DEG_C;    
+        self.toUnit = BS_UNIT_DEG_C;    
     if (1 == [toTemperatureUnitSegment selectedSegmentIndex])
-        self.fromKToUnit = BS_UNIT_DEG_F;    
+        self.toUnit = BS_UNIT_DEG_F;    
     if (2 == [toTemperatureUnitSegment selectedSegmentIndex])
-        self.fromKToUnit = BS_UNIT_DEG_K;    
+        self.toUnit = BS_UNIT_DEG_K;    
     if (3 == [toTemperatureUnitSegment selectedSegmentIndex])
-        self.fromKToUnit = BS_UNIT_DEG_R;    
+        self.toUnit = BS_UNIT_DEG_R;    
     
-    // Convert model property temperatureK to output units, then fill output label
+    // Convert model property temperatureK to view output units, then fill output label
     self.convertToLabel.text = [formatter stringFromNumber:
                                 [self.converter convertTemperature:self.converter.temperatureK
-                                                       fromKToUnit:self.fromKToUnit]];
-    
+                                                       fromKToUnit:self.toUnit]];
     [formatter release];
 }
 

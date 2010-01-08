@@ -14,9 +14,9 @@
     UITextField *convertFromField;
     UILabel *convertToLabel;
     UISegmentedControl *fromTemperatureUnitSegment;
-    NSString *toKFromUnit;
+    NSString *fromUnit;
     UISegmentedControl *toTemperatureUnitSegment;
-    NSString *fromKToUnit;
+    NSString *toUnit;
 }
 #pragma mark -
 #pragma mark properties
@@ -27,8 +27,8 @@
 @property(nonatomic,retain)IBOutlet UISegmentedControl *fromTemperatureUnitSegment;
 @property(nonatomic,retain)IBOutlet UISegmentedControl *toTemperatureUnitSegment;
 
-@property(nonatomic,retain) NSString *toKFromUnit;
-@property(nonatomic,retain) NSString *fromKToUnit;
+@property(nonatomic,retain) NSString *fromUnit;
+@property(nonatomic,retain) NSString *toUnit;
 
 
 - (IBAction)updateTemperatures:(id)sender;
