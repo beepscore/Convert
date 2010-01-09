@@ -17,7 +17,7 @@
 @interface Converter : NSObject { 
     // temperature in degrees Kelvin.  Minimum value = 0 (absolute zero).
     NSNumber *temperatureK;
-    // flag if conversion raised temperature to absolute zero.
+    // flag set if a conversion method raised temperature to absolute zero.
     BOOL raisedTemperatureToAbsoluteZero;
     
     // key is string temperature in degrees K.  value is string temperature fact.
@@ -39,6 +39,8 @@
 - (NSNumber *)convertTemperature:(NSNumber *)aTemperatureInK
                 fromKToUnit:(NSString *)toTemperatureUnit;
 
-- (NSString *)tidbitForTemperatureK:(int)aTemperatureK;
+
+// returns a fact about a temperature close to the argument.
+- (NSString *)tidbitForTemperatureK:(NSNumber *)aTemperatureK;
 
 @end

@@ -123,8 +123,8 @@
     [formatter release];
     
     // Display temperature tidbit
-    self.temperatureTidbitLabel.text = 
-    [self.converter tidbitForTemperatureK:[self.converter.temperatureK intValue]];
+    self.temperatureTidbitLabel.text = [self.converter 
+                                        tidbitForTemperatureK:self.converter.temperatureK];
 }
 
 
