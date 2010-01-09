@@ -18,6 +18,7 @@
     UISegmentedControl *toTemperatureUnitSegment;
     NSString *toUnit;
     UILabel *raisedTemperatureToAbsoluteZeroLabel;
+    UILabel *temperatureTidbitLabel;
 }
 #pragma mark -
 #pragma mark properties
@@ -28,6 +29,7 @@
 @property(nonatomic,retain)IBOutlet UISegmentedControl *fromTemperatureUnitSegment;
 @property(nonatomic,retain)IBOutlet UISegmentedControl *toTemperatureUnitSegment;
 @property(nonatomic,retain)IBOutlet UILabel *raisedTemperatureToAbsoluteZeroLabel;
+@property(nonatomic,retain)IBOutlet UILabel *temperatureTidbitLabel;
 
 @property(nonatomic,retain) NSString *fromUnit;
 @property(nonatomic,retain) NSString *toUnit;

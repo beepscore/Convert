@@ -19,9 +19,13 @@
     NSNumber *temperatureK;
     // flag if conversion raised temperature to absolute zero.
     BOOL raisedTemperatureToAbsoluteZero;
+    
+    // key is string temperature in degrees K.  value is string temperature fact.
+    NSDictionary *tidbits;
 }
-@property(nonatomic,retain) NSNumber *temperatureK;
-@property(nonatomic,assign) BOOL raisedTemperatureToAbsoluteZero;
+@property(nonatomic,retain)NSNumber *temperatureK;
+@property(nonatomic,assign)BOOL raisedTemperatureToAbsoluteZero;
+@property(nonatomic,retain)NSDictionary *tidbits;
 
 
 // Converts temperature from C, F, or R to K.
@@ -34,5 +38,7 @@
 // If necessary, raises temperature to absolute zero and sets flag.
 - (NSNumber *)convertTemperature:(NSNumber *)aTemperatureInK
                 fromKToUnit:(NSString *)toTemperatureUnit;
+
+- (NSString *)tidbitForTemperatureK:(int)aTemperatureK;
 
 @end

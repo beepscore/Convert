@@ -22,7 +22,7 @@
 @synthesize toTemperatureUnitSegment;
 @synthesize toUnit;
 @synthesize raisedTemperatureToAbsoluteZeroLabel;
-
+@synthesize temperatureTidbitLabel;
 
 #pragma mark -
 #pragma mark destructors and memory cleanUp
@@ -35,6 +35,7 @@
     [toTemperatureUnitSegment release], toTemperatureUnitSegment = nil;
     [toUnit release], toUnit = nil;
     [raisedTemperatureToAbsoluteZeroLabel release], raisedTemperatureToAbsoluteZeroLabel = nil;
+    [temperatureTidbitLabel release], temperatureTidbitLabel = nil;
 }
 
 
@@ -87,7 +88,7 @@
     // [formatter setMaximumFractionDigits:2];
 
     // Convert input to a valid temperature.  Store result in model property temperatureK.
-    // TODO: replace autoreleased object with explicit init, release?
+    // TODO: replace convenience method autoreleased object with explicit init, release?
     NSNumber *fromTemperature = [formatter numberFromString:self.convertFromField.text];    
     self.converter.temperatureK = [self.converter convertTemperature:fromTemperature
                                                          toKFromUnit:self.fromUnit];
@@ -118,7 +119,12 @@
     self.convertToLabel.text = [formatter stringFromNumber:
                                 [self.converter convertTemperature:self.converter.temperatureK
                                                        fromKToUnit:self.toUnit]];
+    
     [formatter release];
+    
+    // Display temperature tidbit
+    self.temperatureTidbitLabel.text = 
+    [self.converter tidbitForTemperatureK:[self.converter.temperatureK intValue]];
 }
 
 

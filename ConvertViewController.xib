@@ -106,7 +106,7 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="IBUIText">=</string>
 						<reference key="IBUIFont" ref="601639177"/>
-						<object class="NSColor" key="IBUITextColor">
+						<object class="NSColor" key="IBUITextColor" id="864659846">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MCAwIDAAA</bytes>
 						</object>
@@ -251,6 +251,21 @@
 						<float key="IBUIMinimumFontSize">8</float>
 						<int key="IBUITextAlignment">1</int>
 					</object>
+					<object class="IBUILabel" id="349441210">
+						<reference key="NSNextResponder" ref="774585933"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrame">{{20, 400}, {280, 21}}</string>
+						<reference key="NSSuperview" ref="774585933"/>
+						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<string key="IBUIText"/>
+						<reference key="IBUITextColor" ref="864659846"/>
+						<nil key="IBUIHighlightedColor"/>
+						<int key="IBUIBaselineAdjustment">1</int>
+						<float key="IBUIMinimumFontSize">8</float>
+						<int key="IBUITextAlignment">1</int>
+					</object>
 				</object>
 				<string key="NSFrameSize">{320, 460}</string>
 				<reference key="NSSuperview"/>
@@ -348,6 +363,14 @@
 					</object>
 					<int key="connectionID">31</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">temperatureTidbitLabel</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="349441210"/>
+					</object>
+					<int key="connectionID">33</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -381,6 +404,7 @@
 							<reference ref="1072205705"/>
 							<reference ref="750928656"/>
 							<reference ref="417240016"/>
+							<reference ref="349441210"/>
 						</object>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">ContentViewAsUIControl</string>
@@ -422,6 +446,11 @@
 						<reference key="object" ref="1072205705"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">32</int>
+						<reference key="object" ref="349441210"/>
+						<reference key="parent" ref="774585933"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -436,6 +465,7 @@
 					<string>18.IBPluginDependency</string>
 					<string>19.IBPluginDependency</string>
 					<string>29.IBPluginDependency</string>
+					<string>32.IBPluginDependency</string>
 					<string>6.CustomClassName</string>
 					<string>6.IBEditorWindowLastContentRect</string>
 					<string>6.IBPluginDependency</string>
@@ -445,6 +475,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>ConvertViewController</string>
 					<string>UIResponder</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -473,7 +504,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">31</int>
+			<int key="maxID">33</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -502,6 +533,7 @@
 							<string>convertToLabel</string>
 							<string>fromTemperatureUnitSegment</string>
 							<string>raisedTemperatureToAbsoluteZeroLabel</string>
+							<string>temperatureTidbitLabel</string>
 							<string>toTemperatureUnitSegment</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -509,6 +541,7 @@
 							<string>UITextField</string>
 							<string>UILabel</string>
 							<string>UISegmentedControl</string>
+							<string>UILabel</string>
 							<string>UILabel</string>
 							<string>UISegmentedControl</string>
 						</object>
