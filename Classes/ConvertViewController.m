@@ -15,6 +15,8 @@
 #pragma mark properties
 
 @synthesize converter;
+@synthesize backgroundCold;
+@synthesize backgroundHot;
 @synthesize convertFromField;
 @synthesize convertToLabel;
 @synthesize fromTemperatureUnitSegment;
@@ -28,6 +30,8 @@
 #pragma mark destructors and memory cleanUp
 - (void)cleanUp {
     [converter release], converter = nil;
+    [backgroundCold release], backgroundHot = nil;
+    [backgroundHot release], backgroundHot = nil;
     [convertFromField release], convertFromField = nil;
     [convertToLabel release], convertToLabel = nil;
     [fromTemperatureUnitSegment release], fromTemperatureUnitSegment = nil;
@@ -60,10 +64,33 @@
 }
 
 #pragma mark -
-
-- (void)viewDidLoad {
-    converter = [[Converter alloc] init];
+// reference http://forums.macrumors.com/archive/index.php/t-512718.html
+- (void)updateBackgroundColors {
+    
+    // class methods.  Do not instantiate an object.
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.5];
+    
+    const double TMedium = 273.0;
+    const double THot = 473.0;
+    
+    if ([self.converter.temperatureK doubleValue] < TMedium) {
+        // from temperature 0 to TMedium, decrease opacity from 1 to 0
+        [self.backgroundCold setAlpha:(1.0 - ([self.converter.temperatureK doubleValue]/TMedium))];
+        [self.backgroundHot setAlpha:0.0];        
+    }
+    else 
+        if ([self.converter.temperatureK doubleValue] > THot) {
+            [self.backgroundCold setAlpha:0.0];
+            [self.backgroundHot setAlpha:1.0];
+        } else {
+            [self.backgroundCold setAlpha:0.0];
+            // from TMedium to THot, increase opacity linearly from 0 to 1
+            [self.backgroundHot setAlpha:(([self.converter.temperatureK doubleValue]-TMedium)/(THot-TMedium))];
+        }
+    [UIView commitAnimations];    
 }
+
 
 // This method is called by the input field and by both segmented controls.
 - (IBAction)updateTemperatures:(id)sender {
@@ -86,13 +113,13 @@
     
     // don't use this.  For example it would cause 0.003 to display as 0.00
     // [formatter setMaximumFractionDigits:2];
-
+    
     // Convert input to a valid temperature.  Store result in model property temperatureK.
     // TODO: replace convenience method autoreleased object with explicit init, release?
     NSNumber *fromTemperature = [formatter numberFromString:self.convertFromField.text];    
     self.converter.temperatureK = [self.converter convertTemperature:fromTemperature
                                                          toKFromUnit:self.fromUnit];
-
+    
     // Notify user if model raised their input temperature to a physically valid value.
     if (self.converter.raisedTemperatureToAbsoluteZero) {
         self.raisedTemperatureToAbsoluteZeroLabel.text = @"Raised temperature to absolute zero";
@@ -104,7 +131,7 @@
     self.convertFromField.text = [formatter stringFromNumber:
                                   [self.converter convertTemperature:self.converter.temperatureK
                                                          fromKToUnit:self.fromUnit]];
-
+    
     // read temperature units we are converting "to"  
     if (0 == [toTemperatureUnitSegment selectedSegmentIndex])
         self.toUnit = BS_UNIT_DEG_C;    
@@ -125,6 +152,13 @@
     // Display temperature tidbit
     self.temperatureTidbitLabel.text = [self.converter 
                                         tidbitForTemperatureK:self.converter.temperatureK];
+    [self updateBackgroundColors];
+}
+
+
+- (void)viewDidLoad {
+    converter = [[Converter alloc] init];
+    [self updateTemperatures:self];
 }
 
 
@@ -149,7 +183,7 @@
 
 // ref Dudney sec 4.6 pg 67
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-        
+    
     [self updateTemperatures:self];
 }
 

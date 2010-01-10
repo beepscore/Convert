@@ -11,6 +11,8 @@
 
 @interface ConvertViewController : UIViewController <UITextFieldDelegate> {
     Converter *converter;
+    UIView *backgroundCold;
+    UIView *backgroundHot;
     UITextField *convertFromField;
     UILabel *convertToLabel;
     UISegmentedControl *fromTemperatureUnitSegment;
@@ -24,6 +26,8 @@
 #pragma mark properties
 
 @property(nonatomic,retain) Converter *converter;
+@property(nonatomic,retain)IBOutlet UIView *backgroundCold;
+@property(nonatomic,retain)IBOutlet UIView *backgroundHot;
 @property(nonatomic,retain)IBOutlet UITextField *convertFromField;
 @property(nonatomic,retain)IBOutlet UILabel *convertToLabel;
 @property(nonatomic,retain)IBOutlet UISegmentedControl *fromTemperatureUnitSegment;
