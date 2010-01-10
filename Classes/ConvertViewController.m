@@ -171,8 +171,9 @@
     return YES;
 }
 
-// Dismiss keyboard if user taps container view background.
-// Note:  In IB, Changed container view's class from UIView to UIControl, so it will send Touch Down event.
+// Dismiss keyboard if user taps view background.
+// Note:  In IB, Changed class of container, backgroundCold and backgroundHot views
+// from UIView to UIControl, so they will send Touch Down event.
 // In IB, connected Touch Down event to IBAction backgroundTap
 // Ref Mark and LaMarche "Beginning iPhone 3 Development" Ch 4 pg 75
 - (IBAction)backgroundTap:(id)sender {
