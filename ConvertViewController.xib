@@ -50,7 +50,7 @@
 							<bytes key="NSRGB">MC4yODUzNDM1NTc2IDAuMzA0OTg3ODQ3OCAwLjYyNTQyMTA0NzIAA</bytes>
 						</object>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
-						<float key="IBUIAlpha">0.5</float>
+						<float key="IBUIAlpha">0.0</float>
 					</object>
 					<object class="IBUIView" id="163422364">
 						<reference key="NSNextResponder" ref="774585933"/>
@@ -61,8 +61,7 @@
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC43MzE1OTQwMjYxIDAuMzAyNzEzNzUxOCAwLjIxNzIxNjg5NAA</bytes>
 						</object>
-						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
-						<float key="IBUIAlpha">0.5</float>
+						<float key="IBUIAlpha">0.0</float>
 					</object>
 					<object class="IBUITextField" id="747145382">
 						<reference key="NSNextResponder" ref="774585933"/>
@@ -78,10 +77,10 @@
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<string key="IBUIText">32</string>
 						<int key="IBUIBorderStyle">2</int>
-						<string key="IBUIPlaceholder">Input</string>
-						<object class="NSColor" key="IBUITextColor" id="99094079">
+						<string key="IBUIPlaceholder">Temperature</string>
+						<object class="NSColor" key="IBUITextColor" id="343279417">
 							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC4yMDAwMDAwMDMgMC4yMDAwMDAwMDMgMC4yMDAwMDAwMDMAA</bytes>
+							<bytes key="NSRGB">MCAwIDAAA</bytes>
 						</object>
 						<object class="NSFont" key="IBUIFont" id="601639177">
 							<string key="NSName">Helvetica</string>
@@ -91,7 +90,7 @@
 						<int key="IBUITextAlignment">1</int>
 						<bool key="IBUIClearsOnBeginEditing">YES</bool>
 						<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
-						<float key="IBUIMinimumFontSize">24</float>
+						<float key="IBUIMinimumFontSize">16</float>
 						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 							<int key="IBUIKeyboardType">2</int>
 							<int key="IBUIReturnKeyType">9</int>
@@ -111,7 +110,7 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="IBUIText">0</string>
 						<reference key="IBUIFont" ref="601639177"/>
-						<reference key="IBUITextColor" ref="99094079"/>
+						<reference key="IBUITextColor" ref="343279417"/>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
 						<float key="IBUIMinimumFontSize">24</float>

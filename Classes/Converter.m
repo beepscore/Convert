@@ -8,6 +8,13 @@
 
 #import "Converter.h"
 
+// Ref http://stackoverflow.com/questions/25746/whats-the-difference-between-a-string-constant-and-a-string-literal
+NSString * const kBSUnitDegreeC = @"C";
+NSString * const kBSUnitDegreeF = @"F";
+NSString * const kBSUnitDegreeK = @"K";
+NSString * const kBSUnitDegreeR = @"R";
+
+
 // conversion factors for Kelvin to Celsius, Fahrenheit, Rankine
 const double BS_K_TO_C_SLOPE = 1.0;
 const double BS_K_TO_C_OFFSET = -273.15;
@@ -29,14 +36,19 @@ const double BS_K_TO_R_OFFSET = 0.0;
     if (self = [super init]) {
         
         // TODO: Move tidbits data into a file, plist, or database
+        //       for keys, use string constants instead of string literals?
         tidbits = [[NSDictionary alloc] initWithObjectsAndKeys:
-                   @"-273.15°C absolute zero", @"0",
+                   @"0°K absolute zero", @"0",
                    @"2.725°K cosmic background radiation", @"2",
-                   @"-210°C nitrogen boils", @"63", 
+                   @"63°K nitrogen boils", @"63", 
+                   @"135°K superconductivity", @"135", 
                    @"−89.2°C coldest temperature in Antartica", @"184",
                    @"−78.5°C dry ice sublimes to gas", @"194",
-                   @"-40°C and -40°F are the same temperature", @"233",
+                   @"-60°C nylon brittle", @"213",
+                   @"-40°C = -40°F", @"233",
                    @"-38.72°C mercury freezes", @"234",
+                   @"-33.34°C ammonia boils", @"239",
+                   @"-19°C diesel fuel turns to gel", @"254",
                    @"-18°C boogers freeze (estimated)", @"255",
                    @"-1.9°C ocean saltwater freezes", @"271",
                    @"0°C water freezes", @"273",
@@ -83,16 +95,16 @@ const double BS_K_TO_R_OFFSET = 0.0;
     
     double temperatureDegK = 0.0;
     
-    if (BS_UNIT_DEG_C == fromTemperatureUnit) {
+    if (kBSUnitDegreeC == fromTemperatureUnit) {
         temperatureDegK = ([aTemperature doubleValue] - BS_K_TO_C_OFFSET);
     }
-    if (BS_UNIT_DEG_F == fromTemperatureUnit) {
+    if (kBSUnitDegreeF == fromTemperatureUnit) {
         temperatureDegK = (([aTemperature doubleValue] - BS_K_TO_F_OFFSET)/BS_K_TO_F_SLOPE);
     }
-    if (BS_UNIT_DEG_K == fromTemperatureUnit) {
+    if (kBSUnitDegreeK == fromTemperatureUnit) {
         temperatureDegK = [aTemperature doubleValue];
     }
-    if (BS_UNIT_DEG_R == fromTemperatureUnit) {
+    if (kBSUnitDegreeR == fromTemperatureUnit) {
         temperatureDegK = ([aTemperature doubleValue]/BS_K_TO_R_SLOPE);
     }
     
@@ -123,17 +135,17 @@ const double BS_K_TO_R_OFFSET = 0.0;
         raisedTemperatureToAbsoluteZero = NO;
     }
     
-    if (BS_UNIT_DEG_C == toTemperatureUnit) {
+    if (kBSUnitDegreeC == toTemperatureUnit) {
         return [NSNumber numberWithDouble:(temperatureDegK + BS_K_TO_C_OFFSET)];
     }
-    if (BS_UNIT_DEG_F == toTemperatureUnit) {
+    if (kBSUnitDegreeF == toTemperatureUnit) {
         return [NSNumber numberWithDouble:
                 ((BS_K_TO_F_SLOPE * temperatureDegK) + BS_K_TO_F_OFFSET)];
     }
-    if (BS_UNIT_DEG_K == toTemperatureUnit) {
+    if (kBSUnitDegreeK == toTemperatureUnit) {
         return [NSNumber numberWithDouble:temperatureDegK];
     }
-    if (BS_UNIT_DEG_R == toTemperatureUnit) {
+    if (kBSUnitDegreeR == toTemperatureUnit) {
         return [NSNumber numberWithDouble:(BS_K_TO_R_SLOPE * temperatureDegK)];
     }
     return nil;    
@@ -159,6 +171,5 @@ const double BS_K_TO_R_OFFSET = 0.0;
     // TODO: replace convenience method autoreleased object with explicit init, release?    
     return [self.tidbits valueForKey:[NSString stringWithFormat:@"%d",tidbitsKeyIntFloor]];
 }
-
 
 @end

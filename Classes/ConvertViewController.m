@@ -97,13 +97,13 @@
     
     // read temperature units we are converting "from"
     if (0 == [fromTemperatureUnitSegment selectedSegmentIndex])
-        self.fromUnit = BS_UNIT_DEG_C;    
+        self.fromUnit = kBSUnitDegreeC;    
     if (1 == [fromTemperatureUnitSegment selectedSegmentIndex])
-        self.fromUnit = BS_UNIT_DEG_F;    
+        self.fromUnit = kBSUnitDegreeF;    
     if (2 == [fromTemperatureUnitSegment selectedSegmentIndex])
-        self.fromUnit = BS_UNIT_DEG_K;    
+        self.fromUnit = kBSUnitDegreeK;    
     if (3 == [fromTemperatureUnitSegment selectedSegmentIndex])
-        self.fromUnit = BS_UNIT_DEG_R;
+        self.fromUnit = kBSUnitDegreeR;
     
     // Use a number formatter on text fields to handle localization and user prefs
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
@@ -134,13 +134,13 @@
     
     // read temperature units we are converting "to"  
     if (0 == [toTemperatureUnitSegment selectedSegmentIndex])
-        self.toUnit = BS_UNIT_DEG_C;    
+        self.toUnit = kBSUnitDegreeC;    
     if (1 == [toTemperatureUnitSegment selectedSegmentIndex])
-        self.toUnit = BS_UNIT_DEG_F;    
+        self.toUnit = kBSUnitDegreeF;    
     if (2 == [toTemperatureUnitSegment selectedSegmentIndex])
-        self.toUnit = BS_UNIT_DEG_K;    
+        self.toUnit = kBSUnitDegreeK;    
     if (3 == [toTemperatureUnitSegment selectedSegmentIndex])
-        self.toUnit = BS_UNIT_DEG_R;    
+        self.toUnit = kBSUnitDegreeR;    
     
     // Convert model property temperatureK to view output units, then fill output label
     self.convertToLabel.text = [formatter stringFromNumber:
@@ -177,7 +177,7 @@
 // In IB, connected Touch Down event to IBAction backgroundTap
 // Ref Mark and LaMarche "Beginning iPhone 3 Development" Ch 4 pg 75
 - (IBAction)backgroundTap:(id)sender {
-    // It's ok to send message resignFirstResponder even if reciever isn't first responder.
+    // It's ok to send message resignFirstResponder even if receiver isn't first responder.
     [self.convertFromField resignFirstResponder];
 }
 
@@ -187,6 +187,5 @@
     
     [self updateTemperatures:self];
 }
-
 
 @end

@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 
 // temperature units are degrees Celsius, Fahrenheit, Kelvin, Rankine
-#define BS_UNIT_DEG_C @"C"
-#define BS_UNIT_DEG_F @"F"
-#define BS_UNIT_DEG_K @"K"
-#define BS_UNIT_DEG_R @"R"
+extern NSString * const kBSUnitDegreeC;
+extern NSString * const kBSUnitDegreeF;
+extern NSString * const kBSUnitDegreeK;
+extern NSString * const kBSUnitDegreeR;
 
 @interface Converter : NSObject { 
     // temperature in degrees Kelvin.  Minimum value = 0 (absolute zero).
