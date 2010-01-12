@@ -53,9 +53,9 @@
 
 
 // Release outlets in setView and dealloc instead of in viewDidUnload and dealloc
-// - (void)viewDidUnload {
-//     [self cleanUp];
-// }
+- (void)viewDidUnload {
+
+}
 
 
 // release IBOutlets in setView
@@ -74,7 +74,7 @@
 }
 
 
-// ????: Do I need to implement didReceiveMemoryWarning, or is this the default behavior?
+// ????: Do I need to call setView, or will [super didReceiveMemoryWarning] call it?
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.    
     [self setView:nil];
