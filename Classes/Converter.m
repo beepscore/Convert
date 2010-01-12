@@ -76,15 +76,10 @@ const double BS_K_TO_R_OFFSET = 0.0;
 
 
 #pragma mark -
-#pragma mark destructors and memory cleanUp
-- (void)cleanUp {
+#pragma mark destructors
+- (void)dealloc {
     [temperatureK release], temperatureK = nil;
     [tidbits release], tidbits = nil;
-}
-
-
-- (void)dealloc {
-    [self cleanUp];
     
     [super dealloc];
 }
@@ -153,23 +148,28 @@ const double BS_K_TO_R_OFFSET = 0.0;
 
 - (NSString *)tidbitForTemperatureK:(NSNumber *)aTemperatureK {
 
-    int tidbitsKeyIntFloor = 0;    
-    NSString *tidbitsKey;
+    int tidbitKeyIntFloor = 0;    
+    NSString *tidbitKey;
 
     // find key at or below input temperature
     // dictionary isn't sorted, so enumerate over every element
-    for (tidbitsKey in self.tidbits)
+    for (tidbitKey in self.tidbits)
     {
-        int tidbitsKeyIntValue = [tidbitsKey intValue];
+        int tidbitKeyIntValue = [tidbitKey intValue];
         
-        if ( (tidbitsKeyIntValue > tidbitsKeyIntFloor) 
-            && (tidbitsKeyIntValue <= [aTemperatureK intValue]) ) {
+        if ( (tidbitKeyIntValue > tidbitKeyIntFloor) 
+            && (tidbitKeyIntValue <= [aTemperatureK intValue]) ) {
             
-            tidbitsKeyIntFloor = tidbitsKeyIntValue;
+            tidbitKeyIntFloor = tidbitKeyIntValue;
         }        
     }  
-    // TODO: replace convenience method autoreleased object with explicit init, release?    
-    return [self.tidbits valueForKey:[NSString stringWithFormat:@"%d",tidbitsKeyIntFloor]];
+    // use initWithFormat: instead of convenience method stringWithFormat:
+    //return [self.tidbits valueForKey:[NSString stringWithFormat:@"%d",tidbitKeyIntFloor]];
+    
+     NSString* tidbitKeyString = [[NSString alloc] initWithFormat:@"%d",tidbitKeyIntFloor];
+     NSString* tidbitString = [self.tidbits valueForKey:tidbitKeyString];
+     [tidbitKeyString release];
+     return tidbitString;
 }
 
 @end
