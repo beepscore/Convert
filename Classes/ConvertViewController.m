@@ -28,6 +28,7 @@
 
 #pragma mark -
 #pragma mark destructors and memory cleanUp
+// use cleanUp method to avoid repeating code in dealloc and in viewDidUnload or setView
 - (void)cleanUp {
     [converter release], converter = nil;
     [backgroundCold release], backgroundHot = nil;
@@ -44,9 +45,17 @@
 
 
 - (void)dealloc {
+    // Kris Markel prefers not calling other methods from within dealloc.
     [self cleanUp];
     
     [super dealloc];
+}
+
+
+- (void)viewDidUnload {
+	// Release any retained subviews of the main view.
+	// e.g. self.myOutlet = nil;
+    [self cleanUp];
 }
 
 
@@ -56,12 +65,6 @@
 	// Release any cached data, images, etc that aren't in use.
 }
 
-
-- (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
-    [self cleanUp];
-}
 
 #pragma mark -
 // reference http://forums.macrumors.com/archive/index.php/t-512718.html

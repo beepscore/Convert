@@ -14,7 +14,8 @@ extern NSString * const kBSUnitDegreeF;
 extern NSString * const kBSUnitDegreeK;
 extern NSString * const kBSUnitDegreeR;
 
-@interface Converter : NSObject { 
+@interface Converter : NSObject {
+#pragma mark instance variables
     // temperature in degrees Kelvin.  Minimum value = 0 (absolute zero).
     NSNumber *temperatureK;
     // flag set if a conversion method raised temperature to absolute zero.
@@ -25,8 +26,10 @@ extern NSString * const kBSUnitDegreeR;
 }
 @property(nonatomic,retain)NSNumber *temperatureK;
 @property(nonatomic,assign)BOOL raisedTemperatureToAbsoluteZero;
-@property(nonatomic,retain)NSDictionary *tidbits;
 
+// Use copy instead of retain for types that have mutable subtypes like NSString, NSArray, NSDictionary.
+// This prevents getting a reference to an underlying mutable type that someone else could change.
+@property(nonatomic,copy, readonly)NSDictionary *tidbits;
 
 // Converts temperature from C, F, or R to K.
 // If necessary, raises temperature to absolute zero and sets flag.

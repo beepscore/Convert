@@ -10,6 +10,7 @@
 @class Converter;
 
 @interface ConvertViewController : UIViewController <UITextFieldDelegate> {
+#pragma mark instance variables
     Converter *converter;
     UIView *backgroundCold;
     UIView *backgroundHot;
@@ -24,7 +25,6 @@
 }
 #pragma mark -
 #pragma mark properties
-
 @property(nonatomic,retain) Converter *converter;
 @property(nonatomic,retain)IBOutlet UIView *backgroundCold;
 @property(nonatomic,retain)IBOutlet UIView *backgroundHot;
@@ -35,8 +35,10 @@
 @property(nonatomic,retain)IBOutlet UILabel *raisedTemperatureToAbsoluteZeroLabel;
 @property(nonatomic,retain)IBOutlet UILabel *temperatureTidbitLabel;
 
-@property(nonatomic,retain) NSString *fromUnit;
-@property(nonatomic,retain) NSString *toUnit;
+// Use copy instead of retain for types that have mutable subtypes like NSString, NSArray, NSDictionary.
+// This prevents getting a reference to an underlying mutable type that someone else could change.
+@property(nonatomic,copy) NSString *fromUnit;
+@property(nonatomic,copy) NSString *toUnit;
 
 - (IBAction)updateTemperatures:(id)sender;
 - (IBAction)backgroundTap:(id)sender;
