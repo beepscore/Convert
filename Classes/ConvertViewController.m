@@ -28,7 +28,7 @@
 
 #pragma mark -
 #pragma mark destructors and memory cleanUp
-// use cleanUp method to avoid repeating code in dealloc and in viewDidUnload or setView
+// use cleanUp method to avoid repeating code in dealloc and in setView
 - (void)cleanUp {
     [converter release], converter = nil;
     [backgroundCold release], backgroundHot = nil;
@@ -52,15 +52,32 @@
 }
 
 
-- (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
-    [self cleanUp];
+// Release outlets in setView and dealloc instead of in viewDidUnload and dealloc
+// - (void)viewDidUnload {
+//     [self cleanUp];
+// }
+
+
+// release IBOutlets in setView
+// Ref http://developer.apple.com/iPhone/library/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmNibObjects.html
+//
+// http://moodle.extn.washington.edu/mod/forum/discuss.php?d=3162
+- (void)setView:(UIView *)aView {
+    
+    if (!aView) { // view is being set to nil        
+        // set outlets to nil, e.g. 
+        // self.anOutlet = nil;
+        [self cleanUp];
+    }    
+    // Invoke super's implementation last    
+    [super setView:aView];    
 }
 
 
+// ????: Do I need to implement didReceiveMemoryWarning, or is this the default behavior?
 - (void)didReceiveMemoryWarning {
-	// Releases the view if it doesn't have a superview.
+	// Releases the view if it doesn't have a superview.    
+    [self setView:nil];
     [super didReceiveMemoryWarning];	
 	// Release any cached data, images, etc that aren't in use.
 }
