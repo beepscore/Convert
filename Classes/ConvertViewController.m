@@ -74,10 +74,11 @@
 }
 
 
-// ????: Do I need to call setView, or will [super didReceiveMemoryWarning] call it?
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.    
     [self setView:nil];
+    
+    // ????: this calls setView:nil, don't need line above?
     [super didReceiveMemoryWarning];	
 	// Release any cached data, images, etc that aren't in use.
 }
@@ -135,8 +136,11 @@
     // [formatter setMaximumFractionDigits:2];
     
     // Convert input to a valid temperature.  Store result in model property temperatureK.
-    // TODO: replace convenience method autoreleased object with explicit init, release?
-    NSNumber *fromTemperature = [formatter numberFromString:self.convertFromField.text];    
+    
+    // locally declared variable fromTemperature will autorelease after this method ends.
+    // formatter numberFromString: is not a class convenience method (aka factory method).
+    NSNumber *fromTemperature = [formatter numberFromString:self.convertFromField.text];
+    
     self.converter.temperatureK = [self.converter convertTemperature:fromTemperature
                                                          toKFromUnit:self.fromUnit];
     

@@ -33,8 +33,8 @@ const double BS_K_TO_R_OFFSET = 0.0;
 #pragma mark initializers
 // designated initializer
 - (id)init {
+    
     if (self = [super init]) {
-        
         // TODO: Move tidbits data into a file, plist, or database
         //       for keys, use string constants instead of string literals?
         tidbits = [[NSDictionary alloc] initWithObjectsAndKeys:
