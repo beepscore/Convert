@@ -148,14 +148,17 @@ const double BS_K_TO_R_OFFSET = 0.0;
 
 - (NSString *)tidbitForTemperatureK:(NSNumber *)aTemperatureK {
 
-    int tidbitKeyIntFloor = 0;    
+    // use NSInteger or NSUInteger instead of int.
+    // ref http://theocacao.com/document.page/510
+    // use NSUInteger, because key should never be negative
+    NSUInteger tidbitKeyIntFloor = 0;    
     NSString *tidbitKey;
 
     // find key at or below input temperature
     // dictionary isn't sorted, so enumerate over every element
     for (tidbitKey in self.tidbits)
     {
-        int tidbitKeyIntValue = [tidbitKey intValue];
+        NSUInteger tidbitKeyIntValue = [tidbitKey intValue];
         
         if ( (tidbitKeyIntValue > tidbitKeyIntFloor) 
             && (tidbitKeyIntValue <= [aTemperatureK intValue]) ) {

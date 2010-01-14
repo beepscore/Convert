@@ -92,6 +92,7 @@
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.5];
     
+    // use double instead of CGFloat.  On 32 bit iPhone, CGFloat is 32 bit, double is 64 bit.
     const double TMedium = 273.0;
     const double THot = 473.0;
     
