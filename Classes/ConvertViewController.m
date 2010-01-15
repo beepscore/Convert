@@ -52,13 +52,15 @@
 }
 
 
-// Release outlets in setView and dealloc instead of in viewDidUnload and dealloc
+// Release outlets in viewDidUnload
+// Ref View Controller Programming Guide for iPhone OS,  "Understanding the View Management Cycle"
+// http://developer.apple.com/iphone/library/featuredarticles/ViewControllerPGforiPhoneOS/BasicViewControllers/BasicViewControllers.html#//apple_ref/doc/uid/TP40007457-CH101-SW1
 - (void)viewDidUnload {
-
+    [self cleanUp];
 }
 
 
-// release IBOutlets in setView
+// Release IBOutlets in setView.  
 // Ref http://developer.apple.com/iPhone/library/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmNibObjects.html
 //
 // http://moodle.extn.washington.edu/mod/forum/discuss.php?d=3162
@@ -73,12 +75,9 @@
     [super setView:aView];    
 }
 
-
+// [super didReceiveMemoryWarning] will call setView:nil
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.    
-    [self setView:nil];
-    
-    // ????: this calls setView:nil, don't need line above?
     [super didReceiveMemoryWarning];	
 	// Release any cached data, images, etc that aren't in use.
 }
