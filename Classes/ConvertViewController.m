@@ -117,13 +117,13 @@
 - (IBAction)updateTemperatures:(id)sender {
     
     // read temperature units we are converting "from"
-    if (0 == [fromTemperatureUnitSegment selectedSegmentIndex])
+    if (0 == [self.fromTemperatureUnitSegment selectedSegmentIndex])
         self.fromUnit = kBSUnitDegreeC;    
-    if (1 == [fromTemperatureUnitSegment selectedSegmentIndex])
+    if (1 == [self.fromTemperatureUnitSegment selectedSegmentIndex])
         self.fromUnit = kBSUnitDegreeF;    
-    if (2 == [fromTemperatureUnitSegment selectedSegmentIndex])
+    if (2 == [self.fromTemperatureUnitSegment selectedSegmentIndex])
         self.fromUnit = kBSUnitDegreeK;    
-    if (3 == [fromTemperatureUnitSegment selectedSegmentIndex])
+    if (3 == [self.fromTemperatureUnitSegment selectedSegmentIndex])
         self.fromUnit = kBSUnitDegreeR;
     
     // Use a number formatter on text fields to handle localization and user prefs
@@ -157,13 +157,13 @@
                                                          fromKToUnit:self.fromUnit]];
     
     // read temperature units we are converting "to"  
-    if (0 == [toTemperatureUnitSegment selectedSegmentIndex])
+    if (0 == [self.toTemperatureUnitSegment selectedSegmentIndex])
         self.toUnit = kBSUnitDegreeC;    
-    if (1 == [toTemperatureUnitSegment selectedSegmentIndex])
+    if (1 == [self.toTemperatureUnitSegment selectedSegmentIndex])
         self.toUnit = kBSUnitDegreeF;    
-    if (2 == [toTemperatureUnitSegment selectedSegmentIndex])
+    if (2 == [self.toTemperatureUnitSegment selectedSegmentIndex])
         self.toUnit = kBSUnitDegreeK;    
-    if (3 == [toTemperatureUnitSegment selectedSegmentIndex])
+    if (3 == [self.toTemperatureUnitSegment selectedSegmentIndex])
         self.toUnit = kBSUnitDegreeR;    
     
     // Convert model property temperatureK to view output units, then fill output label
