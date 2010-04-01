@@ -27,59 +27,41 @@
 @synthesize temperatureTidbitLabel;
 
 #pragma mark -
-#pragma mark destructors and memory cleanUp
-// use cleanUp method to avoid repeating code in dealloc and in setView
-- (void)cleanUp {
-    [converter release], converter = nil;
-    [backgroundCold release], backgroundHot = nil;
-    [backgroundHot release], backgroundHot = nil;
-    [convertFromField release], convertFromField = nil;
-    [convertToLabel release], convertToLabel = nil;
-    [fromTemperatureUnitSegment release], fromTemperatureUnitSegment = nil;
-    [fromUnit release], fromUnit = nil;
-    [toTemperatureUnitSegment release], toTemperatureUnitSegment = nil;
-    [toUnit release], toUnit = nil;
-    [raisedTemperatureToAbsoluteZeroLabel release], raisedTemperatureToAbsoluteZeroLabel = nil;
-    [temperatureTidbitLabel release], temperatureTidbitLabel = nil;
-}
-
-
-- (void)dealloc {
-    // Kris Markel prefers not calling other methods from within dealloc.
-    [self cleanUp];
-    
-    [super dealloc];
-}
-
-
-// Release outlets in viewDidUnload
-// Ref View Controller Programming Guide for iPhone OS,  "Understanding the View Management Cycle"
-// http://developer.apple.com/iphone/library/featuredarticles/ViewControllerPGforiPhoneOS/BasicViewControllers/BasicViewControllers.html#//apple_ref/doc/uid/TP40007457-CH101-SW1
-- (void)viewDidUnload {
-    [self cleanUp];
-}
-
-
-// Release IBOutlets in setView.  
-// Ref http://developer.apple.com/iPhone/library/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmNibObjects.html
-//
-// http://moodle.extn.washington.edu/mod/forum/discuss.php?d=3162
-- (void)setView:(UIView *)aView {
-    
-    if (!aView) { // view is being set to nil        
-        // set outlets to nil, e.g. 
-        // self.anOutlet = nil;
-        [self cleanUp];
-    }    
-    // Invoke super's implementation last    
-    [super setView:aView];    
-}
-
+#pragma mark Memory management
 // [super didReceiveMemoryWarning] will call setView:nil
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.    
     [super didReceiveMemoryWarning];	
 	// Release any cached data, images, etc that aren't in use.
+}
+
+
+// Ref http://developer.apple.com/mac/library/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmNibObjects.html
+- (void)viewDidUnload {
+	// Release any retained subviews of the main view.
+    // Release any retained outlets
+    // set properties to nil, which also releases them
+    self.converter = nil;
+    self.backgroundHot = nil;
+    self.backgroundHot = nil;
+    self.convertFromField = nil;
+    self.convertToLabel = nil;
+    self.fromTemperatureUnitSegment = nil;
+    self.fromUnit = nil;
+    self.toTemperatureUnitSegment = nil;
+    self.toUnit = nil;
+    self.raisedTemperatureToAbsoluteZeroLabel = nil;
+    self.temperatureTidbitLabel = nil;
+    
+    [super viewDidUnload];
+}
+
+
+- (void)dealloc {
+    // Kris Markel prefers not calling other methods from within dealloc.
+    self.converter = nil;
+    
+    [super dealloc];
 }
 
 
