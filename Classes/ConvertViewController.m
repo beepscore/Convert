@@ -31,6 +31,7 @@
 // [super didReceiveMemoryWarning] will call setView:nil
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.    
+    // [super didReceiveMemoryWarning] calls setView:nil
     [super didReceiveMemoryWarning];	
 	// Release any cached data, images, etc that aren't in use.
 }
@@ -42,7 +43,7 @@
     // Release any retained outlets
     // set properties to nil, which also releases them
     self.converter = nil;
-    self.backgroundHot = nil;
+    self.backgroundCold = nil;
     self.backgroundHot = nil;
     self.convertFromField = nil;
     self.convertToLabel = nil;
@@ -59,7 +60,17 @@
 
 - (void)dealloc {
     // Kris Markel prefers not calling other methods from within dealloc.
-    self.converter = nil;
+    [converter release], converter = nil;
+    [backgroundCold release], backgroundCold = nil;
+    [backgroundHot release], backgroundHot = nil;
+    [convertFromField release], convertFromField = nil;
+    [convertToLabel release],  convertToLabel = nil;
+    fromTemperatureUnitSegment = nil;
+    [fromUnit release], fromUnit = nil;
+    [toTemperatureUnitSegment release], toTemperatureUnitSegment = nil;
+    [toUnit release], toUnit = nil;
+    [raisedTemperatureToAbsoluteZeroLabel release], raisedTemperatureToAbsoluteZeroLabel = nil;
+    [temperatureTidbitLabel release], temperatureTidbitLabel = nil;
     
     [super dealloc];
 }
