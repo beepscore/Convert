@@ -28,7 +28,6 @@
 
 #pragma mark -
 #pragma mark Memory management
-// [super didReceiveMemoryWarning] will call setView:nil
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.    
     // [super didReceiveMemoryWarning] calls setView:nil
