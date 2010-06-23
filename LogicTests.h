@@ -15,17 +15,24 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 #import <UIKit/UIKit.h>
-//#import "application_headers" as required
 
+//#import "application_headers" as required
+#import "Converter.h"
 
 @interface LogicTests : SenTestCase {
-
+    // in Xcode Groups & Files/Classes, find the Converter.m file.
+    // Hold Option key and drag Converter.m file to Groups & Files/Targets/LogicTests/Compile Sources
+    // This puts a reference to the Converter.m file in both folders.  Both references point to the same project file.
+    Converter* converter;
 }
 
 #if USE_APPLICATION_UNIT_TEST
 - (void) testAppDelegate;       // simple test on application
 #else
-- (void) testMath;              // simple standalone test
+
+- (void) testConvertZeroDegreesToK;
+- (void) testConvertZeroKtoTemperature;
+
 #endif
 
 @end
