@@ -11,17 +11,17 @@
 
 @interface ConvertViewController : UIViewController <UITextFieldDelegate> {
 #pragma mark instance variables
-    Converter *converter;
-    UIView *backgroundCold;
-    UIView *backgroundHot;
-    UITextField *convertFromField;
-    UILabel *convertToLabel;
-    UISegmentedControl *fromTemperatureUnitSegment;
-    NSString *fromUnit;
-    UISegmentedControl *toTemperatureUnitSegment;
-    NSString *toUnit;
-    UILabel *raisedTemperatureToAbsoluteZeroLabel;
-    UILabel *temperatureTidbitLabel;
+    Converter*              converter;
+    UIView*                 backgroundCold;
+    UIView*                 backgroundHot;
+    UITextField*            convertFromField;
+    UILabel*                convertToLabel;
+    UISegmentedControl*     fromTemperatureUnitSegment;
+    NSString*               fromUnit;
+    UISegmentedControl*     toTemperatureUnitSegment;
+    NSString*               toUnit;
+    UILabel*                raisedTemperatureToAbsoluteZeroLabel;
+    UILabel*                temperatureTidbitLabel;
 }
 #pragma mark -
 #pragma mark properties

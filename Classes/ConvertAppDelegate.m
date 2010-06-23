@@ -24,8 +24,8 @@
 
 
 - (void)dealloc {
-    [viewController release], viewController = nil;
-    [window release], window = nil;
+    [viewController release];
+    [window release];
     [super dealloc];
 }
 

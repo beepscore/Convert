@@ -78,8 +78,8 @@ const double BS_K_TO_R_OFFSET = 0.0;
 #pragma mark -
 #pragma mark destructors
 - (void)dealloc {
-    [temperatureK release], temperatureK = nil;
-    [tidbits release], tidbits = nil;
+    [temperatureK release];
+    [tidbits release];
     
     [super dealloc];
 }

@@ -59,17 +59,17 @@
 
 - (void)dealloc {
     // Kris Markel prefers not calling other methods from within dealloc.
-    [converter release], converter = nil;
-    [backgroundCold release], backgroundCold = nil;
-    [backgroundHot release], backgroundHot = nil;
-    [convertFromField release], convertFromField = nil;
-    [convertToLabel release],  convertToLabel = nil;
-    fromTemperatureUnitSegment = nil;
-    [fromUnit release], fromUnit = nil;
-    [toTemperatureUnitSegment release], toTemperatureUnitSegment = nil;
-    [toUnit release], toUnit = nil;
-    [raisedTemperatureToAbsoluteZeroLabel release], raisedTemperatureToAbsoluteZeroLabel = nil;
-    [temperatureTidbitLabel release], temperatureTidbitLabel = nil;
+    [converter release];
+    [backgroundCold release];
+    [backgroundHot release];
+    [convertFromField release];
+    [convertToLabel release];
+    [fromTemperatureUnitSegment release];
+    [fromUnit release];
+    [toTemperatureUnitSegment release];
+    [toUnit release];
+    [raisedTemperatureToAbsoluteZeroLabel release];
+    [temperatureTidbitLabel release];
     
     [super dealloc];
 }
