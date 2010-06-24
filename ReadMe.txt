@@ -27,6 +27,9 @@ http://developer.apple.com/iphone/library/documentation/xcode/conceptual/iphone_
 Automated Unit Testing with Xcode 3 and Objective-C
 http://developer.apple.com/mac/articles/tools/unittestingwithxcode3.html
 
+Test Driving Your Code with OCUnit
+http://developer.apple.com/tools/unittest.html
+
 sample app: Apple iPhoneUnitTests
 
 iPhone Unit Testing
