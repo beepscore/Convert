@@ -19,7 +19,18 @@
 		DE6CF1D910F48BAF006EC6D5 /* Converter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE6CF1D810F48BAF006EC6D5 /* Converter.m */; };
 		DE8F8CD511D2B1F6006AFC0B /* Converter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE6CF1D810F48BAF006EC6D5 /* Converter.m */; };
 		DEA5891F10F5925B00D43BBC /* beepscoreIcon57.png in Resources */ = {isa = PBXBuildFile; fileRef = DEA5891E10F5925B00D43BBC /* beepscoreIcon57.png */; };
+		DEFA0F2911D307980094EEC0 /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = DEFA0F2811D307980094EEC0 /* ReadMe.txt */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DEFA0F3411D30B950094EEC0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D6058900D05DD3D006BFB54 /* Convert */;
+			remoteInfo = Convert;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -42,6 +53,7 @@
 		DE6CF1D710F48BAF006EC6D5 /* Converter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Converter.h; sourceTree = "<group>"; };
 		DE6CF1D810F48BAF006EC6D5 /* Converter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Converter.m; sourceTree = "<group>"; };
 		DEA5891E10F5925B00D43BBC /* beepscoreIcon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beepscoreIcon57.png; sourceTree = "<group>"; };
+		DEFA0F2811D307980094EEC0 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +102,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				DEFA0F2811D307980094EEC0 /* ReadMe.txt */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -172,6 +185,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				DEFA0F3511D30B950094EEC0 /* PBXTargetDependency */,
 			);
 			name = LogicTests;
 			productName = LogicTests;
@@ -211,6 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEFA0F2911D307980094EEC0 /* ReadMe.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +269,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DEFA0F3511D30B950094EEC0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D6058900D05DD3D006BFB54 /* Convert */;
+			targetProxy = DEFA0F3411D30B950094EEC0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
