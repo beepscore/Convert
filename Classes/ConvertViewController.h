@@ -10,20 +10,8 @@
 @class Converter;
 
 @interface ConvertViewController : UIViewController <UITextFieldDelegate> {
-#pragma mark instance variables
-    Converter*              converter;
-    UIView*                 backgroundCold;
-    UIView*                 backgroundHot;
-    UITextField*            convertFromField;
-    UILabel*                convertToLabel;
-    UISegmentedControl*     fromTemperatureUnitSegment;
-    NSString*               fromUnit;
-    UISegmentedControl*     toTemperatureUnitSegment;
-    NSString*               toUnit;
-    UILabel*                raisedTemperatureToAbsoluteZeroLabel;
-    UILabel*                temperatureTidbitLabel;
+    // Xcode automatically adds instance variables to back properties
 }
-#pragma mark -
 #pragma mark properties
 @property(nonatomic,retain) Converter *converter;
 @property(nonatomic,retain)IBOutlet UIView *backgroundCold;

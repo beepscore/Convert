@@ -15,18 +15,15 @@ extern NSString * const kBSUnitDegreeK;
 extern NSString * const kBSUnitDegreeR;
 
 @interface Converter : NSObject {
-#pragma mark instance variables
-    // temperature in degrees Kelvin.  Minimum value = 0 (absolute zero).
-    NSNumber *temperatureK;
-    // flag set if a conversion method raised temperature to absolute zero.
-    BOOL raisedTemperatureToAbsoluteZero;
-    
-    // key is string temperature in degrees K.  value is string temperature fact.
-    NSDictionary *tidbits;
+    // Xcode automatically adds instance variables to back properties
 }
+#pragma mark properties
+// temperature in degrees Kelvin.  Minimum value = 0 (absolute zero).
 @property(nonatomic,retain)NSNumber *temperatureK;
+// flag set if a conversion method raised temperature to absolute zero.
 @property(nonatomic,assign)BOOL raisedTemperatureToAbsoluteZero;
 
+// key is string temperature in degrees K.  value is string temperature fact.
 // Use copy instead of retain for types that have mutable subtypes like NSString, NSArray, NSDictionary.
 // This prevents getting a reference to an underlying mutable type that someone else could change.
 @property(nonatomic,copy, readonly)NSDictionary *tidbits;
