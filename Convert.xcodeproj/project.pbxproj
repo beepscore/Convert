@@ -18,7 +18,14 @@
 		DE5D41B611D2A32000900B4A /* LogicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5D41B511D2A32000900B4A /* LogicTests.m */; };
 		DE6CF1D910F48BAF006EC6D5 /* Converter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE6CF1D810F48BAF006EC6D5 /* Converter.m */; };
 		DE8F8CD511D2B1F6006AFC0B /* Converter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE6CF1D810F48BAF006EC6D5 /* Converter.m */; };
-		DEA5891F10F5925B00D43BBC /* beepscoreIcon57.png in Resources */ = {isa = PBXBuildFile; fileRef = DEA5891E10F5925B00D43BBC /* beepscoreIcon57.png */; };
+		DE97E9FA11EADCA900FAE029 /* assertions.js in Sources */ = {isa = PBXBuildFile; fileRef = DE97E9F311EADCA900FAE029 /* assertions.js */; };
+		DE97E9FB11EADCA900FAE029 /* lang-ext.js in Sources */ = {isa = PBXBuildFile; fileRef = DE97E9F411EADCA900FAE029 /* lang-ext.js */; };
+		DE97E9FC11EADCA900FAE029 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = DE97E9F511EADCA900FAE029 /* LICENSE */; };
+		DE97E9FD11EADCA900FAE029 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DE97E9F611EADCA900FAE029 /* README.md */; };
+		DE97E9FE11EADCA900FAE029 /* test.js in Sources */ = {isa = PBXBuildFile; fileRef = DE97E9F711EADCA900FAE029 /* test.js */; };
+		DE97E9FF11EADCA900FAE029 /* tuneup.js in Sources */ = {isa = PBXBuildFile; fileRef = DE97E9F811EADCA900FAE029 /* tuneup.js */; };
+		DE97EA0011EADCA900FAE029 /* uiautomation-ext.js in Sources */ = {isa = PBXBuildFile; fileRef = DE97E9F911EADCA900FAE029 /* uiautomation-ext.js */; };
+		DEA5891F10F5925B00D43BBC /* beepscoreIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DEA5891E10F5925B00D43BBC /* beepscoreIcon.png */; };
 		DEFA0F2911D307980094EEC0 /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = DEFA0F2811D307980094EEC0 /* ReadMe.txt */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +59,14 @@
 		DE5D41B511D2A32000900B4A /* LogicTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogicTests.m; sourceTree = "<group>"; };
 		DE6CF1D710F48BAF006EC6D5 /* Converter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Converter.h; sourceTree = "<group>"; };
 		DE6CF1D810F48BAF006EC6D5 /* Converter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Converter.m; sourceTree = "<group>"; };
-		DEA5891E10F5925B00D43BBC /* beepscoreIcon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beepscoreIcon57.png; sourceTree = "<group>"; };
+		DE97E9F311EADCA900FAE029 /* assertions.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = assertions.js; sourceTree = "<group>"; };
+		DE97E9F411EADCA900FAE029 /* lang-ext.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "lang-ext.js"; sourceTree = "<group>"; };
+		DE97E9F511EADCA900FAE029 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		DE97E9F611EADCA900FAE029 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		DE97E9F711EADCA900FAE029 /* test.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test.js; sourceTree = "<group>"; };
+		DE97E9F811EADCA900FAE029 /* tuneup.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = tuneup.js; sourceTree = "<group>"; };
+		DE97E9F911EADCA900FAE029 /* uiautomation-ext.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "uiautomation-ext.js"; sourceTree = "<group>"; };
+		DEA5891E10F5925B00D43BBC /* beepscoreIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beepscoreIcon.png; sourceTree = "<group>"; };
 		DEFA0F2811D307980094EEC0 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,7 +139,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				DEA5891E10F5925B00D43BBC /* beepscoreIcon57.png */,
+				DEA5891E10F5925B00D43BBC /* beepscoreIcon.png */,
 				8D1107310486CEB800E47090 /* Convert-Info.plist */,
 				2899E5210DE3E06400AC0155 /* ConvertViewController.xib */,
 				DE5D418111D2A15D00900B4A /* LogicTests-Info.plist */,
@@ -147,10 +161,25 @@
 		DE5D41B011D2A1E100900B4A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				DE97E9F211EADCA900FAE029 /* AutomationTests */,
 				DE5D41B411D2A32000900B4A /* LogicTests.h */,
 				DE5D41B511D2A32000900B4A /* LogicTests.m */,
 			);
 			name = Tests;
+			sourceTree = "<group>";
+		};
+		DE97E9F211EADCA900FAE029 /* AutomationTests */ = {
+			isa = PBXGroup;
+			children = (
+				DE97E9F311EADCA900FAE029 /* assertions.js */,
+				DE97E9F411EADCA900FAE029 /* lang-ext.js */,
+				DE97E9F511EADCA900FAE029 /* LICENSE */,
+				DE97E9F611EADCA900FAE029 /* README.md */,
+				DE97E9F711EADCA900FAE029 /* test.js */,
+				DE97E9F811EADCA900FAE029 /* tuneup.js */,
+				DE97E9F911EADCA900FAE029 /* uiautomation-ext.js */,
+			);
+			path = AutomationTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,7 +246,7 @@
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				2899E5220DE3E06400AC0155 /* ConvertViewController.xib in Resources */,
-				DEA5891F10F5925B00D43BBC /* beepscoreIcon57.png in Resources */,
+				DEA5891F10F5925B00D43BBC /* beepscoreIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +255,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEFA0F2911D307980094EEC0 /* ReadMe.txt in Resources */,
+				DE97E9FC11EADCA900FAE029 /* LICENSE in Resources */,
+				DE97E9FD11EADCA900FAE029 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +296,11 @@
 			files = (
 				DE8F8CD511D2B1F6006AFC0B /* Converter.m in Sources */,
 				DE5D41B611D2A32000900B4A /* LogicTests.m in Sources */,
+				DE97E9FA11EADCA900FAE029 /* assertions.js in Sources */,
+				DE97E9FB11EADCA900FAE029 /* lang-ext.js in Sources */,
+				DE97E9FE11EADCA900FAE029 /* test.js in Sources */,
+				DE97E9FF11EADCA900FAE029 /* tuneup.js in Sources */,
+				DE97EA0011EADCA900FAE029 /* uiautomation-ext.js in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
