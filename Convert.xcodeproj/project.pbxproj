@@ -22,6 +22,7 @@
 		DE97E9FD11EADCA900FAE029 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DE97E9F611EADCA900FAE029 /* README.md */; };
 		DEA5891F10F5925B00D43BBC /* beepscoreIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DEA5891E10F5925B00D43BBC /* beepscoreIcon.png */; };
 		DEFA0F2911D307980094EEC0 /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = DEFA0F2811D307980094EEC0 /* ReadMe.txt */; };
+		DEFAF62F1247FDFA0074B474 /* Xcode324iOS41TestSuiteWorkaround.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFAF62E1247FDFA0074B474 /* Xcode324iOS41TestSuiteWorkaround.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		DE97E9F911EADCA900FAE029 /* uiautomation-ext.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "uiautomation-ext.js"; sourceTree = "<group>"; };
 		DEA5891E10F5925B00D43BBC /* beepscoreIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beepscoreIcon.png; sourceTree = "<group>"; };
 		DEFA0F2811D307980094EEC0 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
+		DEFAF62E1247FDFA0074B474 /* Xcode324iOS41TestSuiteWorkaround.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Xcode324iOS41TestSuiteWorkaround.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				DE97E9F211EADCA900FAE029 /* AutomationTests */,
 				DE5D41B411D2A32000900B4A /* LogicTests.h */,
 				DE5D41B511D2A32000900B4A /* LogicTests.m */,
+				DEFAF62E1247FDFA0074B474 /* Xcode324iOS41TestSuiteWorkaround.m */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -225,7 +228,14 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Convert" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -293,6 +303,7 @@
 			files = (
 				DE8F8CD511D2B1F6006AFC0B /* Converter.m in Sources */,
 				DE5D41B611D2A32000900B4A /* LogicTests.m in Sources */,
+				DEFAF62F1247FDFA0074B474 /* Xcode324iOS41TestSuiteWorkaround.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,9 +352,10 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphonesimulator4.0;
+				SDKROOT = iphonesimulator4.1;
 			};
 			name = Debug;
 		};
@@ -355,9 +367,10 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphonesimulator4.0;
+				SDKROOT = iphonesimulator4.1;
 			};
 			name = Release;
 		};
@@ -386,6 +399,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = LogicTests;
+				SDKROOT = iphoneos4.1;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -414,6 +428,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = LogicTests;
+				SDKROOT = iphoneos4.1;
 				WRAPPER_EXTENSION = octest;
 				ZERO_LINK = NO;
 			};
