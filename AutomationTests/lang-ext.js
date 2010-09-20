@@ -8,15 +8,20 @@ function extend(destination, source) {
   return destination;
 };
 
-extend(Array.prototype, {
-  /**
-  * Performs the given function +f+ on each element in the array instance.
-  * The function is given the index of the current object and the object
-  * itself for each element in the array.
-  */
-  each: function(f) {
-    for (i = 0; i < this.length; i++) {
-      f(i, this[i]);
+// Note: function has two arguments enclosed in parentheses
+// second argument is enclosed in braces 
+// closing parenthesis at end isn't a typo.
+extend(Array.prototype,
+  {
+    // Performs the given function +f+ on each element in the array instance.
+    // The function is given the index of the current object and the object
+    // itself for each element in the array.
+    each: function(f)
+    {
+        for (i = 0; i < this.length; i++)
+      {
+        f(i, this[i]);
+      }
     }
   }
-});
+);
