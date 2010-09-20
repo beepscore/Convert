@@ -27,7 +27,19 @@
 @synthesize temperatureTidbitLabel;
 
 #pragma mark -
-#pragma mark Memory management
+#pragma mark Lifecycle management
+- (void)viewDidLoad {
+  converter = [[Converter alloc] init];
+  [self updateTemperatures:self];
+  
+    // set accessibility label for use by UIAutomation
+    // reference http://alexvollmer.com/posts/2010/07/03/working-with-uiautomation/
+  self.fromTemperatureUnitSegment.isAccessibilityElement = YES;
+  self.fromTemperatureUnitSegment.accessibilityLabel = @"fromTemperatureUnitSegment";
+  self.toTemperatureUnitSegment.isAccessibilityElement = YES;
+  self.toTemperatureUnitSegment.accessibilityLabel = @"toTemperatureUnitSegment";
+}
+
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.    
     // [super didReceiveMemoryWarning] calls setView:nil
@@ -169,19 +181,6 @@
     self.temperatureTidbitLabel.text = [self.converter 
                                         tidbitForTemperatureK:self.converter.temperatureK];
     [self updateBackgroundColors];
-}
-
-
-- (void)viewDidLoad {
-    converter = [[Converter alloc] init];
-    [self updateTemperatures:self];
-    
-    // set accessibility label for use by UIAutomation
-    // reference http://alexvollmer.com/posts/2010/07/03/working-with-uiautomation/
-    self.fromTemperatureUnitSegment.isAccessibilityElement = YES;
-    self.fromTemperatureUnitSegment.accessibilityLabel = @"fromTemperatureUnitSegment";
-    self.toTemperatureUnitSegment.isAccessibilityElement = YES;
-    self.toTemperatureUnitSegment.accessibilityLabel = @"toTemperatureUnitSegment";
 }
 
 
