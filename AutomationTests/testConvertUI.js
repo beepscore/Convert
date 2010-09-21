@@ -25,7 +25,14 @@ test("easyTest", function(target, application) {
      // var temperatureIn =  mainWindow.textFields()["temperatureIn"];
      // only one UITextField, it must be textFields()[0]
      var temperatureIn =  mainWindow.textFields()[0];
-    
+
+     // var temperatureOut = mainWindow.staticTexts()["temperatureOut"];
+     // var temperatureOut = mainWindow.staticTexts()[0];
+     var temperatureOut = mainWindow.elements()[1];
+     UIALogger.logMessage("temperatureOut.logElement()");
+     temperatureOut.logElement();
+     
+          
      UIALogger.logMessage("temperatureIn.tap()");
      temperatureIn.tap();
      UIALogger.logMessage("Keyboard is showing. Call target.logElementTree()");
@@ -42,6 +49,8 @@ test("easyTest", function(target, application) {
      titleLabel.tap();
      
      assertEquals("59", temperatureIn.value());
+     // for a label, use name not value
+     assertEquals("15", temperatureOut.name());
           
      var fromTemperatureUnitSegment = mainWindow.segmentedControls()["fromTemperatureUnitSegment"];
      fromTemperatureUnitSegment.logElement();
