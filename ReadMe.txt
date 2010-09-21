@@ -37,3 +37,16 @@ http://stackoverflow.com/questions/2973167/iphone-unit-testing
 
 OCUnit: Integrated Unit Testing In Xcode
 http://www.mobileorchard.com/ocunit-integrated-unit-testing-in-xcode/
+=============================================================================
+UIAutomation test
+http://alexvollmer.com/posts/2010/07/03/working-with-uiautomation/
+Procedure to run UIAutomation tests:
+Build app for device and install on device
+Attach device to Mac
+Open Instruments, choose template iOS Automation
+Choose Target should show device (e.g. myIpodTouch).
+From drop down, select Choose Target = Convert (i.e. the app name)
+Choose Script = testConvertUI.js
+Check "Run on Record", press red record button.
+
+
