@@ -13,36 +13,27 @@ test("easyTest", function(target, application) {
      
      // UIAApplication class mainWindow() method
      var mainWindow = application.mainWindow();
-     UIALogger.logMessage("mainWindow.logElementTree()");
-     mainWindow.logElementTree();
 
-     UIALogger.logMessage("declare contentView");
-     // ????: In IB, I cast UIView toå UIControl.  Is that confusing UIAutomation?
-     var contentView = target.elements()["contentView"];
+     // UIALogger.logMessage("declare contentView");
+     // ????: In IB, I cast UIView to UIControl.  Is that confusing UIAutomation?
+     // contentView is not part of the element tree
      // contentView elementTree equals UIAElementNil
-     UIALogger.logMessage("contentView.logElementTree()");
-     contentView.logElementTree();
-     
+     // var contentView = target.elements()["contentView"];
 
-     // var fromTemperatureUnitSegment = contentView.segmentedControls()["fromTemperatureUnitSegment"];
-     // fromTemperatureUnitSegment.logElement();
+     var fromTemperatureUnitSegment = mainWindow.segmentedControls()["fromTemperatureUnitSegment"];
+     fromTemperatureUnitSegment.logElement();
 
-     // fromTemperatureUnitSegment.buttons()[2].tap;
+     UIALogger.logMessage("fromTemperatureUnitSegment.buttons()[2].tap");
+     fromTemperatureUnitSegment.buttons()[2].tap;
      
-     // only one UITextField, same as textFields()[0] ????????????
+     // only one UITextField, same as textFields()[0]
      // var temperatureIn =  mainWindow.textFields()["temperatureIn"];
-     // var temperatureIn =  mainWindow.textFields()[0];
-     // var temperatureIn =  contentView.textFields()["temperatureIn"];
-     // var temperatureIn =  contentView.textFields()[0];
      var temperatureIn =  mainWindow.textFields()[0];
     
-     UIALogger.logMessage("Tap temperatureIn");
+     UIALogger.logMessage("temperatureIn.tap()");
      temperatureIn.tap();
-     // var temperatureIn =  contentView.textFields()[0];
-     // temperatureIn.logElement();
-     temperatureIn.setValue("42");
-     // assertEquals("42", temperatureIn.value());
-     // assertTrue("42" == temperatureIn.value());
+     temperatureIn.setValue("15");
+     assertEquals("15", temperatureIn.value());
      
      });
 
