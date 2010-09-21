@@ -1,12 +1,15 @@
 #import "tuneup.js"
 
 // method |test| is defined in test.js
-test("simpleTest", function(target, application) {
+test("testShouldPass", function(target, application) {
      assertEquals(3, 3);
+     
+     var a = "fred";
+     assertEquals("fred", a);
      });
 
 
-test("easyTest", function(target, application) {
+test("test59FtoC", function(target, application) {
 
      UIALogger.logMessage("target.logElementTree()");
      target.logElementTree();
@@ -58,6 +61,34 @@ test("easyTest", function(target, application) {
      //UIALogger.logMessage("fromTemperatureUnitSegment.buttons()[2].tap()");
      //fromTemperatureUnitSegment.buttons()[2].tap();
      
+     
+     });
+
+test("testBlue", function(target, application) {
+     
+     var mainWindow = application.mainWindow();     
+     var titleLabel = mainWindow.staticTexts()["Temperature Converter"];
+     var temperatureIn =  mainWindow.textFields()[0];     
+     var temperatureOut = mainWindow.elements()[1];
+
+     UIALogger.logMessage("temperatureIn.tap()");
+     temperatureIn.tap();
+     temperatureIn.setValue("0");
+     
+     // tap titleLabel to dismiss keyboard
+     titleLabel.tap();
+     
+     var fromTemperatureUnitSegment = mainWindow.segmentedControls()["fromTemperatureUnitSegment"];
+     fromTemperatureUnitSegment.logElement();
+     
+     //UIALogger.logMessage("fromTemperatureUnitSegment.buttons()[2].tap()");
+     //fromTemperatureUnitSegment.buttons()[2].tap();
+     
+     
+     
+     // for a label, use name not value
+     assertEquals("-17.778", temperatureOut.name());
+          
      
      });
 
