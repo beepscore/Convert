@@ -146,6 +146,7 @@
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<object class="IBUIAccessibilityConfiguration" key="IBUIAccessibilityConfiguration">
+							<string key="IBUIAccessibilityLabel">equalSign</string>
 							<integer value="320" key="IBUIAccessibilityTraits"/>
 						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -265,6 +266,7 @@
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<object class="IBUIAccessibilityConfiguration" key="IBUIAccessibilityConfiguration">
+							<string key="IBUIAccessibilityLabel">temperatureConverter</string>
 							<integer value="320" key="IBUIAccessibilityTraits"/>
 						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -344,6 +346,7 @@
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<object class="IBUIAccessibilityConfiguration" key="IBUIAccessibilityConfiguration">
+							<string key="IBUIAccessibilityLabel">tidbitHeader</string>
 							<integer value="320" key="IBUIAccessibilityTraits"/>
 						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -559,23 +562,25 @@
 						<int key="objectID">13</int>
 						<reference key="object" ref="417240016"/>
 						<reference key="parent" ref="774585933"/>
+						<string key="objectName">equalSign</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">17</int>
 						<reference key="object" ref="750928656"/>
 						<reference key="parent" ref="774585933"/>
-						<string key="objectName">FromPlain Segmented Control (°C, °F, °K, °R)</string>
+						<string key="objectName">fromTemperatureUnitSegment</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">18</int>
 						<reference key="object" ref="548864988"/>
 						<reference key="parent" ref="774585933"/>
-						<string key="objectName">ToPlain Segmented Control (°C, °F, °K, °R)</string>
+						<string key="objectName">toTemperatureUnitSegment</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">19</int>
 						<reference key="object" ref="1071739453"/>
 						<reference key="parent" ref="774585933"/>
+						<string key="objectName">temperatureConverter</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">29</int>
@@ -602,6 +607,7 @@
 						<int key="objectID">40</int>
 						<reference key="object" ref="944411337"/>
 						<reference key="parent" ref="774585933"/>
+						<string key="objectName">tidbitHeader</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">32</int>

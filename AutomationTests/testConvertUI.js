@@ -17,7 +17,9 @@ test("easyTest", function(target, application) {
      mainWindow.logElementTree();
 
      UIALogger.logMessage("declare contentView");
+     // ????: In IB, I cast UIView toå UIControl.  Is that confusing UIAutomation?
      var contentView = target.elements()["contentView"];
+     // contentView elementTree equals UIAElementNil
      UIALogger.logMessage("contentView.logElementTree()");
      contentView.logElementTree();
      
@@ -31,7 +33,9 @@ test("easyTest", function(target, application) {
      // var temperatureIn =  mainWindow.textFields()["temperatureIn"];
      // var temperatureIn =  mainWindow.textFields()[0];
      // var temperatureIn =  contentView.textFields()["temperatureIn"];
-     var temperatureIn =  contentView.textFields()[0];
+     // var temperatureIn =  contentView.textFields()[0];
+     var temperatureIn =  mainWindow.textFields()[0];
+    
      UIALogger.logMessage("Tap temperatureIn");
      temperatureIn.tap();
      // var temperatureIn =  contentView.textFields()[0];
