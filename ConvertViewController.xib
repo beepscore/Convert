@@ -541,17 +541,19 @@
 							<reference ref="349441210"/>
 						</object>
 						<reference key="parent" ref="0"/>
-						<string key="objectName">ContentViewAsUIControl</string>
+						<string key="objectName">contentView</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">8</int>
 						<reference key="object" ref="747145382"/>
 						<reference key="parent" ref="774585933"/>
+						<string key="objectName">temperatureIn</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">10</int>
 						<reference key="object" ref="363230504"/>
 						<reference key="parent" ref="774585933"/>
+						<string key="objectName">temperatureOut</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">13</int>
