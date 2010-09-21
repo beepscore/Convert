@@ -13,27 +13,42 @@ test("easyTest", function(target, application) {
      
      // UIAApplication class mainWindow() method
      var mainWindow = application.mainWindow();
-
+     
      // UIALogger.logMessage("declare contentView");
      // ????: In IB, I cast UIView to UIControl.  Is that confusing UIAutomation?
      // contentView is not part of the element tree
      // contentView elementTree equals UIAElementNil
      // var contentView = target.elements()["contentView"];
-
-     var fromTemperatureUnitSegment = mainWindow.segmentedControls()["fromTemperatureUnitSegment"];
-     fromTemperatureUnitSegment.logElement();
-
-     UIALogger.logMessage("fromTemperatureUnitSegment.buttons()[2].tap");
-     fromTemperatureUnitSegment.buttons()[2].tap;
      
-     // only one UITextField, same as textFields()[0]
+     var titleLabel = mainWindow.staticTexts()["Temperature Converter"];
+
      // var temperatureIn =  mainWindow.textFields()["temperatureIn"];
+     // only one UITextField, it must be textFields()[0]
      var temperatureIn =  mainWindow.textFields()[0];
     
      UIALogger.logMessage("temperatureIn.tap()");
      temperatureIn.tap();
-     temperatureIn.setValue("15");
-     assertEquals("15", temperatureIn.value());
+     UIALogger.logMessage("Keyboard is showing. Call target.logElementTree()");
+     target.logElementTree();
+     
+     temperatureIn.setValue("59");
+     
+     // tap done key to dismiss keyboard
+     // I couldn't figure out how to reference the keyboard element
+     //mainWindow.keyboards()[0].keys()["done"].tap();
+     //mainWindow.elements().keyboard().keys()["done"].tap();
+     
+     // tap titleLabel to dismiss keyboard
+     titleLabel.tap();
+     
+     assertEquals("59", temperatureIn.value());
+          
+     var fromTemperatureUnitSegment = mainWindow.segmentedControls()["fromTemperatureUnitSegment"];
+     fromTemperatureUnitSegment.logElement();
+     
+     //UIALogger.logMessage("fromTemperatureUnitSegment.buttons()[2].tap()");
+     //fromTemperatureUnitSegment.buttons()[2].tap();
+     
      
      });
 

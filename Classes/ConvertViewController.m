@@ -31,9 +31,10 @@
 - (void)viewDidLoad {
   converter = [[Converter alloc] init];
   [self updateTemperatures:self];
-  
-    // set accessibility label for use by UIAutomation
-    // reference http://alexvollmer.com/posts/2010/07/03/working-with-uiautomation/
+
+  // set accessibility label for use by UIAutomation
+  // reference http://alexvollmer.com/posts/2010/07/03/working-with-uiautomation/
+  // ????: This didn't seem to work for UIAutomation.  Need to set earlier, in initWithNibName:?
   self.fromTemperatureUnitSegment.isAccessibilityElement = YES;
   self.fromTemperatureUnitSegment.accessibilityLabel = @"fromTemperatureUnitSegment";
   self.toTemperatureUnitSegment.isAccessibilityElement = YES;
