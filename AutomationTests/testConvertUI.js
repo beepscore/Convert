@@ -9,7 +9,7 @@ test("testShouldPass", function(target, application) {
      });
 
 
-test("test59FtoC", function(target, application) {
+test("testFtoC", function(target, application) {
 
      UIALogger.logMessage("target.logElementTree()");
      target.logElementTree();
@@ -32,10 +32,28 @@ test("test59FtoC", function(target, application) {
      // var temperatureOut = mainWindow.staticTexts()["temperatureOut"];
      // var temperatureOut = mainWindow.staticTexts()[0];
      var temperatureOut = mainWindow.elements()[1];
-     UIALogger.logMessage("temperatureOut.logElement()");
-     temperatureOut.logElement();
      
-          
+
+     // var fromTemperatureUnitSegment = mainWindow.segmentedControls()["fromTemperatureUnitSegment"];
+     var fromTemperatureUnitSegment = mainWindow.segmentedControls()[0];
+     var toTemperatureUnitSegment = mainWindow.segmentedControls()[1];
+     
+     // var fromK = fromTemperatureUnitSegment.buttons()["°R"].logElement();
+     // var fromK = fromTemperatureUnitSegment.buttons()[3].logElement;
+     // var fromK = mainWindow.buttons()[1].logElement();
+     var fromC = fromTemperatureUnitSegment.elements()[2];
+     var fromF = fromTemperatureUnitSegment.elements()[3];
+     var fromK = fromTemperatureUnitSegment.elements()[1];
+     var fromR = fromTemperatureUnitSegment.elements()[0];
+     
+     var toC = toTemperatureUnitSegment.elements()[3];
+     var toF = toTemperatureUnitSegment.elements()[2];
+     var toK = toTemperatureUnitSegment.elements()[1];
+     var toR = toTemperatureUnitSegment.elements()[0];
+     
+     fromF.tap();
+     toC.tap();
+
      UIALogger.logMessage("temperatureIn.tap()");
      temperatureIn.tap();
      UIALogger.logMessage("Keyboard is showing. Call target.logElementTree()");
@@ -54,70 +72,56 @@ test("test59FtoC", function(target, application) {
      assertEquals("59", temperatureIn.value());
      // for a label, use name not value
      assertEquals("15", temperatureOut.name());
-          
-     var fromTemperatureUnitSegment = mainWindow.segmentedControls()["fromTemperatureUnitSegment"];
-     fromTemperatureUnitSegment.logElement();
-     
-     //UIALogger.logMessage("fromTemperatureUnitSegment.buttons()[2].tap()");
-     //fromTemperatureUnitSegment.buttons()[2].tap();
-     
      
      });
 
-test("testBlue", function(target, application) {
+test("testKtoC", function(target, application) {
      
      var mainWindow = application.mainWindow();     
      var titleLabel = mainWindow.staticTexts()["Temperature Converter"];
      var temperatureIn =  mainWindow.textFields()[0];     
      var temperatureOut = mainWindow.elements()[1];
-
-     UIALogger.logMessage("temperatureIn.tap()");
-     temperatureIn.tap();
-     temperatureIn.setValue("0");
      
+     // var fromTemperatureUnitSegment = mainWindow.segmentedControls()["fromTemperatureUnitSegment"];
+     var fromTemperatureUnitSegment = mainWindow.segmentedControls()[0];
+     var toTemperatureUnitSegment = mainWindow.segmentedControls()[1];
+     
+     // var fromK = fromTemperatureUnitSegment.buttons()["°R"].logElement();
+     // var fromK = fromTemperatureUnitSegment.buttons()[3].logElement;
+     // var fromK = mainWindow.buttons()[1].logElement();
+     var fromC = fromTemperatureUnitSegment.elements()[2];
+     var fromF = fromTemperatureUnitSegment.elements()[3];
+     var fromK = fromTemperatureUnitSegment.elements()[1];
+     var fromR = fromTemperatureUnitSegment.elements()[0];
+
+     var toC = toTemperatureUnitSegment.elements()[3];
+     var toF = toTemperatureUnitSegment.elements()[2];
+     var toK = toTemperatureUnitSegment.elements()[1];
+     var toR = toTemperatureUnitSegment.elements()[0];
+     
+     fromK.tap();
+     toC.tap();
+     // for a label, use name not value
+     temperatureIn.tap();
+     temperatureIn.setValue("0");     
      // tap titleLabel to dismiss keyboard
      titleLabel.tap();
-     
-     var fromTemperatureUnitSegment = mainWindow.segmentedControls()["fromTemperatureUnitSegment"];
-     fromTemperatureUnitSegment.logElement();
-     
-     //UIALogger.logMessage("fromTemperatureUnitSegment.buttons()[2].tap()");
-     //fromTemperatureUnitSegment.buttons()[2].tap();
-     
-     
-     
-     // for a label, use name not value
-     assertEquals("-17.778", temperatureOut.name());
-          
-     
+
+     assertEquals("-273.15", temperatureOut.name());
+
      });
 
 
 /*
  test("ZeroKToR", function(target, application) {
- window = application.mainWindow();
- window.contentView.fromTemperatureUnitSegment.setValue("K");
- window.contentView.temperatureIn.setValue("123");
- window.contentView.toTemperatureUnitSegment.setValue("R");
- assertEquals(0, window.contentView.temperatureOut.value);
  });
  
  
  test("ZeroKToC", function(target, application) {
- window = application.mainWindow();
- window.contentView.fromTemperatureUnitSegment.setValue("K");
- window.contentView.temperatureIn.setValue("0");
- window.contentView.toTemperatureUnitSegment.setValue("C");
- assertEquals(-273.15, window.contentView.temperatureOut.value);
  });
  
  
  test("FifteenCToF", function(target, application) {
- window = application.mainWindow();
- window.contentView.fromTemperatureUnitSegment.setValue("C");
- window.contentView.temperatureIn.setValue("15");
- window.contentView.toTemperatureUnitSegment.setValue("F");
- assertEquals(59, window.contentView.temperatureOut.value);
- });
+  });
  */
 
