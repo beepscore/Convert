@@ -41,6 +41,7 @@ test("testFtoC", function(target, application) {
      // var fromK = fromTemperatureUnitSegment.buttons()["°R"].logElement();
      // var fromK = fromTemperatureUnitSegment.buttons()[3].logElement;
      // var fromK = mainWindow.buttons()[1].logElement();
+     // var fromK = fromTemperatureUnitSegment.buttons().firstWithName("°K");
      var fromC = fromTemperatureUnitSegment.elements()[2];
      var fromF = fromTemperatureUnitSegment.elements()[3];
      var fromK = fromTemperatureUnitSegment.elements()[1];
