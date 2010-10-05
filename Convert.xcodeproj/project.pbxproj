@@ -170,14 +170,14 @@
 		DE97E9F211EADCA900FAE029 /* AutomationTests */ = {
 			isa = PBXGroup;
 			children = (
-				DE8BF91011EAE24700B1BB52 /* testConvertUI.js */,
-				DE97E9F311EADCA900FAE029 /* assertions.js */,
-				DE97E9F411EADCA900FAE029 /* lang-ext.js */,
 				DE97E9F511EADCA900FAE029 /* LICENSE */,
 				DE97E9F611EADCA900FAE029 /* README.md */,
+				DE97E9F311EADCA900FAE029 /* assertions.js */,
+				DE97E9F911EADCA900FAE029 /* uiautomation-ext.js */,
+				DE97E9F411EADCA900FAE029 /* lang-ext.js */,
 				DE97E9F711EADCA900FAE029 /* test.js */,
 				DE97E9F811EADCA900FAE029 /* tuneup.js */,
-				DE97E9F911EADCA900FAE029 /* uiautomation-ext.js */,
+				DE8BF91011EAE24700B1BB52 /* testConvertUI.js */,
 			);
 			path = AutomationTests;
 			sourceTree = "<group>";

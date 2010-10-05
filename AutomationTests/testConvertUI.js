@@ -1,6 +1,8 @@
 #import "tuneup.js"
 
 // method |test| is defined in test.js
+// target and application are defined in test.js
+
 test("testShouldPass", function(target, application) {
      assertEquals(3, 3);
      
@@ -15,7 +17,7 @@ test("testFtoC", function(target, application) {
      target.logElementTree();
      
      // UIAApplication class mainWindow() method
-     var mainWindow = application.mainWindow();
+     var window = application.mainWindow();
      
      // UIALogger.logMessage("declare contentView");
      // ????: In IB, I cast UIView to UIControl.  Is that confusing UIAutomation?
@@ -23,24 +25,24 @@ test("testFtoC", function(target, application) {
      // contentView elementTree equals UIAElementNil
      // var contentView = target.elements()["contentView"];
      
-     var titleLabel = mainWindow.staticTexts()["Temperature Converter"];
+     var titleLabel = window.staticTexts()["Temperature Converter"];
 
-     // var temperatureIn =  mainWindow.textFields()["temperatureIn"];
+     // var temperatureIn =  window.textFields()["temperatureIn"];
      // only one UITextField, it must be textFields()[0]
-     var temperatureIn =  mainWindow.textFields()[0];
+     var temperatureIn =  window.textFields()[0];
 
-     // var temperatureOut = mainWindow.staticTexts()["temperatureOut"];
-     // var temperatureOut = mainWindow.staticTexts()[0];
-     var temperatureOut = mainWindow.elements()[1];
+     // var temperatureOut = window.staticTexts()["temperatureOut"];
+     // var temperatureOut = window.staticTexts()[0];
+     var temperatureOut = window.elements()[1];
      
 
-     // var fromTemperatureUnitSegment = mainWindow.segmentedControls()["fromTemperatureUnitSegment"];
-     var fromTemperatureUnitSegment = mainWindow.segmentedControls()[0];
-     var toTemperatureUnitSegment = mainWindow.segmentedControls()[1];
+     // var fromTemperatureUnitSegment = window.segmentedControls()["fromTemperatureUnitSegment"];
+     var fromTemperatureUnitSegment = window.segmentedControls()[0];
+     var toTemperatureUnitSegment = window.segmentedControls()[1];
      
      // var fromK = fromTemperatureUnitSegment.buttons()["°R"].logElement();
      // var fromK = fromTemperatureUnitSegment.buttons()[3].logElement;
-     // var fromK = mainWindow.buttons()[1].logElement();
+     // var fromK = window.buttons()[1].logElement();
      // var fromK = fromTemperatureUnitSegment.buttons().firstWithName("°K");
      var fromC = fromTemperatureUnitSegment.elements()[2];
      var fromF = fromTemperatureUnitSegment.elements()[3];
@@ -64,8 +66,8 @@ test("testFtoC", function(target, application) {
      
      // tap done key to dismiss keyboard
      // I couldn't figure out how to reference the keyboard element
-     //mainWindow.keyboards()[0].keys()["done"].tap();
-     //mainWindow.elements().keyboard().keys()["done"].tap();
+     //window.keyboards()[0].keys()["done"].tap();
+     //window.elements().keyboard().keys()["done"].tap();
      
      // tap titleLabel to dismiss keyboard
      titleLabel.tap();
@@ -78,18 +80,18 @@ test("testFtoC", function(target, application) {
 
 test("testKtoC", function(target, application) {
      
-     var mainWindow = application.mainWindow();     
-     var titleLabel = mainWindow.staticTexts()["Temperature Converter"];
-     var temperatureIn =  mainWindow.textFields()[0];     
-     var temperatureOut = mainWindow.elements()[1];
+     var window = application.mainWindow();     
+     var titleLabel = window.staticTexts()["Temperature Converter"];
+     var temperatureIn =  window.textFields()[0];     
+     var temperatureOut = window.elements()[1];
      
-     // var fromTemperatureUnitSegment = mainWindow.segmentedControls()["fromTemperatureUnitSegment"];
-     var fromTemperatureUnitSegment = mainWindow.segmentedControls()[0];
-     var toTemperatureUnitSegment = mainWindow.segmentedControls()[1];
+     // var fromTemperatureUnitSegment = window.segmentedControls()["fromTemperatureUnitSegment"];
+     var fromTemperatureUnitSegment = window.segmentedControls()[0];
+     var toTemperatureUnitSegment = window.segmentedControls()[1];
      
      // var fromK = fromTemperatureUnitSegment.buttons()["°R"].logElement();
      // var fromK = fromTemperatureUnitSegment.buttons()[3].logElement;
-     // var fromK = mainWindow.buttons()[1].logElement();
+     // var fromK = window.buttons()[1].logElement();
      var fromC = fromTemperatureUnitSegment.elements()[2];
      var fromF = fromTemperatureUnitSegment.elements()[3];
      var fromK = fromTemperatureUnitSegment.elements()[1];
