@@ -1,47 +1,14 @@
 #import "tuneup.js"
+// tuneup.js imports test.js, which defines target, application and method |test|.
 
-/////////////////////////////////////////////////////////////
 // Global variables
 UIALogger.logMessage("initializing global variables");
 
 // UIAApplication class mainWindow() method
-var window = UIATarget.localTarget().frontMostApp().mainWindow();
+var window = application.mainWindow();
 
-// UIALogger.logMessage("declare contentView");
-// ????: In IB, I cast UIView to UIControl.  Is that confusing UIAutomation?
-// contentView is not part of the element tree
-// contentView elementTree equals UIAElementNil
-// var contentView = target.elements()["contentView"];
-
-var titleLabel = window.staticTexts()["Temperature Converter"];
-
-// var temperatureIn =  window.textFields()["temperatureIn"];
-// only one UITextField, it must be textFields()[0]
-var temperatureIn =  window.textFields()[0];
-
-// var temperatureOut = window.staticTexts()["temperatureOut"];
-// var temperatureOut = window.staticTexts()[0];
-var temperatureOut = window.elements()[1];
-
-// var fromTemperatureUnitSegment = window.segmentedControls()["fromTemperatureUnitSegment"];
-var fromTemperatureUnitSegment = window.segmentedControls()[0];
-var toTemperatureUnitSegment = window.segmentedControls()[1];
-
-// var fromK = fromTemperatureUnitSegment.buttons()["°R"].logElement();
-// var fromK = fromTemperatureUnitSegment.buttons()[3].logElement;
-// var fromK = window.buttons()[1].logElement();
-// var fromK = fromTemperatureUnitSegment.buttons().firstWithName("°K");
-var fromC = fromTemperatureUnitSegment.elements()[0];
-var fromF = fromTemperatureUnitSegment.elements()[1];
-var fromK = fromTemperatureUnitSegment.elements()[2];
-var fromR = fromTemperatureUnitSegment.elements()[3];
-
-var toC = toTemperatureUnitSegment.elements()[0];
-var toF = toTemperatureUnitSegment.elements()[1];
-var toK = toTemperatureUnitSegment.elements()[2];
-var toR = toTemperatureUnitSegment.elements()[3];
-/////////////////////////////////////////////////////////////
-
+var fromTemperatureField = window.textFields()[0];
+var toTemperatureLabel = window.staticTexts()[3];
 
 // method |test| is defined in test.js
 // target and application are defined in test.js
@@ -56,29 +23,22 @@ test("testShouldPass", function(target, application) {
 
 test("testFtoC", function(target, application) {
 
-     fromF.tap();
-     delay(2);
-     toC.tap();
-     delay(2);
+     window.segmentedControls()["fromTemperatureUnitSegment"].buttons()["°F"].tap();
+     target.delay(1);
+     fromTemperatureField.tap();
+     target.delay(1);
      
-     UIALogger.logMessage("temperatureIn.tap()");
-     temperatureIn.tap();
-     UIALogger.logMessage("Keyboard is showing. Call target.logElementTree()");
-     target.logElementTree();
+     //application.keyboard().typeString("59");
+     //application.keyboard().elements()["done"].tap();
+     application.keyboard().typeString("59\n");
+     target.delay(2);
      
-     temperatureIn.setValue("59");
-     
-     // tap done key to dismiss keyboard
-     // I couldn't figure out how to reference the keyboard element
-     //window.keyboards()[0].keys()["done"].tap();
-     //window.elements().keyboard().keys()["done"].tap();
-     application.keyboard().elements()["done"].tap();
-     
-     delay(4);
-     
-     assertEquals("59", temperatureIn.value());
+     window.segmentedControls()["toTemperatureUnitSegment"].buttons()["°C"].tap();
+     target.delay(1);
+               
+     assertEquals("59", fromTemperatureField.value());
      // for a label, use name not value
-     assertEquals("15", temperatureOut.name());
+     assertEquals("15", toTemperatureLabel.name());
      
      });
 
