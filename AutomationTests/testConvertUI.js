@@ -31,15 +31,15 @@ var toTemperatureUnitSegment = window.segmentedControls()[1];
 // var fromK = fromTemperatureUnitSegment.buttons()[3].logElement;
 // var fromK = window.buttons()[1].logElement();
 // var fromK = fromTemperatureUnitSegment.buttons().firstWithName("°K");
-var fromC = fromTemperatureUnitSegment.elements()[2];
-var fromF = fromTemperatureUnitSegment.elements()[3];
-var fromK = fromTemperatureUnitSegment.elements()[1];
-var fromR = fromTemperatureUnitSegment.elements()[0];
+var fromC = fromTemperatureUnitSegment.elements()[0];
+var fromF = fromTemperatureUnitSegment.elements()[1];
+var fromK = fromTemperatureUnitSegment.elements()[2];
+var fromR = fromTemperatureUnitSegment.elements()[3];
 
-var toC = toTemperatureUnitSegment.elements()[3];
-var toF = toTemperatureUnitSegment.elements()[2];
-var toK = toTemperatureUnitSegment.elements()[1];
-var toR = toTemperatureUnitSegment.elements()[0];
+var toC = toTemperatureUnitSegment.elements()[0];
+var toF = toTemperatureUnitSegment.elements()[1];
+var toK = toTemperatureUnitSegment.elements()[2];
+var toR = toTemperatureUnitSegment.elements()[3];
 /////////////////////////////////////////////////////////////
 
 
@@ -57,7 +57,9 @@ test("testShouldPass", function(target, application) {
 test("testFtoC", function(target, application) {
 
      fromF.tap();
+     delay(2);
      toC.tap();
+     delay(2);
      
      UIALogger.logMessage("temperatureIn.tap()");
      temperatureIn.tap();
@@ -70,9 +72,9 @@ test("testFtoC", function(target, application) {
      // I couldn't figure out how to reference the keyboard element
      //window.keyboards()[0].keys()["done"].tap();
      //window.elements().keyboard().keys()["done"].tap();
+     application.keyboard().elements()["done"].tap();
      
-     // tap titleLabel to dismiss keyboard
-     titleLabel.tap();
+     delay(4);
      
      assertEquals("59", temperatureIn.value());
      // for a label, use name not value
@@ -80,6 +82,7 @@ test("testFtoC", function(target, application) {
      
      });
 
+/*
 test("testKtoC", function(target, application) {
      
      fromK.tap();
@@ -93,7 +96,7 @@ test("testKtoC", function(target, application) {
      assertEquals("-273.15", temperatureOut.name());
      
      });
-
+*/
 
 /*
  test("ZeroKToR", function(target, application) {
