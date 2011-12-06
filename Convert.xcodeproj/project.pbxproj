@@ -64,6 +64,7 @@
 		DE97E9F811EADCA900FAE029 /* tuneup.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = tuneup.js; sourceTree = "<group>"; };
 		DE97E9F911EADCA900FAE029 /* uiautomation-ext.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "uiautomation-ext.js"; sourceTree = "<group>"; };
 		DEA5891E10F5925B00D43BBC /* beepscoreIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beepscoreIcon.png; sourceTree = "<group>"; };
+		DEAE3510148DD5EA00FC1E52 /* screen.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = screen.js; path = ../../../../../../Hubcape/UIAutomationTests/screen.js; sourceTree = "<group>"; };
 		DEFA0F2811D307980094EEC0 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
 		DEFAF62E1247FDFA0074B474 /* Xcode324iOS41TestSuiteWorkaround.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Xcode324iOS41TestSuiteWorkaround.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,11 +174,12 @@
 				DE97E9F511EADCA900FAE029 /* LICENSE */,
 				DE97E9F611EADCA900FAE029 /* README.md */,
 				DE97E9F311EADCA900FAE029 /* assertions.js */,
-				DE97E9F911EADCA900FAE029 /* uiautomation-ext.js */,
 				DE97E9F411EADCA900FAE029 /* lang-ext.js */,
+				DEAE3510148DD5EA00FC1E52 /* screen.js */,
 				DE97E9F711EADCA900FAE029 /* test.js */,
-				DE97E9F811EADCA900FAE029 /* tuneup.js */,
 				DE8BF91011EAE24700B1BB52 /* testConvertUI.js */,
+				DE97E9F811EADCA900FAE029 /* tuneup.js */,
+				DE97E9F911EADCA900FAE029 /* uiautomation-ext.js */,
 			);
 			path = AutomationTests;
 			sourceTree = "<group>";
