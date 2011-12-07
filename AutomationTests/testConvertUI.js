@@ -1,17 +1,17 @@
 #import "tuneup.js"
-// tuneup.js imports test.js, which defines target, application and method |test|.
+// tuneup.js imports test.js, which defines method |test|.
 
 // Global variables
 UIALogger.logMessage("initializing global variables");
 
 // UIAApplication class mainWindow() method
+var target = UIATarget.localTarget();
+var application = target.frontMostApp();
 var window = application.mainWindow();
 
 var fromTemperatureField = window.textFields()[0];
 var toTemperatureLabel = window.staticTexts()[3];
 
-// method |test| is defined in test.js
-// target and application are defined in test.js
 
 test("testShouldPass", function(target, application) {
      assertEquals(3, 3);
