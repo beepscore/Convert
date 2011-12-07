@@ -4,9 +4,9 @@
 // Global variables
 UIALogger.logMessage("initializing global variables");
 
-// UIAApplication class mainWindow() method
 var target = UIATarget.localTarget();
 var application = target.frontMostApp();
+// UIAApplication class mainWindow() method
 var window = application.mainWindow();
 
 var fromTemperatureField = window.textFields()[0];
@@ -21,8 +21,8 @@ test("testShouldPass", function(target, application) {
      });
 
 
-test("testFtoC", function(target, application) {
-
+test("testFifyNineFtoC", function(target, application) {
+     
      window.segmentedControls()["fromTemperatureUnitSegment"].buttons()["°F"].tap();
      target.delay(1);
      fromTemperatureField.tap();
@@ -35,14 +35,14 @@ test("testFtoC", function(target, application) {
      
      window.segmentedControls()["toTemperatureUnitSegment"].buttons()["°C"].tap();
      target.delay(1);
-               
+     
      assertEquals("59", fromTemperatureField.value());
      // for a label, use name not value
      assertEquals("15", toTemperatureLabel.name());     
      });
 
 
-test("testKtoC", function(target, application) {
+test("testZeroKtoC", function(target, application) {
      
      window.segmentedControls()["fromTemperatureUnitSegment"].buttons()["°K"].tap();
      target.delay(1);
@@ -54,39 +54,47 @@ test("testKtoC", function(target, application) {
      
      window.segmentedControls()["toTemperatureUnitSegment"].buttons()["°C"].tap();
      target.delay(1);
-               
+     
      assertEquals("0", fromTemperatureField.value());
      // for a label, use name not value
      assertEquals("-273.15", toTemperatureLabel.name());     
      });
 
 
- test("testZeroKToR", function(target, application) {
-      
-      window.segmentedControls()["fromTemperatureUnitSegment"].buttons()["°K"].tap();
-      target.delay(1);
-      fromTemperatureField.tap();
-      target.delay(1);
-      
-      application.keyboard().typeString("0\n");
-      target.delay(2);
-      
-      window.segmentedControls()["toTemperatureUnitSegment"].buttons()["°R"].tap();
-      target.delay(1);
-      
-      assertEquals("0", fromTemperatureField.value());
-      // for a label, use name not value
-      assertEquals("0", toTemperatureLabel.name());      
-      });
+test("testZeroKToR", function(target, application) {
+     
+     window.segmentedControls()["fromTemperatureUnitSegment"].buttons()["°K"].tap();
+     target.delay(1);
+     fromTemperatureField.tap();
+     target.delay(1);
+     
+     application.keyboard().typeString("0\n");
+     target.delay(2);
+     
+     window.segmentedControls()["toTemperatureUnitSegment"].buttons()["°R"].tap();
+     target.delay(1);
+     
+     assertEquals("0", fromTemperatureField.value());
+     // for a label, use name not value
+     assertEquals("0", toTemperatureLabel.name());      
+     });
 
 
-/*
- 
- test("testZeroKToC", function(target, application) {
- });
- 
- 
- test("testFifteenCToF", function(target, application) {
- });
- */
+test("testFifteenCToF", function(target, application) {
+     window.segmentedControls()["fromTemperatureUnitSegment"].buttons()["°C"].tap();
+     target.delay(1);
+     fromTemperatureField.tap();
+     target.delay(1);
+     
+     application.keyboard().typeString("15\n");
+     target.delay(2);
+     
+     window.segmentedControls()["toTemperatureUnitSegment"].buttons()["°F"].tap();
+     target.delay(1);
+     
+     assertEquals("15", fromTemperatureField.value());
+     // for a label, use name not value
+     assertEquals("59", toTemperatureLabel.name());     
+     });
+
 
