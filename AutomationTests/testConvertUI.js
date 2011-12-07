@@ -38,8 +38,7 @@ test("testFtoC", function(target, application) {
                
      assertEquals("59", fromTemperatureField.value());
      // for a label, use name not value
-     assertEquals("15", toTemperatureLabel.name());
-     
+     assertEquals("15", toTemperatureLabel.name());     
      });
 
 
@@ -58,20 +57,36 @@ test("testKtoC", function(target, application) {
                
      assertEquals("0", fromTemperatureField.value());
      // for a label, use name not value
-     assertEquals("-273.15", toTemperatureLabel.name());
-     
+     assertEquals("-273.15", toTemperatureLabel.name());     
      });
 
+
+ test("testZeroKToR", function(target, application) {
+      
+      window.segmentedControls()["fromTemperatureUnitSegment"].buttons()["°K"].tap();
+      target.delay(1);
+      fromTemperatureField.tap();
+      target.delay(1);
+      
+      application.keyboard().typeString("0\n");
+      target.delay(2);
+      
+      window.segmentedControls()["toTemperatureUnitSegment"].buttons()["°R"].tap();
+      target.delay(1);
+      
+      assertEquals("0", fromTemperatureField.value());
+      // for a label, use name not value
+      assertEquals("0", toTemperatureLabel.name());      
+      });
+
+
 /*
- test("ZeroKToR", function(target, application) {
+ 
+ test("testZeroKToC", function(target, application) {
  });
  
  
- test("ZeroKToC", function(target, application) {
- });
- 
- 
- test("FifteenCToF", function(target, application) {
+ test("testFifteenCToF", function(target, application) {
  });
  */
 
