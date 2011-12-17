@@ -72,17 +72,17 @@
 
 - (void)dealloc {
     // Kris Markel prefers not calling other methods from within dealloc.
-    [converter release];
-    [backgroundCold release];
-    [backgroundHot release];
-    [convertFromField release];
-    [convertToField release];
-    [fromTemperatureUnitSegment release];
-    [fromUnit release];
-    [toTemperatureUnitSegment release];
-    [toUnit release];
-    [raisedTemperatureToAbsoluteZeroLabel release];
-    [temperatureTidbitLabel release];
+    self.converter = nil;
+    self.backgroundCold = nil;
+    self.backgroundHot = nil;
+    self.convertFromField = nil;
+    self.convertToField = nil;
+    self.fromTemperatureUnitSegment = nil;
+    self.fromUnit = nil;
+    self.toTemperatureUnitSegment = nil;
+    self.toUnit = nil;
+    self.raisedTemperatureToAbsoluteZeroLabel = nil;
+    self.temperatureTidbitLabel = nil;
     
     [super dealloc];
 }
