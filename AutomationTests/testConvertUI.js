@@ -10,7 +10,7 @@ var application = target.frontMostApp();
 var window = application.mainWindow();
 
 var fromTemperatureField = window.textFields()[0];
-var toTemperatureLabel = window.staticTexts()[3];
+var toTemperatureField = window.textFields()[1];
 
 
 test("testShouldPass", function(target, application) {
@@ -37,8 +37,10 @@ test("testFifyNineFtoC", function(target, application) {
      target.delay(1);
      
      assertEquals("59", fromTemperatureField.value());
-     // for a label, use name not value
-     assertEquals("15", toTemperatureLabel.name());     
+     UIALogger.logMessage("toTemperatureField.name() = " + toTemperatureField.name());
+     UIALogger.logMessage("toTemperatureField.value() = " + toTemperatureField.value());
+
+     assertEquals("15", toTemperatureField.value());
      });
 
 
@@ -56,8 +58,7 @@ test("testZeroKtoC", function(target, application) {
      target.delay(1);
      
      assertEquals("0", fromTemperatureField.value());
-     // for a label, use name not value
-     assertEquals("-273.15", toTemperatureLabel.name());     
+     assertEquals("-273.15", toTemperatureField.value());     
      });
 
 
@@ -75,8 +76,7 @@ test("testZeroKToR", function(target, application) {
      target.delay(1);
      
      assertEquals("0", fromTemperatureField.value());
-     // for a label, use name not value
-     assertEquals("0", toTemperatureLabel.name());      
+     assertEquals("0", toTemperatureField.value());      
      });
 
 
@@ -93,8 +93,5 @@ test("testFifteenCToF", function(target, application) {
      target.delay(1);
      
      assertEquals("15", fromTemperatureField.value());
-     // for a label, use name not value
-     assertEquals("59", toTemperatureLabel.name());     
+     assertEquals("59", toTemperatureField.value());     
      });
-
-

@@ -18,7 +18,7 @@
 @synthesize backgroundCold;
 @synthesize backgroundHot;
 @synthesize convertFromField;
-@synthesize convertToLabel;
+@synthesize convertToField;
 @synthesize fromTemperatureUnitSegment;
 @synthesize fromUnit;
 @synthesize toTemperatureUnitSegment;
@@ -58,7 +58,7 @@
     self.backgroundCold = nil;
     self.backgroundHot = nil;
     self.convertFromField = nil;
-    self.convertToLabel = nil;
+    self.convertToField = nil;
     self.fromTemperatureUnitSegment = nil;
     self.fromUnit = nil;
     self.toTemperatureUnitSegment = nil;
@@ -76,7 +76,7 @@
     [backgroundCold release];
     [backgroundHot release];
     [convertFromField release];
-    [convertToLabel release];
+    [convertToField release];
     [fromTemperatureUnitSegment release];
     [fromUnit release];
     [toTemperatureUnitSegment release];
@@ -172,7 +172,7 @@
         self.toUnit = kBSUnitDegreeR;    
     
     // Convert model property temperatureK to view output units, then fill output label
-    self.convertToLabel.text = [formatter stringFromNumber:
+    self.convertToField.text = [formatter stringFromNumber:
                                 [self.converter convertTemperature:self.converter.temperatureK
                                                        fromKToUnit:self.toUnit]];
     

@@ -17,7 +17,7 @@
 @property(nonatomic,retain)IBOutlet UIView *backgroundCold;
 @property(nonatomic,retain)IBOutlet UIView *backgroundHot;
 @property(nonatomic,retain)IBOutlet UITextField *convertFromField;
-@property(nonatomic,retain)IBOutlet UILabel *convertToLabel;
+@property(nonatomic,retain)IBOutlet UITextField *convertToField;
 @property(nonatomic,retain)IBOutlet UISegmentedControl *fromTemperatureUnitSegment;
 @property(nonatomic,retain)IBOutlet UISegmentedControl *toTemperatureUnitSegment;
 @property(nonatomic,retain)IBOutlet UILabel *raisedTemperatureToAbsoluteZeroLabel;
