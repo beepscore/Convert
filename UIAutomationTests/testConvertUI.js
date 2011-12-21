@@ -1,4 +1,4 @@
-#import "tuneup.js"
+#import "tuneup_js/tuneup.js"
 // tuneup.js imports test.js, which defines method |test|.
 
 // Global variables
