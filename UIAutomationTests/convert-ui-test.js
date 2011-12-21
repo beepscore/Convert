@@ -1,3 +1,6 @@
+// These tests are a way to learn and practice using UIAutomation.
+// Some may be more appropriate for unit tests than UI tests
+
 #import "tuneup_js/tuneup.js"
 // tuneup.js imports test.js, which defines method |test|.
 
@@ -19,7 +22,6 @@ test("testShouldPass", function(target, application) {
      var a = "fred";
      assertEquals("fred", a);
      });
-
 
 test("testFifyNineFtoC", function(target, application) {
      
