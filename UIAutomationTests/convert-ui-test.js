@@ -1,6 +1,9 @@
 // These tests are a way to learn and practice using UIAutomation.
 // Some may be more appropriate for unit tests than UI tests
 
+// list global for JSLint
+/*global assertEquals: false, test: false, UIALogger: false, UIATarget: false */
+
 #import "tuneup_js/tuneup.js"
 // tuneup.js imports test.js, which defines method |test|.
 
@@ -16,14 +19,14 @@ var fromTemperatureField = window.textFields()[0];
 var toTemperatureField = window.textFields()[1];
 
 
-test("testShouldPass", function(target, application) {
+test("testShouldPass", function (target, application) {
     assertEquals(3, 3);
 
     var a = "fred";
     assertEquals("fred", a);
 });
 
-test("testFifyNineFtoC", function(target, application) {
+test("testFifyNineFtoC", function (target, application) {
 
     window.segmentedControls()["fromTemperatureUnitSegment"].buttons()["°F"].tap();
     target.delay(1);
@@ -46,7 +49,7 @@ test("testFifyNineFtoC", function(target, application) {
 });
 
 
-test("testZeroKtoC", function(target, application) {
+test("testZeroKtoC", function (target, application) {
 
     window.segmentedControls()["fromTemperatureUnitSegment"].buttons()["°K"].tap();
     target.delay(1);
@@ -60,11 +63,11 @@ test("testZeroKtoC", function(target, application) {
     target.delay(1);
 
     assertEquals("0", fromTemperatureField.value());
-    assertEquals("-273.15", toTemperatureField.value());     
+    assertEquals("-273.15", toTemperatureField.value());
 });
 
 
-test("testZeroKToR", function(target, application) {
+test("testZeroKToR", function (target, application) {
 
     window.segmentedControls()["fromTemperatureUnitSegment"].buttons()["°K"].tap();
     target.delay(1);
@@ -78,11 +81,11 @@ test("testZeroKToR", function(target, application) {
     target.delay(1);
 
     assertEquals("0", fromTemperatureField.value());
-    assertEquals("0", toTemperatureField.value());      
+    assertEquals("0", toTemperatureField.value());
 });
 
 
-test("testFifteenCToF", function(target, application) {
+test("testFifteenCToF", function (target, application) {
     window.segmentedControls()["fromTemperatureUnitSegment"].buttons()["°C"].tap();
     target.delay(1);
     fromTemperatureField.tap();
@@ -95,5 +98,6 @@ test("testFifteenCToF", function(target, application) {
     target.delay(1);
 
     assertEquals("15", fromTemperatureField.value());
-    assertEquals("59", toTemperatureField.value());     
+    assertEquals("59", toTemperatureField.value());
 });
+
