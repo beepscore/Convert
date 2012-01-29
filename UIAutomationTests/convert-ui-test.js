@@ -28,17 +28,17 @@ test("testShouldPass", function (target, application) {
 
 test("testFifyNineFtoC", function (target, application) {
 
-    window.segmentedControls()["fromTemperatureUnitSegment"].buttons()["°F"].tap();
+    window.segmentedControls()["fromTemperatureUnitSegment"].buttons()["°F"].vtap();
     target.delay(1);
-    fromTemperatureField.tap();
+    fromTemperatureField.vtap();
     target.delay(1);
 
     //application.keyboard().typeString("59");
-    //application.keyboard().elements()["done"].tap();
+    //application.keyboard().elements()["done"].vtap();
     application.keyboard().typeString("59\n");
     target.delay(2);
 
-    window.segmentedControls()["toTemperatureUnitSegment"].buttons()["°C"].tap();
+    window.segmentedControls()["toTemperatureUnitSegment"].buttons()["°C"].vtap();
     target.delay(1);
 
     assertEquals("59", fromTemperatureField.value());
@@ -51,15 +51,15 @@ test("testFifyNineFtoC", function (target, application) {
 
 test("testZeroKtoC", function (target, application) {
 
-    window.segmentedControls()["fromTemperatureUnitSegment"].buttons()["°K"].tap();
+    window.segmentedControls()["fromTemperatureUnitSegment"].buttons()["°K"].vtap();
     target.delay(1);
-    fromTemperatureField.tap();
+    fromTemperatureField.vtap();
     target.delay(1);
 
     application.keyboard().typeString("0\n");
     target.delay(2);
 
-    window.segmentedControls()["toTemperatureUnitSegment"].buttons()["°C"].tap();
+    window.segmentedControls()["toTemperatureUnitSegment"].buttons()["°C"].vtap();
     target.delay(1);
 
     assertEquals("0", fromTemperatureField.value());
@@ -69,15 +69,15 @@ test("testZeroKtoC", function (target, application) {
 
 test("testZeroKToR", function (target, application) {
 
-    window.segmentedControls()["fromTemperatureUnitSegment"].buttons()["°K"].tap();
+    window.segmentedControls()["fromTemperatureUnitSegment"].buttons()["°K"].vtap();
     target.delay(1);
-    fromTemperatureField.tap();
+    fromTemperatureField.vtap();
     target.delay(1);
 
     application.keyboard().typeString("0\n");
     target.delay(2);
 
-    window.segmentedControls()["toTemperatureUnitSegment"].buttons()["°R"].tap();
+    window.segmentedControls()["toTemperatureUnitSegment"].buttons()["°R"].vtap();
     target.delay(1);
 
     assertEquals("0", fromTemperatureField.value());
@@ -86,15 +86,15 @@ test("testZeroKToR", function (target, application) {
 
 
 test("testFifteenCToF", function (target, application) {
-    window.segmentedControls()["fromTemperatureUnitSegment"].buttons()["°C"].tap();
+    window.segmentedControls()["fromTemperatureUnitSegment"].buttons()["°C"].vtap();
     target.delay(1);
-    fromTemperatureField.tap();
+    fromTemperatureField.vtap();
     target.delay(1);
 
     application.keyboard().typeString("15\n");
     target.delay(2);
 
-    window.segmentedControls()["toTemperatureUnitSegment"].buttons()["°F"].tap();
+    window.segmentedControls()["toTemperatureUnitSegment"].buttons()["°F"].vtap();
     target.delay(1);
 
     assertEquals("15", fromTemperatureField.value());

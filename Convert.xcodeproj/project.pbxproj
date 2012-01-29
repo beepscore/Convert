@@ -46,7 +46,7 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Convert_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Convert_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Convert-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Convert-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
-		DE2A7A9614A1BE5C003745EA /* convert-ui-test.js */ = {isa = PBXFileReference; path = "convert-ui-test.js"; sourceTree = "<group>"; };
+		DE2A7A9614A1BE5C003745EA /* convert-ui-test.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; lineEnding = 0; path = "convert-ui-test.js"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
 		DE2A7A9814A1BE5C003745EA /* assertions.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = assertions.js; sourceTree = "<group>"; };
 		DE2A7A9914A1BE5C003745EA /* lang-ext.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "lang-ext.js"; sourceTree = "<group>"; };
 		DE2A7A9A14A1BE5C003745EA /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
