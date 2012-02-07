@@ -1,5 +1,15 @@
-// These tests are a way to learn and practice using UIAutomation.
-// Some may be more appropriate for unit tests than UI tests
+//
+//  convert-ui-test.js
+//  Convert
+//
+//  Created by Steve Baker on 12/20/2011.
+//  Copyright 2011 Beepscore LLC. All rights reserved.
+//
+//  Purpose:
+//  convert-ui-test.js runs UIAutomation tests on Convert.
+//  It uses library tuneup_js by Alex Vollmer
+//  These tests are a way to learn and practice using UIAutomation.
+//  Some may be more appropriate for unit tests than UI tests
 
 // list global for JSLint
 /*global assertEquals: false, test: false, UIALogger: false, UIATarget: false */
@@ -12,7 +22,7 @@ UIALogger.logMessage("initializing global variables");
 
 var fromTemperatureField = UIATarget.localTarget().frontMostApp().mainWindow().textFields()[0];
 var toTemperatureField = UIATarget.localTarget().frontMostApp().mainWindow().textFields()[1];
-
+/////////////
 
 test("testShouldPass", function (target, app) {
     assertEquals(3, 3);
