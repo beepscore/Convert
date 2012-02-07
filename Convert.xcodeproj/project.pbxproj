@@ -157,8 +157,8 @@
 		DE2A7A9514A1BE5C003745EA /* UIAutomationTests */ = {
 			isa = PBXGroup;
 			children = (
-				DE2A7A9614A1BE5C003745EA /* convert-ui-test.js */,
 				DE2A7A9714A1BE5C003745EA /* tuneup_js */,
+				DE2A7A9614A1BE5C003745EA /* convert-ui-test.js */,
 			);
 			path = UIAutomationTests;
 			sourceTree = "<group>";
