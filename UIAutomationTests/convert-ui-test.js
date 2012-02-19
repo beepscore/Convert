@@ -32,7 +32,12 @@ function testConvertViewUIElements(target, app) {
                  segmentedControls: [ { name: "fromTemperatureUnitSegment" },
                                      { name: "toTemperatureUnitSegment" }
                                      ],
-                 staticTexts : [ { name: "temperatureConverter" } ],
+                 staticTexts : [ { name: "temperatureConverter" },
+                                 { name: "raisedTemperatureLabel" },
+                                 { name: "equalSign" },
+                                 { name: "tidbitHeader" },
+                                 { name: "temperatureTidbitLabel"}
+                                ],
                  textFields: [ { name: "temperatureIn" },
                                { name: "temperatureOut" }
                               ],
@@ -40,6 +45,10 @@ function testConvertViewUIElements(target, app) {
                      // do nothing
                  }
     });
+    
+    // expect label is visible but text is empty
+    assertTrue(app.mainWindow().staticTexts()["raisedTemperatureLabel"].isVisible(),
+                "expected raisedTemperatureLabel is visible");
 }
 /////////////
 
