@@ -24,7 +24,27 @@ var fromTemperatureField = UIATarget.localTarget().frontMostApp().mainWindow().t
 var toTemperatureField = UIATarget.localTarget().frontMostApp().mainWindow().textFields()[1];
 /////////////
 
-test("testShouldPass", function (target, app) {
+function testConvertViewUIElements(target, app) {
+    
+    // assert window has these expected elements
+    // ref http://alexvollmer.com/posts/2010/10/17/assert-yourself/
+    assertWindow({
+                 segmentedControls: [ { name: "fromTemperatureUnitSegment" },
+                                     { name: "toTemperatureUnitSegment" }
+                                     ],
+                 staticTexts : [ { name: "temperatureConverter" } ],
+                 textFields: [ { name: "temperatureIn" },
+                               { name: "temperatureOut" }
+                              ],
+                 onPass: function (window) {
+                 // do nothing
+                 }
+    });
+}
+/////////////
+
+
+test("test 3 Equals 3 and fred == fred", function (target, app) {
     assertEquals(3, 3);
 
     var a = "fred";
@@ -32,22 +52,10 @@ test("testShouldPass", function (target, app) {
 });
 
 
-test("test expected UI elements", function (target, app) {
+
+test("test convert view UI elements", function (target, app) {
      
-     // assert window has these expected elements
-     // ref http://alexvollmer.com/posts/2010/10/17/assert-yourself/
-     assertWindow({
-                  segmentedControls: [ { name: "fromTemperatureUnitSegment" },
-                                      { name: "toTemperatureUnitSegment" }
-                                      ],
-                  staticTexts : [ { name: "temperatureConverter" } ],
-                  textFields: [ { name: "temperatureIn" },
-                                { name: "temperatureOut" }
-                               ],
-                  onPass: function (window) {
-                      // do nothing
-                  }
-    });
+     testConvertViewUIElements(target, app);
 });
 
 
@@ -55,20 +63,8 @@ test("test background app", function (target, app) {
      
      target.deactivateAppForDuration(5);
      
-     UIALogger.logMessage("asserting window elements");
-     // TODO: Consider refactoring this code which is repeated in another test.
-     assertWindow({
-                  segmentedControls: [ { name: "fromTemperatureUnitSegment" },
-                                      { name: "toTemperatureUnitSegment" }
-                                      ],
-                  staticTexts : [ { name: "temperatureConverter" } ],
-                  textFields: [ { name: "temperatureIn" },
-                               { name: "temperatureOut" }
-                               ],
-                  onPass: function (window) {
-                  // do nothing
-                  }
-    });
+     UIALogger.logMessage("asserting convert view elements");
+     testConvertViewUIElements(target, app);
 });
 
 
