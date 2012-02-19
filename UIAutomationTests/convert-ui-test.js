@@ -31,6 +31,40 @@ test("testShouldPass", function (target, app) {
     assertEquals("fred", a);
 });
 
+
+test("test expected UI elements", function (target, app) {
+     
+     // assert window has these expected elements
+     // ref http://alexvollmer.com/posts/2010/10/17/assert-yourself/
+     assertWindow({
+                  segmentedControls: [ { name: "fromTemperatureUnitSegment" },
+                                      { name: "toTemperatureUnitSegment" }
+                                      ],
+                  
+                  onPass: function (window) {
+                  // do nothing
+                  }
+    });
+});
+
+
+test("test background app", function (target, app) {
+     
+     target.deactivateAppForDuration(5);
+     
+     UIALogger.logMessage("asserting window elements");
+     assertWindow({
+                  segmentedControls: [ { name: "fromTemperatureUnitSegment" },
+                                      { name: "toTemperatureUnitSegment" }
+                                      ],
+                  
+                  onPass: function (window) {
+                  // do nothing
+                  }
+    });
+});
+
+
 test("testFifyNineFtoC", function (target, app) {
 
     app.mainWindow().segmentedControls()["fromTemperatureUnitSegment"].buttons()["°F"].vtap();
@@ -105,4 +139,3 @@ test("testFifteenCToF", function (target, app) {
     assertEquals("15", fromTemperatureField.value());
     assertEquals("59", toTemperatureField.value());
 });
-
