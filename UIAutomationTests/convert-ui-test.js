@@ -76,6 +76,8 @@ test("test background app", function (target, app) {
      UIALogger.logMessage("asserting convert view elements");
      testConvertViewUIElements(target, app);
      
+     // wait for view to finish appearing before starting next test
+     app.mainWindow().staticTexts()["temperatureConverter"].waitUntilVisible(5);
      // delay so a human can better observe the end of the test
      target.delay(2);
 });
@@ -89,7 +91,10 @@ test("test lock app", function (target, app) {
      UIALogger.logMessage("asserting convert view elements");
      testConvertViewUIElements(target, app);
      
-     // delay for view to finish appearing before starting next test
+     // wait for view to finish appearing before starting next test
+     app.mainWindow().staticTexts()["temperatureConverter"].waitUntilVisible(10);
+     // waitUntilVisible is not sufficient to give following test time to pass.
+     // add delay
      target.delay(2);
 });
 
