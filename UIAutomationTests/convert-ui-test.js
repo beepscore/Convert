@@ -37,7 +37,7 @@ function testConvertViewUIElements(target, app) {
                                { name: "temperatureOut" }
                               ],
                  onPass: function (window) {
-                 // do nothing
+                     // do nothing
                  }
     });
 }
@@ -59,12 +59,29 @@ test("test convert view UI elements", function (target, app) {
 });
 
 
+// simulate user pressing home button to put app into background
 test("test background app", function (target, app) {
      
      target.deactivateAppForDuration(5);
      
      UIALogger.logMessage("asserting convert view elements");
      testConvertViewUIElements(target, app);
+     
+     // delay so a human can better observe the end of the test
+     target.delay(2);
+});
+
+
+// simulate user pressing hardware lock button
+test("test lock app", function (target, app) {
+     
+     target.lockForDuration(5);
+     
+     UIALogger.logMessage("asserting convert view elements");
+     testConvertViewUIElements(target, app);
+     
+     // delay for view to finish appearing before starting next test
+     target.delay(2);
 });
 
 
