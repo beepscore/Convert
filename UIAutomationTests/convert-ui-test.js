@@ -173,3 +173,32 @@ test("testFifteenCToF", function (target, app) {
     assertEquals("15", fromTemperatureField.value());
     assertEquals("59", toTemperatureField.value());
 });
+
+
+test("test Frozen Boogers", function (target, app) {
+     app.mainWindow().segmentedControls()["fromTemperatureUnitSegment"].buttons()["°C"].vtap();
+     target.delay(1);
+     fromTemperatureField.vtap();
+     target.delay(1);
+     
+     app.keyboard().typeString("-18\n");
+     target.delay(2);
+     
+     app.mainWindow().segmentedControls()["toTemperatureUnitSegment"].buttons()["°F"].vtap();
+     target.delay(1);
+     
+     assertEquals("-18", fromTemperatureField.value());
+     assertEquals("-0.4", toTemperatureField.value());
+     
+     // Note UIAutomation may have a bug reading UILabel?
+     // If we set the accessibility name then we can't read the value?
+     // value returns placeholder text. Workaround - temporarily delete placeholder text?
+     // References:
+     // http://stackoverflow.com/questions/8268162/getting-values-out-of-text-fields-with-uiautomation
+     // http://www.youtube.com/watch?v=5SycebOn7iY
+     // video 39:20
+     // assertEquals("-18°C boogers freeze (estimated)", 
+     //             app.mainWindow().staticTexts()["temperatureTidbitLabel"].value());
+     assertEquals("temperatureTidbitLabel", 
+                  app.mainWindow().staticTexts()["temperatureTidbitLabel"].value());
+});
