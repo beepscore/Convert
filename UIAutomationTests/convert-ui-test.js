@@ -40,9 +40,12 @@ test("test expected UI elements", function (target, app) {
                   segmentedControls: [ { name: "fromTemperatureUnitSegment" },
                                       { name: "toTemperatureUnitSegment" }
                                       ],
-                  
+                  staticTexts : [ { name: "temperatureConverter" } ],
+                  textFields: [ { name: "temperatureIn" },
+                                { name: "temperatureOut" }
+                               ],
                   onPass: function (window) {
-                  // do nothing
+                      // do nothing
                   }
     });
 });
@@ -53,11 +56,15 @@ test("test background app", function (target, app) {
      target.deactivateAppForDuration(5);
      
      UIALogger.logMessage("asserting window elements");
+     // TODO: Consider refactoring this code which is repeated in another test.
      assertWindow({
                   segmentedControls: [ { name: "fromTemperatureUnitSegment" },
                                       { name: "toTemperatureUnitSegment" }
                                       ],
-                  
+                  staticTexts : [ { name: "temperatureConverter" } ],
+                  textFields: [ { name: "temperatureIn" },
+                               { name: "temperatureOut" }
+                               ],
                   onPass: function (window) {
                   // do nothing
                   }
