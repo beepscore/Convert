@@ -175,7 +175,7 @@ test("testFifteenCToF", function (target, app) {
 });
 
 
-test("test Frozen Boogers", function (target, app) {
+test("test Temperature Tidbit label", function (target, app) {
      app.mainWindow().segmentedControls()["fromTemperatureUnitSegment"].buttons()["°C"].vtap();
      target.delay(1);
      fromTemperatureField.vtap();
