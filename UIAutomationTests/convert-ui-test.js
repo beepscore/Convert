@@ -28,13 +28,43 @@ var fromTemperatureField = UIATarget.localTarget().frontMostApp().mainWindow().t
 var toTemperatureField = UIATarget.localTarget().frontMostApp().mainWindow().textFields()[1];
 /////////////
 
-function testConvertViewUIElements(target, app) {
-    
+function testConvertViewUIElementsOnDevice(target, app) {
+
     // assert window has these expected elements
     // ref http://alexvollmer.com/posts/2010/10/17/assert-yourself/
     assertWindow({
                  segmentedControls: [ { name: "fromTemperatureUnitSegment" },
-                                     { name: "toTemperatureUnitSegment" }
+                                      { name: "toTemperatureUnitSegment" }
+                                     ],
+     /*
+                 staticTexts : [ null, //{ name: "Temperature Converter" },
+                                { name: "raisedTemperatureLabel" },
+                                { name: "equalSign" },
+                                { name: "tidbitHeader" },
+                                { name: "temperatureTidbitLabel"}
+                                ],
+     */
+                 textFields: [ { name: "temperatureIn" },
+                               { name: "temperatureOut" }
+                              ],
+                 onPass: function (window) {
+                 // do nothing
+                 }
+    });
+    
+    // expect label is visible but text is empty
+    assertTrue(app.mainWindow().staticTexts()["raisedTemperatureLabel"].isVisible(),
+               "expected raisedTemperatureLabel is visible");
+}
+
+
+function testConvertViewUIElementsOnSimulator(target, app) {
+
+    // assert window has these expected elements
+    // ref http://alexvollmer.com/posts/2010/10/17/assert-yourself/
+    assertWindow({
+                 segmentedControls: [ { name: "fromTemperatureUnitSegment" },
+                                      { name: "toTemperatureUnitSegment" }
                                      ],
                  staticTexts : [ { name: "temperatureConverter" },
                                  { name: "raisedTemperatureLabel" },
@@ -67,8 +97,11 @@ test("test 3 Equals 3 and fred == fred", function (target, app) {
 
 
 test("test convert view UI elements", function (target, app) {
-     
-     testConvertViewUIElements(target, app);
+     if (IS_TEST_RUNNING_ON_DEVICE) {
+         testConvertViewUIElementsOnDevice(target, app);
+     } else {
+         testConvertViewUIElementsOnSimulator(target, app);
+     }
 });
 
 
@@ -78,10 +111,14 @@ test("test background app", function (target, app) {
      target.deactivateAppForDuration(5);
      
      UIALogger.logMessage("asserting convert view elements");
-     testConvertViewUIElements(target, app);
+     if (IS_TEST_RUNNING_ON_DEVICE) {
+         testConvertViewUIElementsOnDevice(target, app);
+     } else {
+         testConvertViewUIElementsOnSimulator(target, app);
+     }
      
      // wait for view to finish appearing before starting next test
-     app.mainWindow().staticTexts()["temperatureConverter"].waitUntilVisible(5);
+     //app.mainWindow().staticTexts()["temperatureConverter"].waitUntilVisible(5);
      // delay so a human can better observe the end of the test
      target.delay(2);
 });
@@ -93,10 +130,14 @@ test("test lock app", function (target, app) {
      target.lockForDuration(5);
      
      UIALogger.logMessage("asserting convert view elements");
-     testConvertViewUIElements(target, app);
+     if (IS_TEST_RUNNING_ON_DEVICE) {
+         testConvertViewUIElementsOnDevice(target, app);
+     } else {
+         testConvertViewUIElementsOnSimulator(target, app);
+     }
      
      // wait for view to finish appearing before starting next test
-     app.mainWindow().staticTexts()["temperatureConverter"].waitUntilVisible(10);
+     //app.mainWindow().staticTexts()["temperatureConverter"].waitUntilVisible(10);
      // waitUntilVisible is not sufficient to give following test time to pass.
      // add delay
      target.delay(2);
