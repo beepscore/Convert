@@ -151,6 +151,7 @@ test("testZeroKToR", function (target, app) {
     fromTemperatureField.vtap();
     target.delay(1);
 
+    // can use either syntax: string then "done", or "59\n"
     app.keyboard().typeString("0\n");
     target.delay(2);
 
