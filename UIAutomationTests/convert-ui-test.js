@@ -21,8 +21,9 @@
 UIALogger.logMessage("initializing global variables");
 
 // Device and simulator give different results.
-// To test on device, set true. To test on simulator, set false. 
-var IS_TEST_RUNNING_ON_DEVICE = true;
+// To test on device, set true. To test on simulator, set false.
+// Also set Xcode scheme/target to device or simulator.
+var IS_TEST_RUNNING_ON_DEVICE = false;
 
 var fromTemperatureField = UIATarget.localTarget().frontMostApp().mainWindow().textFields()[0];
 var toTemperatureField = UIATarget.localTarget().frontMostApp().mainWindow().textFields()[1];
@@ -43,18 +44,19 @@ function testConvertViewUIElementsOnDevice(target, app) {
                                 { name: "tidbitHeader" },
                                 { name: "temperatureTidbitLabel"}
                                 ],
-     */
+     
                  textFields: [ { name: "temperatureIn" },
                                { name: "temperatureOut" }
                               ],
+     */
                  onPass: function (window) {
                  // do nothing
                  }
     });
     
-    // expect label is visible but text is empty
-    assertTrue(app.mainWindow().staticTexts()["raisedTemperatureLabel"].isVisible(),
-               "expected raisedTemperatureLabel is visible");
+    // expect label is not visible
+    assertFalse(app.mainWindow().staticTexts()["raisedTemperatureLabel"].isVisible(),
+               "expected raisedTemperatureLabel is not visible");
 }
 
 
@@ -108,7 +110,9 @@ test("test convert view UI elements", function (target, app) {
 // simulate user pressing home button to put app into background
 test("test background app", function (target, app) {
      
-     target.deactivateAppForDuration(5);
+     target.deactivateAppForDuration(1);
+     app.mainWindow().segmentedControls()["fromTemperatureUnitSegment"].waitUntilVisible();
+     target.delay(1);
      
      UIALogger.logMessage("asserting convert view elements");
      if (IS_TEST_RUNNING_ON_DEVICE) {
