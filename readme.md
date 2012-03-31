@@ -25,14 +25,15 @@ This puts a reference to the Converter.m file in both folders.  Both references 
 
 ##UIAutomation test
 http://alexvollmer.com/posts/2010/07/03/working-with-uiautomation/
-Procedure to run UIAutomation tests:
-Build app for device and install on device
-Attach device to Mac
-Open Instruments, choose template iOS Automation
-Choose Target should show device (e.g. myIpodTouch).
-From drop down, select Choose Target = Convert (i.e. the app name)
-Choose Script = testConvertUI.js
-Check "Run on Record", press red record button.
+
+###Procedure to run UIAutomation tests:
+- Build app for device and install on device.
+- Attach device to Mac.
+- Open Instruments, choose template iOS Automation.
+- Choose Target should show device (e.g. myIpodTouch).
+- From drop down, select Choose Target = Convert (i.e. the app name)
+- Choose Script = testConvertUI.js
+- Check "Run on Record", press red record button.
 
 
 ##References:
