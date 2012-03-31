@@ -1,9 +1,12 @@
-#Convert is an iOS temperature converter application.
+#Convert
+Convert is a simple iOS temperature converter application.
+The app has example unit tests and UIAutomation tests.
 
 The project has 2 targets
   Convert- main target for the app
   LogicTests - logic unit tests, runs only in simulator
 
+##Unit tests
 LogicTests can be set to the active target and run independently.
 However running the test target independently requires remembering to manually run the tests!
 
@@ -19,6 +22,18 @@ When building the app for the device, the logic tests don't run.
 In Xcode Groups & Files/Classes, find the Converter.m file.
 Hold Option key and drag Converter.m file to Groups & Files/Targets/LogicTests/Compile Sources
 This puts a reference to the Converter.m file in both folders.  Both references point to the same project file.
+
+##UIAutomation test
+http://alexvollmer.com/posts/2010/07/03/working-with-uiautomation/
+Procedure to run UIAutomation tests:
+Build app for device and install on device
+Attach device to Mac
+Open Instruments, choose template iOS Automation
+Choose Target should show device (e.g. myIpodTouch).
+From drop down, select Choose Target = Convert (i.e. the app name)
+Choose Script = testConvertUI.js
+Check "Run on Record", press red record button.
+
 
 ##References:
 iPhone Development Guide- Unit Testing Applications
@@ -37,16 +52,3 @@ http://stackoverflow.com/questions/2973167/iphone-unit-testing
 
 OCUnit: Integrated Unit Testing In Xcode
 http://www.mobileorchard.com/ocunit-integrated-unit-testing-in-xcode/
----
-##UIAutomation test
-http://alexvollmer.com/posts/2010/07/03/working-with-uiautomation/
-Procedure to run UIAutomation tests:
-Build app for device and install on device
-Attach device to Mac
-Open Instruments, choose template iOS Automation
-Choose Target should show device (e.g. myIpodTouch).
-From drop down, select Choose Target = Convert (i.e. the app name)
-Choose Script = testConvertUI.js
-Check "Run on Record", press red record button.
-
-
