@@ -1,4 +1,4 @@
-Converter is an iPhone temperature converter application.
+#Convert is an iOS temperature converter application.
 
 The project has 2 targets
   Convert- main target for the app
@@ -20,7 +20,7 @@ In Xcode Groups & Files/Classes, find the Converter.m file.
 Hold Option key and drag Converter.m file to Groups & Files/Targets/LogicTests/Compile Sources
 This puts a reference to the Converter.m file in both folders.  Both references point to the same project file.
 
-References:
+##References:
 iPhone Development Guide- Unit Testing Applications
 http://developer.apple.com/iphone/library/documentation/xcode/conceptual/iphone_development/135-Unit_Testing_Applications/unit_testing_applications.html
 
@@ -37,8 +37,8 @@ http://stackoverflow.com/questions/2973167/iphone-unit-testing
 
 OCUnit: Integrated Unit Testing In Xcode
 http://www.mobileorchard.com/ocunit-integrated-unit-testing-in-xcode/
-=============================================================================
-UIAutomation test
+---
+##UIAutomation test
 http://alexvollmer.com/posts/2010/07/03/working-with-uiautomation/
 Procedure to run UIAutomation tests:
 Build app for device and install on device
