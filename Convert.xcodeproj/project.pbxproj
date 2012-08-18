@@ -62,6 +62,7 @@
 		DE6CF1D710F48BAF006EC6D5 /* Converter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Converter.h; sourceTree = "<group>"; };
 		DE6CF1D810F48BAF006EC6D5 /* Converter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Converter.m; sourceTree = "<group>"; };
 		DEA5891E10F5925B00D43BBC /* beepscoreIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beepscoreIcon.png; sourceTree = "<group>"; };
+		DEAA335515DF6D980047578D /* READMEJenkins.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = READMEJenkins.md; sourceTree = "<group>"; };
 		DEFA0F2811D307980094EEC0 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +114,7 @@
 			children = (
 				DE5F98FE14FB1F1400A9A3E0 /* tuneup */,
 				DEFA0F2811D307980094EEC0 /* readme.md */,
+				DEAA335515DF6D980047578D /* READMEJenkins.md */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
