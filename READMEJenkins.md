@@ -34,4 +34,5 @@ Keychain path (default?): ${HOME}/Library/Keychains/login.keychain
 Keychain password: <empty>
 
 Post-build actions
-Files to archive: build/*.ipa,build/*.dSYM
+Files to archive:build/*.ipa, build/*.zip
+
