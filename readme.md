@@ -1,4 +1,28 @@
-#Convert
+#Purpose:
+Describe Convert project.
+
+#References:
+READMEJenkins.md Describes example Jenkins project to build and test Convert.
+
+iPhone Development Guide- Unit Testing Applications
+http://developer.apple.com/iphone/library/documentation/xcode/conceptual/iphone_development/135-Unit_Testing_Applications/unit_testing_applications.html
+
+Automated Unit Testing with Xcode 3 and Objective-C
+http://developer.apple.com/mac/articles/tools/unittestingwithxcode3.html
+
+Test Driving Your Code with OCUnit
+http://developer.apple.com/tools/unittest.html
+
+sample app: Apple iPhoneUnitTests
+
+iPhone Unit Testing
+http://stackoverflow.com/questions/2973167/iphone-unit-testing
+
+OCUnit: Integrated Unit Testing In Xcode
+http://www.mobileorchard.com/ocunit-integrated-unit-testing-in-xcode/
+
+
+#Results
 Convert is a simple iOS temperature converter application.
 The app has example unit tests and UIAutomation tests.
 
@@ -36,20 +60,3 @@ http://alexvollmer.com/posts/2010/07/03/working-with-uiautomation/
 - Check "Run on Record", press red record button.
 
 
-##References:
-iPhone Development Guide- Unit Testing Applications
-http://developer.apple.com/iphone/library/documentation/xcode/conceptual/iphone_development/135-Unit_Testing_Applications/unit_testing_applications.html
-
-Automated Unit Testing with Xcode 3 and Objective-C
-http://developer.apple.com/mac/articles/tools/unittestingwithxcode3.html
-
-Test Driving Your Code with OCUnit
-http://developer.apple.com/tools/unittest.html
-
-sample app: Apple iPhoneUnitTests
-
-iPhone Unit Testing
-http://stackoverflow.com/questions/2973167/iphone-unit-testing
-
-OCUnit: Integrated Unit Testing In Xcode
-http://www.mobileorchard.com/ocunit-integrated-unit-testing-in-xcode/
