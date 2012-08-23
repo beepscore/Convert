@@ -39,11 +39,42 @@ Unlock Keychain? false (sic, seems to work without unlock. Maybe OS X supplies?)
 Keychain path (default?): ${HOME}/Library/Keychains/login.keychain
 Keychain password: <empty>
 
-Execute shell
+21 Aug
+Execute shell - this command didn't work
 instruments -t /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Instruments/PlugIns/AutomationInstrument.bundle/Contents/Resources/Automation.tracetemplate ${WORKSPACE}/build/Convert.app -e UIASCRIPT ${WORKSPACE}/UIAutomationTests/convert-ui-test.js -e UIARESULTSPATH ${WORKSPACE}
 
 Post-build actions
 Files to archive:build/*.ipa, build/*.zip
 
-(didn't do this one yet)
+(didn't do this yet)
 Publish JUnit test result report - need a test report xml to graph.
+
+---
+
+23 Aug This works from command line and from Jenkins
+
+instruments -t "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Instruments/PlugIns/AutomationInstrument.bundle/Contents/Resources/Automation.tracetemplate" "/Users/stevebaker/xcode-build/Convert-cirgdecbzxoiobfeqabnkpoqfxnn/Build/Products/Release-iphonesimulator/Convert.app" -e UIASCRIPT "/Users/stevebaker/.jenkins/jobs/ConvertAndTest2/workspace/UIAutomationTests/convert-ui-test.js" -e UIARESULTSPATH "/Users/stevebaker/Desktop"
+
+TODO: Work towards arguments that reference Jenkins ${WORKSPACE}
+
+tracetemplate
+ok:
+"/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Instruments/PlugIns/AutomationInstrument.bundle/Contents/Resources/Automation.tracetemplate"
+
+app
+ok:
+"/Users/stevebaker/xcode-build/Convert-cirgdecbzxoiobfeqabnkpoqfxnn/Build/Products/Release-iphonesimulator/Convert.app"
+does this work??
+/Users/stevebaker/.jenkins/jobs/ConvertAndTest2/workspace/build/Convert.app
+
+doesn't work??- need to escape "."? Don't have execute permission for .jenkins??
+"/Users/stevebaker/.jenkins/jobs/ConvertAndTest2/workspace/build/Convert.app"
+
+UIASCRIPT
+ok:
+"/Users/stevebaker/.jenkins/jobs/ConvertAndTest2/workspace/UIAutomationTests/convert-ui-test.js"
+
+UIARESULTSPATH 
+ok:
+"/Users/stevebaker/Desktop"
+
