@@ -14,8 +14,8 @@
     // Xcode automatically adds instance variables to back properties
 }
 #pragma mark properties
-@property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet ConvertViewController *viewController;
+@property (nonatomic, strong) IBOutlet UIWindow *window;
+@property (nonatomic, strong) IBOutlet ConvertViewController *viewController;
 
 @end
 

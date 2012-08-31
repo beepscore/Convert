@@ -77,12 +77,6 @@ const double BS_K_TO_R_OFFSET = 0.0;
 
 #pragma mark -
 #pragma mark destructors
-- (void)dealloc {
-    [temperatureK release];
-    [tidbits release];
-    
-    [super dealloc];
-}
 
 
 - (NSNumber *)convertTemperature:(NSNumber *)aTemperature
@@ -171,7 +165,6 @@ const double BS_K_TO_R_OFFSET = 0.0;
     
      NSString* tidbitKeyString = [[NSString alloc] initWithFormat:@"%d",tidbitKeyIntFloor];
      NSString* tidbitString = [self.tidbits valueForKey:tidbitKeyString];
-     [tidbitKeyString release];
      return tidbitString;
 }
 

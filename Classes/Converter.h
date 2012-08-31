@@ -19,7 +19,7 @@ extern NSString * const kBSUnitDegreeR;
 }
 #pragma mark properties
 // temperature in degrees Kelvin.  Minimum value = 0 (absolute zero).
-@property(nonatomic,retain)NSNumber *temperatureK;
+@property(nonatomic,strong)NSNumber *temperatureK;
 // flag set if a conversion method raised temperature to absolute zero.
 @property(nonatomic,assign)BOOL raisedTemperatureToAbsoluteZero;
 

@@ -70,22 +70,6 @@
 }
 
 
-- (void)dealloc {
-    // Kris Markel prefers not calling other methods from within dealloc.
-    self.converter = nil;
-    self.backgroundCold = nil;
-    self.backgroundHot = nil;
-    self.convertFromField = nil;
-    self.convertToField = nil;
-    self.fromTemperatureUnitSegment = nil;
-    self.fromUnit = nil;
-    self.toTemperatureUnitSegment = nil;
-    self.toUnit = nil;
-    self.raisedTemperatureToAbsoluteZeroLabel = nil;
-    self.temperatureTidbitLabel = nil;
-    
-    [super dealloc];
-}
 
 
 #pragma mark -
@@ -176,7 +160,6 @@
                                 [self.converter convertTemperature:self.converter.temperatureK
                                                        fromKToUnit:self.toUnit]];
     
-    [formatter release];
     
     // Display temperature tidbit
     self.temperatureTidbitLabel.text = [self.converter 

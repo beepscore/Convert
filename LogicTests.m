@@ -36,7 +36,6 @@
 // tearDown method is called automatically after each test-case method (method whose name starts with 'test').
 - (void) tearDown
 {
-    [converter release];
     NSLog(@"%@ tearDown", self.name);
 }
 

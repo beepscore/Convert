@@ -13,15 +13,15 @@
     // Xcode automatically adds instance variables to back properties
 }
 #pragma mark properties
-@property(nonatomic,retain) Converter *converter;
-@property(nonatomic,retain)IBOutlet UIView *backgroundCold;
-@property(nonatomic,retain)IBOutlet UIView *backgroundHot;
-@property(nonatomic,retain)IBOutlet UITextField *convertFromField;
-@property(nonatomic,retain)IBOutlet UITextField *convertToField;
-@property(nonatomic,retain)IBOutlet UISegmentedControl *fromTemperatureUnitSegment;
-@property(nonatomic,retain)IBOutlet UISegmentedControl *toTemperatureUnitSegment;
-@property(nonatomic,retain)IBOutlet UILabel *raisedTemperatureToAbsoluteZeroLabel;
-@property(nonatomic,retain)IBOutlet UILabel *temperatureTidbitLabel;
+@property(nonatomic,strong) Converter *converter;
+@property(nonatomic,strong)IBOutlet UIView *backgroundCold;
+@property(nonatomic,strong)IBOutlet UIView *backgroundHot;
+@property(nonatomic,strong)IBOutlet UITextField *convertFromField;
+@property(nonatomic,strong)IBOutlet UITextField *convertToField;
+@property(nonatomic,strong)IBOutlet UISegmentedControl *fromTemperatureUnitSegment;
+@property(nonatomic,strong)IBOutlet UISegmentedControl *toTemperatureUnitSegment;
+@property(nonatomic,strong)IBOutlet UILabel *raisedTemperatureToAbsoluteZeroLabel;
+@property(nonatomic,strong)IBOutlet UILabel *temperatureTidbitLabel;
 
 // Use copy instead of retain for types that have mutable subtypes like NSString, NSArray, NSDictionary.
 // This prevents getting a reference to an underlying mutable type that someone else could change.
