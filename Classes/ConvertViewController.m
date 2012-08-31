@@ -13,21 +13,10 @@
 
 #pragma mark - properties
 
-@synthesize converter;
-@synthesize backgroundCold;
-@synthesize backgroundHot;
-@synthesize convertFromField;
-@synthesize convertToField;
-@synthesize fromTemperatureUnitSegment;
-@synthesize fromUnit;
-@synthesize toTemperatureUnitSegment;
-@synthesize toUnit;
-@synthesize raisedTemperatureToAbsoluteZeroLabel;
-@synthesize temperatureTidbitLabel;
 
 #pragma mark - Lifecycle management
 - (void)viewDidLoad {
-  converter = [[Converter alloc] init];
+  self.converter = [[Converter alloc] init];
   [self updateTemperatures:self];
 
   // set accessibility label for use by UIAutomation

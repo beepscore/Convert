@@ -23,12 +23,12 @@ const double BS_K_TO_F_OFFSET = -459.67;
 const double BS_K_TO_R_SLOPE = 1.8;
 const double BS_K_TO_R_OFFSET = 0.0;
 
+
+@interface Converter ()
+@property(nonatomic, copy, readwrite) NSDictionary *tidbits;
+@end
+
 @implementation Converter
-
-@synthesize temperatureK;
-@synthesize raisedTemperatureToAbsoluteZero;
-@synthesize tidbits;
-
 
 #pragma mark - initializers
 // designated initializer
@@ -37,7 +37,7 @@ const double BS_K_TO_R_OFFSET = 0.0;
     if (self = [super init]) {
         // TODO: Move tidbits data into a file, plist, or database
         //       for keys, use string constants instead of string literals?
-        tidbits = @{@"0": @"0°K absolute zero",
+        self.tidbits = @{@"0": @"0°K absolute zero",
                    @"2": @"2.725°K cosmic background radiation",
                    @"63": @"63°K nitrogen boils", 
                    @"135": @"135°K superconductivity", 
@@ -97,9 +97,9 @@ const double BS_K_TO_R_OFFSET = 0.0;
     
     if (temperatureDegK < 0.0) {
         temperatureDegK = 0.0;
-        raisedTemperatureToAbsoluteZero = YES;
+        self.raisedTemperatureToAbsoluteZero = YES;
     } else {
-        raisedTemperatureToAbsoluteZero = NO;
+        self.raisedTemperatureToAbsoluteZero = NO;
     }
     return @(temperatureDegK);
 }
@@ -112,9 +112,9 @@ const double BS_K_TO_R_OFFSET = 0.0;
     
     if (temperatureDegK < 0.0) {
         temperatureDegK = 0.0;
-        raisedTemperatureToAbsoluteZero = YES;
+        self.raisedTemperatureToAbsoluteZero = YES;
     } else {
-        raisedTemperatureToAbsoluteZero = NO;
+        self.raisedTemperatureToAbsoluteZero = NO;
     }
     
     if (kBSUnitDegreeC == toTemperatureUnit) {
