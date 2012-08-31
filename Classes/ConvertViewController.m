@@ -11,8 +11,6 @@
 
 @implementation ConvertViewController
 
-#pragma mark - properties
-
 
 #pragma mark - Lifecycle management
 - (void)viewDidLoad {

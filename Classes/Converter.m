@@ -76,7 +76,6 @@ const double BS_K_TO_R_OFFSET = 0.0;
 
 #pragma mark - destructors
 
-
 - (NSNumber *)convertTemperature:(NSNumber *)aTemperature
                      toKFromUnit:(NSString *)fromTemperatureUnit {
     

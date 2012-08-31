@@ -18,7 +18,4 @@
     [self.window makeKeyAndVisible];
 }
 
-
-
-
 @end
