@@ -55,7 +55,7 @@
     
     // Use convenience methods.  Don't worry about minimizing memory use here,
     // these logic unit tests run only in simulator, not on device
-    inputTemperature = [NSNumber numberWithDouble:0.0];
+    inputTemperature = @0.0;
     outputTemperature = [converter convertTemperature:inputTemperature toKFromUnit:@"K"];
     double outputTemperatureSpec = 0.0;    
     STAssertEqualsWithAccuracy([outputTemperature doubleValue],
@@ -63,7 +63,7 @@
                                0.01,
                                @"returned %g K should be %g K", [inputTemperature doubleValue], outputTemperatureSpec);
     
-    inputTemperature = [NSNumber numberWithDouble:0.0];
+    inputTemperature = @0.0;
     outputTemperature = [converter convertTemperature:inputTemperature toKFromUnit:@"C"];
     outputTemperatureSpec = 273.15;
     STAssertEqualsWithAccuracy([outputTemperature doubleValue],
@@ -71,7 +71,7 @@
                                0.01,
                                @"input %g C should return %g K", [inputTemperature doubleValue], outputTemperatureSpec);
     
-    inputTemperature = [NSNumber numberWithDouble:0.0];
+    inputTemperature = @0.0;
     outputTemperature = [converter convertTemperature:inputTemperature toKFromUnit:@"F"];
     outputTemperatureSpec = 255.372;
     STAssertEqualsWithAccuracy([outputTemperature doubleValue],
@@ -90,7 +90,7 @@
     NSNumber* inputTemperature;
     NSNumber* outputTemperature;
     
-    inputTemperature = [NSNumber numberWithDouble:0.0];
+    inputTemperature = @0.0;
     outputTemperature = [converter convertTemperature:inputTemperature fromKToUnit:@"K"];
     double outputTemperatureSpec = 0.0;    
     STAssertEqualsWithAccuracy([outputTemperature doubleValue],
@@ -98,7 +98,7 @@
                                0.01,
                                @"input %g K should return %g K", [inputTemperature doubleValue], outputTemperatureSpec);
     
-    inputTemperature = [NSNumber numberWithDouble:0.0];
+    inputTemperature = @0.0;
     outputTemperature = [converter convertTemperature:inputTemperature fromKToUnit:@"C"];
     outputTemperatureSpec = -273.15;    
     STAssertEqualsWithAccuracy([outputTemperature doubleValue],
@@ -106,7 +106,7 @@
                                0.01,
                                @"input %g K should return %g C", [inputTemperature doubleValue], outputTemperatureSpec);
     
-    inputTemperature = [NSNumber numberWithDouble:0.0];
+    inputTemperature = @0.0;
     outputTemperature = [converter convertTemperature:inputTemperature fromKToUnit:@"F"];
     outputTemperatureSpec = -459.67;    
     STAssertEqualsWithAccuracy([outputTemperature doubleValue],

@@ -37,39 +37,38 @@ const double BS_K_TO_R_OFFSET = 0.0;
     if (self = [super init]) {
         // TODO: Move tidbits data into a file, plist, or database
         //       for keys, use string constants instead of string literals?
-        tidbits = [[NSDictionary alloc] initWithObjectsAndKeys:
-                   @"0°K absolute zero", @"0",
-                   @"2.725°K cosmic background radiation", @"2",
-                   @"63°K nitrogen boils", @"63", 
-                   @"135°K superconductivity", @"135", 
-                   @"−89.2°C coldest temperature in Antartica", @"184",
-                   @"−78.5°C dry ice sublimes to gas", @"194",
-                   @"-60°C nylon brittle", @"213",
-                   @"-40°C = -40°F", @"233",
-                   @"-38.72°C mercury freezes", @"234",
-                   @"-33.34°C ammonia boils", @"239",
-                   @"-19°C diesel fuel turns to gel", @"254",
-                   @"-18°C boogers freeze (estimated)", @"255",
-                   @"-1.9°C ocean saltwater freezes", @"271",
-                   @"0°C water freezes", @"273",
-                   @"38-40°F food refrigerator temperature", @"276",
-                   @"3.9°C fresh water most dense", @"277",
-                   @"60°F mosquitos lethargic", @"288",
-                   @"68°F water too hot for salmon", @"293",
-                   @"27.5°C average temperature in Hawaii", @"300",
-                   @"37°C human core temperature", @"310",
-                   @"100-106°F maximum safe bath water temperature", @"311",
-                   @"40°C hummingbird body temperature", @"313",
-                   @"57.1°C hottest temperature in Death Valley CA", @"330",
-                   @"70°C Wood's metal melts", @"343",
-                   @"100°C water boils", @"373",
-                   @"451°F paper burns", @"505",
-                   @"255-265°C nylon melts", @"528",
-                   @"660°C aluminum melts", @"933",
-                   @"1250°C lava melts", @"1520",
-                   @"1300-1700°C steel melts", @"1570",
-                   @"2500°C thermite reacts", @"2770",
-                   @"6000°C Sun's surface", @"6273", nil];
+        tidbits = @{@"0": @"0°K absolute zero",
+                   @"2": @"2.725°K cosmic background radiation",
+                   @"63": @"63°K nitrogen boils", 
+                   @"135": @"135°K superconductivity", 
+                   @"184": @"−89.2°C coldest temperature in Antartica",
+                   @"194": @"−78.5°C dry ice sublimes to gas",
+                   @"213": @"-60°C nylon brittle",
+                   @"233": @"-40°C = -40°F",
+                   @"234": @"-38.72°C mercury freezes",
+                   @"239": @"-33.34°C ammonia boils",
+                   @"254": @"-19°C diesel fuel turns to gel",
+                   @"255": @"-18°C boogers freeze (estimated)",
+                   @"271": @"-1.9°C ocean saltwater freezes",
+                   @"273": @"0°C water freezes",
+                   @"276": @"38-40°F food refrigerator temperature",
+                   @"277": @"3.9°C fresh water most dense",
+                   @"288": @"60°F mosquitos lethargic",
+                   @"293": @"68°F water too hot for salmon",
+                   @"300": @"27.5°C average temperature in Hawaii",
+                   @"310": @"37°C human core temperature",
+                   @"311": @"100-106°F maximum safe bath water temperature",
+                   @"313": @"40°C hummingbird body temperature",
+                   @"330": @"57.1°C hottest temperature in Death Valley CA",
+                   @"343": @"70°C Wood's metal melts",
+                   @"373": @"100°C water boils",
+                   @"505": @"451°F paper burns",
+                   @"528": @"255-265°C nylon melts",
+                   @"933": @"660°C aluminum melts",
+                   @"1520": @"1250°C lava melts",
+                   @"1570": @"1300-1700°C steel melts",
+                   @"2770": @"2500°C thermite reacts",
+                   @"6273": @"6000°C Sun's surface"};
     }
     return self;
 }
@@ -103,12 +102,7 @@ const double BS_K_TO_R_OFFSET = 0.0;
     } else {
         raisedTemperatureToAbsoluteZero = NO;
     }
-    
-    // ????: Homework goal is minimize use of autoreleased objects.
-    // I don't see an easy way to avoid using one here.
-    // Could re-write method to not return NSNumber object,
-    // instead return type double or set property temperatureK.
-    return [NSNumber numberWithDouble:temperatureDegK];
+    return @(temperatureDegK);
 }
 
 
@@ -125,17 +119,16 @@ const double BS_K_TO_R_OFFSET = 0.0;
     }
     
     if (kBSUnitDegreeC == toTemperatureUnit) {
-        return [NSNumber numberWithDouble:(temperatureDegK + BS_K_TO_C_OFFSET)];
+        return @(temperatureDegK + BS_K_TO_C_OFFSET);
     }
     if (kBSUnitDegreeF == toTemperatureUnit) {
-        return [NSNumber numberWithDouble:
-                ((BS_K_TO_F_SLOPE * temperatureDegK) + BS_K_TO_F_OFFSET)];
+        return @((BS_K_TO_F_SLOPE * temperatureDegK) + BS_K_TO_F_OFFSET);
     }
     if (kBSUnitDegreeK == toTemperatureUnit) {
-        return [NSNumber numberWithDouble:temperatureDegK];
+        return @(temperatureDegK);
     }
     if (kBSUnitDegreeR == toTemperatureUnit) {
-        return [NSNumber numberWithDouble:(BS_K_TO_R_SLOPE * temperatureDegK)];
+        return @(BS_K_TO_R_SLOPE * temperatureDegK);
     }
     return nil;    
 }
