@@ -41,35 +41,13 @@
   self.toTemperatureUnitSegment.accessibilityLabel = @"toTemperatureUnitSegment";
 }
 
+// Ref https://developer.apple.com/library/prerelease/ios/#releasenotes/General/RN-iOSSDK-6_0/_index.html
 - (void)didReceiveMemoryWarning {
-	// Releases the view if it doesn't have a superview.    
+	// Releases the view if it doesn't have a superview.
     // [super didReceiveMemoryWarning] calls setView:nil
     [super didReceiveMemoryWarning];	
 	// Release any cached data, images, etc that aren't in use.
 }
-
-
-// Ref http://developer.apple.com/mac/library/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmNibObjects.html
-- (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-    // Release any retained outlets
-    // set properties to nil, which also releases them
-    self.converter = nil;
-    self.backgroundCold = nil;
-    self.backgroundHot = nil;
-    self.convertFromField = nil;
-    self.convertToField = nil;
-    self.fromTemperatureUnitSegment = nil;
-    self.fromUnit = nil;
-    self.toTemperatureUnitSegment = nil;
-    self.toUnit = nil;
-    self.raisedTemperatureToAbsoluteZeroLabel = nil;
-    self.temperatureTidbitLabel = nil;
-    
-    [super viewDidUnload];
-}
-
-
 
 
 #pragma mark -
