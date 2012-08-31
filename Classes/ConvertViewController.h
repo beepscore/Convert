@@ -23,7 +23,7 @@
 @property(nonatomic,strong)IBOutlet UILabel *raisedTemperatureToAbsoluteZeroLabel;
 @property(nonatomic,strong)IBOutlet UILabel *temperatureTidbitLabel;
 
-// Use copy instead of retain for types that have mutable subtypes like NSString, NSArray, NSDictionary.
+// Use copy instead of strong for types that have mutable subtypes like NSString, NSArray, NSDictionary.
 // This prevents getting a reference to an underlying mutable type that someone else could change.
 @property(nonatomic,copy) NSString *fromUnit;
 @property(nonatomic,copy) NSString *toUnit;

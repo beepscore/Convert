@@ -24,7 +24,7 @@ extern NSString * const kBSUnitDegreeR;
 @property(nonatomic,assign)BOOL raisedTemperatureToAbsoluteZero;
 
 // key is string temperature in degrees K.  value is string temperature fact.
-// Use copy instead of retain for types that have mutable subtypes like NSString, NSArray, NSDictionary.
+// Use copy instead of strong for types that have mutable subtypes like NSString, NSArray, NSDictionary.
 // This prevents getting a reference to an underlying mutable type that someone else could change.
 @property(nonatomic,copy, readonly)NSDictionary *tidbits;
 
