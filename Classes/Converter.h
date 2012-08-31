@@ -17,7 +17,7 @@ extern NSString * const kBSUnitDegreeR;
 @interface Converter : NSObject {
     // Xcode automatically adds instance variables to back properties
 }
-#pragma mark properties
+#pragma mark - properties
 // temperature in degrees Kelvin.  Minimum value = 0 (absolute zero).
 @property(nonatomic,strong)NSNumber *temperatureK;
 // flag set if a conversion method raised temperature to absolute zero.

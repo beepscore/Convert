@@ -30,7 +30,7 @@ const double BS_K_TO_R_OFFSET = 0.0;
 @synthesize tidbits;
 
 
-#pragma mark initializers
+#pragma mark - initializers
 // designated initializer
 - (id)init {
     
@@ -74,8 +74,7 @@ const double BS_K_TO_R_OFFSET = 0.0;
 }
 
 
-#pragma mark -
-#pragma mark destructors
+#pragma mark - destructors
 
 
 - (NSNumber *)convertTemperature:(NSNumber *)aTemperature

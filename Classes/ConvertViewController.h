@@ -12,7 +12,7 @@
 @interface ConvertViewController : UIViewController <UITextFieldDelegate> {
     // Xcode automatically adds instance variables to back properties
 }
-#pragma mark properties
+#pragma mark - properties
 @property(nonatomic,strong) Converter *converter;
 @property(nonatomic,strong)IBOutlet UIView *backgroundCold;
 @property(nonatomic,strong)IBOutlet UIView *backgroundHot;

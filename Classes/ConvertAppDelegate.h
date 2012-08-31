@@ -13,7 +13,7 @@
 @interface ConvertAppDelegate : NSObject <UIApplicationDelegate> {
     // Xcode automatically adds instance variables to back properties
 }
-#pragma mark properties
+#pragma mark - properties
 @property (nonatomic, strong) IBOutlet UIWindow *window;
 @property (nonatomic, strong) IBOutlet ConvertViewController *viewController;
 

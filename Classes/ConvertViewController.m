@@ -11,8 +11,7 @@
 
 @implementation ConvertViewController
 
-#pragma mark -
-#pragma mark properties
+#pragma mark - properties
 
 @synthesize converter;
 @synthesize backgroundCold;
@@ -26,8 +25,7 @@
 @synthesize raisedTemperatureToAbsoluteZeroLabel;
 @synthesize temperatureTidbitLabel;
 
-#pragma mark -
-#pragma mark Lifecycle management
+#pragma mark - Lifecycle management
 - (void)viewDidLoad {
   converter = [[Converter alloc] init];
   [self updateTemperatures:self];
@@ -146,8 +144,7 @@
 }
 
 
-#pragma mark -
-#pragma mark textFieldDelegate methods
+#pragma mark - textFieldDelegate methods
 // called when user presses Return key (labeled "Done")  ref Dudney sec 4.6 pg 67
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     // resignFirstResponder will cause keyboard to be dismissed
