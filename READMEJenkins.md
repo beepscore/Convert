@@ -102,3 +102,11 @@ output:
 posix spawn failure; aborting launch (binary == /Users/stevebaker/.jenkins/jobs/ConvertAndTest2/workspace/build/Convert.app/Convert).
 2012-08-23 23:33:52.493 instruments[2129:1207] Recording cancelled : At least one target failed to launch; aborting run
 Instruments Trace Error : Failed to start trace.
+
+---
+
+TODO:
+Delete app from simulator and see if Hudson reinstalls it.
+Try run in terminal from command line in simulator with app not in simulator directory.
+After Hudson build, programmatically copy Convert.app into simulator directory, then run instruments?
+
