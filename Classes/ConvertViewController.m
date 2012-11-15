@@ -11,14 +11,14 @@
 
 @interface ConvertViewController ()
 #pragma mark - properties
-@property(nonatomic,strong)IBOutlet UIView *backgroundCold;
-@property(nonatomic,strong)IBOutlet UIView *backgroundHot;
-@property(nonatomic,strong)IBOutlet UITextField *convertFromField;
-@property(nonatomic,strong)IBOutlet UITextField *convertToField;
-@property(nonatomic,strong)IBOutlet UISegmentedControl *fromTemperatureUnitSegment;
-@property(nonatomic,strong)IBOutlet UISegmentedControl *toTemperatureUnitSegment;
-@property(nonatomic,strong)IBOutlet UILabel *raisedTemperatureToAbsoluteZeroLabel;
-@property(nonatomic,strong)IBOutlet UILabel *temperatureTidbitLabel;
+@property(nonatomic, weak)IBOutlet UIView *backgroundCold;
+@property(nonatomic, weak)IBOutlet UIView *backgroundHot;
+@property(nonatomic, weak)IBOutlet UITextField *convertFromField;
+@property(nonatomic, weak)IBOutlet UITextField *convertToField;
+@property(nonatomic, weak)IBOutlet UISegmentedControl *fromTemperatureUnitSegment;
+@property(nonatomic, weak)IBOutlet UISegmentedControl *toTemperatureUnitSegment;
+@property(nonatomic, weak)IBOutlet UILabel *raisedTemperatureToAbsoluteZeroLabel;
+@property(nonatomic, weak)IBOutlet UILabel *temperatureTidbitLabel;
 @end
 
 @implementation ConvertViewController
