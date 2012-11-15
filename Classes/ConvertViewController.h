@@ -14,14 +14,6 @@
 }
 #pragma mark - properties
 @property(nonatomic,strong) Converter *converter;
-@property(nonatomic,strong)IBOutlet UIView *backgroundCold;
-@property(nonatomic,strong)IBOutlet UIView *backgroundHot;
-@property(nonatomic,strong)IBOutlet UITextField *convertFromField;
-@property(nonatomic,strong)IBOutlet UITextField *convertToField;
-@property(nonatomic,strong)IBOutlet UISegmentedControl *fromTemperatureUnitSegment;
-@property(nonatomic,strong)IBOutlet UISegmentedControl *toTemperatureUnitSegment;
-@property(nonatomic,strong)IBOutlet UILabel *raisedTemperatureToAbsoluteZeroLabel;
-@property(nonatomic,strong)IBOutlet UILabel *temperatureTidbitLabel;
 
 // Use copy instead of strong for types that have mutable subtypes like NSString, NSArray, NSDictionary.
 // This prevents getting a reference to an underlying mutable type that someone else could change.

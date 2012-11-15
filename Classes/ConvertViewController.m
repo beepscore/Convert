@@ -9,6 +9,18 @@
 #import "ConvertViewController.h"
 #import "Converter.h"
 
+@interface ConvertViewController ()
+#pragma mark - properties
+@property(nonatomic,strong)IBOutlet UIView *backgroundCold;
+@property(nonatomic,strong)IBOutlet UIView *backgroundHot;
+@property(nonatomic,strong)IBOutlet UITextField *convertFromField;
+@property(nonatomic,strong)IBOutlet UITextField *convertToField;
+@property(nonatomic,strong)IBOutlet UISegmentedControl *fromTemperatureUnitSegment;
+@property(nonatomic,strong)IBOutlet UISegmentedControl *toTemperatureUnitSegment;
+@property(nonatomic,strong)IBOutlet UILabel *raisedTemperatureToAbsoluteZeroLabel;
+@property(nonatomic,strong)IBOutlet UILabel *temperatureTidbitLabel;
+@end
+
 @implementation ConvertViewController
 
 
