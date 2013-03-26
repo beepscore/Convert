@@ -18,4 +18,13 @@
     [self.window makeKeyAndVisible];
 }
 
+
+#pragma mark - Application lifecycle
+
+- (void)awakeFromNib
+{
+    // http://stackoverflow.com/questions/7520971/applications-are-expected-to-have-a-root-view-controller-at-the-end-of-applicati
+    self.window.rootViewController = self.viewController;
+}
+
 @end
