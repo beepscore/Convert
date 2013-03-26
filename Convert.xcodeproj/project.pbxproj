@@ -344,6 +344,7 @@
 				GCC_PREFIX_HEADER = Convert_Prefix.pch;
 				INFOPLIST_FILE = "Convert-Info.plist";
 				PRODUCT_NAME = Convert;
+				TEST_AFTER_BUILD = YES;
 			};
 			name = Debug;
 		};
@@ -361,6 +362,7 @@
 				PRODUCT_NAME = Convert;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				TEST_AFTER_BUILD = YES;
 			};
 			name = Release;
 		};
@@ -424,6 +426,7 @@
 				PRODUCT_NAME = LogicTests;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
+				TEST_AFTER_BUILD = NO;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -453,6 +456,7 @@
 				PRODUCT_NAME = LogicTests;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
+				TEST_AFTER_BUILD = NO;
 				WRAPPER_EXTENSION = octest;
 				ZERO_LINK = NO;
 			};
