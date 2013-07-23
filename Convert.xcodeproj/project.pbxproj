@@ -13,6 +13,8 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		28D7ACF80DDB3853001CB0EB /* ConvertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* ConvertViewController.m */; };
+		DE269941179F48D400A78B11 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE269940179F48D400A78B11 /* libGoogleAnalytics.a */; };
+		DE269943179F48EA00A78B11 /* libGoogleAnalytics_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE269942179F48E900A78B11 /* libGoogleAnalytics_debug.a */; };
 		DE595231179EFF4A00D2B18D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE595230179EFF4A00D2B18D /* MainStoryboard.storyboard */; };
 		DE595232179EFF4A00D2B18D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE595230179EFF4A00D2B18D /* MainStoryboard.storyboard */; };
 		DE5D41B611D2A32000900B4A /* LogicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5D41B511D2A32000900B4A /* LogicTests.m */; };
@@ -47,6 +49,8 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Convert_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Convert_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Convert-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Convert-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		DE269940179F48D400A78B11 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalytics.a; path = "GoogleAdMobAdsSdkiOS-6.5.0/Add-ons/GoogleAnalyticsiOS_2.0beta4/Library/libGoogleAnalytics.a"; sourceTree = "<group>"; };
+		DE269942179F48E900A78B11 /* libGoogleAnalytics_debug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalytics_debug.a; path = "GoogleAdMobAdsSdkiOS-6.5.0/Add-ons/GoogleAnalyticsiOS_2.0beta4/Library/libGoogleAnalytics_debug.a"; sourceTree = "<group>"; };
 		DE2A7A9614A1BE5C003745EA /* convert-ui-test.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; lineEnding = 0; path = "convert-ui-test.js"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
 		DE595230179EFF4A00D2B18D /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainStoryboard.storyboard; path = ../MainStoryboard.storyboard; sourceTree = "<group>"; };
 		DE5D418011D2A15D00900B4A /* LogicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogicTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +86,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE269943179F48EA00A78B11 /* libGoogleAnalytics_debug.a in Frameworks */,
+				DE269941179F48D400A78B11 /* libGoogleAnalytics.a in Frameworks */,
 				DE7ACDFE179F481E009EABF1 /* SystemConfiguration.framework in Frameworks */,
 				DE7ACDFC179F4812009EABF1 /* CoreData.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
@@ -165,6 +171,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DE269942179F48E900A78B11 /* libGoogleAnalytics_debug.a */,
+				DE269940179F48D400A78B11 /* libGoogleAnalytics.a */,
 				DE7ACDFD179F481E009EABF1 /* SystemConfiguration.framework */,
 				DE7ACDFB179F4812009EABF1 /* CoreData.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
