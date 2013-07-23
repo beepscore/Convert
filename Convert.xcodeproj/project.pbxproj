@@ -48,7 +48,7 @@
 		32CA4F630368D1EE00C91783 /* Convert_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Convert_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Convert-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Convert-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		DE2A7A9614A1BE5C003745EA /* convert-ui-test.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; lineEnding = 0; path = "convert-ui-test.js"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
-		DE595230179EFF4A00D2B18D /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		DE595230179EFF4A00D2B18D /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainStoryboard.storyboard; path = ../MainStoryboard.storyboard; sourceTree = "<group>"; };
 		DE5D418011D2A15D00900B4A /* LogicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogicTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE5D418111D2A15D00900B4A /* LogicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LogicTests-Info.plist"; sourceTree = "<group>"; };
 		DE5D41B411D2A32000900B4A /* LogicTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogicTests.h; sourceTree = "<group>"; };
@@ -94,6 +94,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				DE595230179EFF4A00D2B18D /* MainStoryboard.storyboard */,
 				1D3623240D0F684500981E51 /* ConvertAppDelegate.h */,
 				1D3623250D0F684500981E51 /* ConvertAppDelegate.m */,
 				DE6CF1D710F48BAF006EC6D5 /* Converter.h */,
@@ -116,8 +117,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				DE595230179EFF4A00D2B18D /* MainStoryboard.storyboard */,
-				DE73C8B91644EAC300E65D91 /* Default-568h@2x.png */,
 				DE5F98FE14FB1F1400A9A3E0 /* tuneup */,
 				DEFA0F2811D307980094EEC0 /* README.md */,
 				DEAA335515DF6D980047578D /* READMEJenkins.md */,
@@ -145,6 +144,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DE73C8B91644EAC300E65D91 /* Default-568h@2x.png */,
 				DEA5891E10F5925B00D43BBC /* beepscoreIcon.png */,
 				8D1107310486CEB800E47090 /* Convert-Info.plist */,
 				DE5D418111D2A15D00900B4A /* LogicTests-Info.plist */,
