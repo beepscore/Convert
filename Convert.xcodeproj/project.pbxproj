@@ -65,6 +65,11 @@
 		DE9241D015EB3C0F00604F3E /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scripts; sourceTree = "<group>"; };
 		DEA5891E10F5925B00D43BBC /* beepscoreIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beepscoreIcon.png; sourceTree = "<group>"; };
 		DEAA335515DF6D980047578D /* READMEJenkins.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = READMEJenkins.md; sourceTree = "<group>"; };
+		DEC53660179F46F60033A227 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAI.h; path = "GoogleAdMobAdsSdkiOS-6.5.0/Add-ons/GoogleAnalyticsiOS_2.0beta4/Library/GAI.h"; sourceTree = "<group>"; };
+		DEC53661179F46F60033A227 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITrackedViewController.h; path = "GoogleAdMobAdsSdkiOS-6.5.0/Add-ons/GoogleAnalyticsiOS_2.0beta4/Library/GAITrackedViewController.h"; sourceTree = "<group>"; };
+		DEC53662179F46F60033A227 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITracker.h; path = "GoogleAdMobAdsSdkiOS-6.5.0/Add-ons/GoogleAnalyticsiOS_2.0beta4/Library/GAITracker.h"; sourceTree = "<group>"; };
+		DEC53663179F46F60033A227 /* GAITransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITransaction.h; path = "GoogleAdMobAdsSdkiOS-6.5.0/Add-ons/GoogleAnalyticsiOS_2.0beta4/Library/GAITransaction.h"; sourceTree = "<group>"; };
+		DEC53664179F46F60033A227 /* GAITransactionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITransactionItem.h; path = "GoogleAdMobAdsSdkiOS-6.5.0/Add-ons/GoogleAnalyticsiOS_2.0beta4/Library/GAITransactionItem.h"; sourceTree = "<group>"; };
 		DEFA0F2811D307980094EEC0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +120,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				DEC5365E179F462E0033A227 /* GoogleAnalytics */,
 				DE5F98FE14FB1F1400A9A3E0 /* tuneup */,
 				DEFA0F2811D307980094EEC0 /* README.md */,
 				DEAA335515DF6D980047578D /* READMEJenkins.md */,
@@ -190,6 +196,26 @@
 				DE5F990614FB1F1400A9A3E0 /* uiautomation-ext.js */,
 			);
 			path = tuneup;
+			sourceTree = "<group>";
+		};
+		DEC5365E179F462E0033A227 /* GoogleAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				DEC5365F179F46AD0033A227 /* Library */,
+			);
+			name = GoogleAnalytics;
+			sourceTree = "<group>";
+		};
+		DEC5365F179F46AD0033A227 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				DEC53660179F46F60033A227 /* GAI.h */,
+				DEC53661179F46F60033A227 /* GAITrackedViewController.h */,
+				DEC53662179F46F60033A227 /* GAITracker.h */,
+				DEC53663179F46F60033A227 /* GAITransaction.h */,
+				DEC53664179F46F60033A227 /* GAITransactionItem.h */,
+			);
+			name = Library;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,6 +367,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Convert_Prefix.pch;
 				INFOPLIST_FILE = "Convert-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/GoogleAdMobAdsSdkiOS-6.5.0/Add-ons/GoogleAnalyticsiOS_2.0beta4/Library\"",
+				);
 				PRODUCT_NAME = Convert;
 				TEST_AFTER_BUILD = YES;
 			};
@@ -357,6 +387,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Convert_Prefix.pch;
 				INFOPLIST_FILE = "Convert-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/GoogleAdMobAdsSdkiOS-6.5.0/Add-ons/GoogleAnalyticsiOS_2.0beta4/Library\"",
+				);
 				PRODUCT_NAME = Convert;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
