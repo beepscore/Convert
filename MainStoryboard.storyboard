@@ -61,6 +61,9 @@
                                     <segment title="°K"/>
                                     <segment title="°R"/>
                                 </segments>
+                                <connections>
+                                    <action selector="updateTemperatures:" destination="d0E-dQ-YDc" eventType="valueChanged" id="7Ia-2x-pZ0"/>
+                                </connections>
                             </segmentedControl>
                             <segmentedControl opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7w0-M3-cn7" userLabel="toTemperatureUnitSegment">
                                 <segments>
