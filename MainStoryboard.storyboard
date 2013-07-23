@@ -24,7 +24,7 @@
                                     <bool key="isElement" value="NO"/>
                                 </accessibility>
                             </view>
-                            <textField opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="32" borderStyle="bezel" placeholder="Input" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="VVg-md-oYY" userLabel="temperatureIn">
+                            <textField opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="32" borderStyle="bezel" placeholder="Input" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="48" translatesAutoresizingMaskIntoConstraints="NO" id="VVg-md-oYY" userLabel="temperatureIn">
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" label="temperatureIn"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -34,7 +34,7 @@
                                     <outlet property="delegate" destination="d0E-dQ-YDc" id="5cy-h8-7HZ"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="bezel" placeholder="Output" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="48l-H5-ufk" userLabel="temperatureOut">
+                            <textField opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="bezel" placeholder="Output" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="48" translatesAutoresizingMaskIntoConstraints="NO" id="48l-H5-ufk" userLabel="temperatureOut">
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" label="temperatureOut">
                                     <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
