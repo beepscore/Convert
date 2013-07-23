@@ -30,6 +30,9 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="d0E-dQ-YDc" id="5cy-h8-7HZ"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="bezel" placeholder="Output" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="48l-H5-ufk" userLabel="temperatureOut">
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -66,6 +69,9 @@
                                     <segment title="°K"/>
                                     <segment title="°R"/>
                                 </segments>
+                                <connections>
+                                    <action selector="updateTemperatures:" destination="d0E-dQ-YDc" eventType="valueChanged" id="LiN-Ce-EQV"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Temperature Converter" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Aix-u0-Cse" userLabel="temperatureConverter">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -152,7 +158,20 @@
                             <constraint firstItem="48l-H5-ufk" firstAttribute="leading" secondItem="GaK-ht-542" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="zFl-oa-NJy"/>
                         </constraints>
                         <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                        <connections>
+                            <action selector="backgroundTap:" destination="d0E-dQ-YDc" eventType="touchDown" id="vN8-Ke-Kpp"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="backgroundCold" destination="jeL-UN-PPa" id="HoD-r6-UCq"/>
+                        <outlet property="backgroundHot" destination="W6Z-Wc-hxs" id="LFt-5U-GQi"/>
+                        <outlet property="convertFromField" destination="VVg-md-oYY" id="qh7-XF-Nr6"/>
+                        <outlet property="convertToField" destination="48l-H5-ufk" id="JL7-c1-GD4"/>
+                        <outlet property="fromTemperatureUnitSegment" destination="1oC-4y-2Ng" id="kKI-fu-t5f"/>
+                        <outlet property="raisedTemperatureToAbsoluteZeroLabel" destination="Ttw-QA-eIK" id="JnY-gN-Fpg"/>
+                        <outlet property="temperatureTidbitLabel" destination="2zP-vi-oxc" id="27c-ei-9cd"/>
+                        <outlet property="toTemperatureUnitSegment" destination="7w0-M3-cn7" id="x82-eJ-eGf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yhw-2j-gbr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
