@@ -39,6 +39,9 @@
   self.fromTemperatureUnitSegment.accessibilityLabel = @"fromTemperatureUnitSegment";
   self.toTemperatureUnitSegment.isAccessibilityElement = YES;
   self.toTemperatureUnitSegment.accessibilityLabel = @"toTemperatureUnitSegment";
+  
+    // Google Analytics
+    self.trackedViewName = @"ConvertView";
 }
 
 // Ref https://developer.apple.com/library/prerelease/ios/#releasenotes/General/RN-iOSSDK-6_0/_index.html
