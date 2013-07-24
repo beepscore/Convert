@@ -26,7 +26,10 @@
 
 #pragma mark - Lifecycle management
 - (void)viewDidLoad {
-  self.converter = [[Converter alloc] init];
+    
+    [super viewDidLoad];
+    
+    self.converter = [[Converter alloc] init];
   [self updateTemperatures:self];
 
   // set accessibility label for use by UIAutomation
