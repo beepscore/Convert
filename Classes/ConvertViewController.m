@@ -8,6 +8,8 @@
 
 #import "ConvertViewController.h"
 #import "Converter.h"
+#import "GAI.h"
+#import "GAITracker.h"
 
 @interface ConvertViewController ()
 #pragma mark - properties
@@ -19,6 +21,8 @@
 @property(nonatomic, weak)IBOutlet UISegmentedControl *toTemperatureUnitSegment;
 @property(nonatomic, weak)IBOutlet UILabel *raisedTemperatureToAbsoluteZeroLabel;
 @property(nonatomic, weak)IBOutlet UILabel *temperatureTidbitLabel;
+
+@property(nonatomic, strong) id<GAITracker> googleAnalyticsTracker;
 @end
 
 @implementation ConvertViewController
@@ -42,6 +46,7 @@
     self.toTemperatureUnitSegment.accessibilityLabel = @"toTemperatureUnitSegment";
     
     // Google Analytics
+    self.googleAnalyticsTracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-42678217-1"];
     self.trackedViewName = @"ConvertView";
 }
 
