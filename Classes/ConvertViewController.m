@@ -147,12 +147,15 @@
                                 [self.converter convertTemperature:self.converter.temperatureK
                                                        fromKToUnit:self.toUnit]];
     
-    
     // Display temperature tidbit
     self.temperatureTidbitLabel.text = [self.converter 
                                         tidbitForTemperatureK:self.converter.temperatureK];
     [self updateBackgroundColors];
     
+    [self trackUpdateTemperatures:sender];
+}
+
+- (void)trackUpdateTemperatures:(id)sender {
     if ([self.fromTemperatureUnitSegment isEqual:sender]) {
         [self.googleAnalyticsTracker sendEventWithCategory:@"uiAction"
                                                 withAction:@"updateTemperatures"
@@ -165,7 +168,6 @@
                                                  withValue:[NSNumber numberWithInt:[sender selectedSegmentIndex]]];
     }
 }
-
 
 #pragma mark - textFieldDelegate methods
 // called when user presses Return key (labeled "Done")  ref Dudney sec 4.6 pg 67
