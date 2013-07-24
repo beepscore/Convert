@@ -152,6 +152,18 @@
     self.temperatureTidbitLabel.text = [self.converter 
                                         tidbitForTemperatureK:self.converter.temperatureK];
     [self updateBackgroundColors];
+    
+    if ([self.fromTemperatureUnitSegment isEqual:sender]) {
+        [self.googleAnalyticsTracker sendEventWithCategory:@"uiAction"
+                                                withAction:@"updateTemperatures"
+                                                 withLabel:@"fromTemperatureUnitSegment"
+                                                 withValue:[NSNumber numberWithInt:[sender selectedSegmentIndex]]];
+    } else if ([self.toTemperatureUnitSegment isEqual:sender]) {
+        [self.googleAnalyticsTracker sendEventWithCategory:@"uiAction"
+                                                withAction:@"updateTemperatures"
+                                                 withLabel:@"toTemperatureUnitSegment"
+                                                 withValue:[NSNumber numberWithInt:[sender selectedSegmentIndex]]];
+    }
 }
 
 
