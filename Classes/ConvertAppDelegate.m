@@ -10,22 +10,29 @@
 #import "ConvertViewController.h"
 #import "GAI.h"
 
-@implementation ConvertAppDelegate
+@interface ConvertAppDelegate ()
+    @property(nonatomic, strong) GAI *googleAnalytics;
+    @property(nonatomic, strong) id<GAITracker> googleAnalyticsTracker;
+@end
 
+
+@implementation ConvertAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
     
     // Google Analytics
+    self.googleAnalytics = [GAI sharedInstance];
     // Optional: automatically send uncaught exceptions to Google Analytics.
-    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    self.googleAnalytics.trackUncaughtExceptions = YES;
     // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
-    [GAI sharedInstance].dispatchInterval = 20;
+    self.googleAnalytics.dispatchInterval = 20;
     // Optional: set debug to YES for extra debugging information.
-    [GAI sharedInstance].debug = YES;
-    // Create tracker instance.
-    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-42678217-1"];
+    self.googleAnalytics.debug = YES;
+    
+    // Create tracker instance
+    self.googleAnalyticsTracker = [self.googleAnalytics trackerWithTrackingId:@"UA-42678217-1"];
     
     return YES;
 }
