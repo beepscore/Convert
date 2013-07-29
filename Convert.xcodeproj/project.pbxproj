@@ -518,6 +518,9 @@
 					SenTestingKit,
 					"-framework",
 					UIKit,
+					"-force_load",
+					"\"$(SRCROOT)/libOCMock.a\"",
+					"-ObjC",
 				);
 				PRODUCT_NAME = LogicTests;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -554,6 +557,9 @@
 					SenTestingKit,
 					"-framework",
 					UIKit,
+					"-force_load",
+					"\"$(SRCROOT)/libOCMock.a\"",
+					"-ObjC",
 				);
 				PRODUCT_NAME = LogicTests;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
