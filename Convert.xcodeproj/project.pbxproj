@@ -58,7 +58,7 @@
 		DE269940179F48D400A78B11 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalytics.a; path = "GoogleAdMobAdsSdkiOS-6.5.0/Add-ons/GoogleAnalyticsiOS_2.0beta4/Library/libGoogleAnalytics.a"; sourceTree = "<group>"; };
 		DE269942179F48E900A78B11 /* libGoogleAnalytics_debug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalytics_debug.a; path = "GoogleAdMobAdsSdkiOS-6.5.0/Add-ons/GoogleAnalyticsiOS_2.0beta4/Library/libGoogleAnalytics_debug.a"; sourceTree = "<group>"; };
 		DE2A7A9614A1BE5C003745EA /* convert-ui-test.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; lineEnding = 0; path = "convert-ui-test.js"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
-		DE478D8917A612A300E1893B /* ConvertAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConvertAppDelegateTests.m; sourceTree = "<group>"; };
+		DE478D8917A612A300E1893B /* ConvertAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConvertAppDelegateTests.m; path = ConvertTests/ConvertAppDelegateTests.m; sourceTree = "<group>"; };
 		DE595230179EFF4A00D2B18D /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainStoryboard.storyboard; path = ../MainStoryboard.storyboard; sourceTree = "<group>"; };
 		DE5D418011D2A15D00900B4A /* LogicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogicTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE5D418111D2A15D00900B4A /* LogicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LogicTests-Info.plist"; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 		DEC53663179F46F60033A227 /* GAITransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITransaction.h; path = "GoogleAdMobAdsSdkiOS-6.5.0/Add-ons/GoogleAnalyticsiOS_2.0beta4/Library/GAITransaction.h"; sourceTree = "<group>"; };
 		DEC53664179F46F60033A227 /* GAITransactionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITransactionItem.h; path = "GoogleAdMobAdsSdkiOS-6.5.0/Add-ons/GoogleAnalyticsiOS_2.0beta4/Library/GAITransactionItem.h"; sourceTree = "<group>"; };
 		DEE9285117A61A3800A5C1C8 /* ConvertAppDelegate_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConvertAppDelegate_Private.h; sourceTree = "<group>"; };
-		DEF67DC917A60EB700CD9169 /* ConverterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConverterTests.m; sourceTree = "<group>"; };
+		DEF67DC917A60EB700CD9169 /* ConverterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConverterTests.m; path = ConvertTests/ConverterTests.m; sourceTree = "<group>"; };
 		DEFA0F2811D307980094EEC0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,7 +154,7 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				DE5D41B011D2A1E100900B4A /* Tests */,
+				DE5D41B011D2A1E100900B4A /* ConvertTests */,
 				DE2A7A9514A1BE5C003745EA /* UIAutomationTests */,
 			);
 			name = CustomTemplate;
@@ -202,13 +202,13 @@
 			path = UIAutomationTests;
 			sourceTree = "<group>";
 		};
-		DE5D41B011D2A1E100900B4A /* Tests */ = {
+		DE5D41B011D2A1E100900B4A /* ConvertTests */ = {
 			isa = PBXGroup;
 			children = (
 				DE478D8917A612A300E1893B /* ConvertAppDelegateTests.m */,
 				DEF67DC917A60EB700CD9169 /* ConverterTests.m */,
 			);
-			name = Tests;
+			name = ConvertTests;
 			sourceTree = "<group>";
 		};
 		DE5F98FE14FB1F1400A9A3E0 /* tuneup */ = {
