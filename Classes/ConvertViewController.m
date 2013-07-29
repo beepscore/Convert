@@ -7,9 +7,9 @@
 //
 
 #import "ConvertViewController.h"
+#import "ConvertViewController_Private.h"
 #import "Converter.h"
 #import "GAI.h"
-#import "GAITracker.h"
 
 @interface ConvertViewController ()
 #pragma mark - properties
@@ -17,12 +17,9 @@
 @property(nonatomic, weak)IBOutlet UIView *backgroundHot;
 @property(nonatomic, weak)IBOutlet UITextField *convertFromField;
 @property(nonatomic, weak)IBOutlet UITextField *convertToField;
-@property(nonatomic, weak)IBOutlet UISegmentedControl *fromTemperatureUnitSegment;
-@property(nonatomic, weak)IBOutlet UISegmentedControl *toTemperatureUnitSegment;
 @property(nonatomic, weak)IBOutlet UILabel *raisedTemperatureToAbsoluteZeroLabel;
 @property(nonatomic, weak)IBOutlet UILabel *temperatureTidbitLabel;
 
-@property(nonatomic, strong) id<GAITracker> googleAnalyticsTracker;
 @end
 
 @implementation ConvertViewController

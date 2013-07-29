@@ -18,7 +18,6 @@
 		DE340F7617A6298C00EEFC97 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE340F7517A6298C00EEFC97 /* libOCMock.a */; };
 		DE478D8A17A612A300E1893B /* ConvertAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE478D8917A612A300E1893B /* ConvertAppDelegateTests.m */; };
 		DE478D8B17A6164000E1893B /* ConvertAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* ConvertAppDelegate.m */; };
-		DE478D8C17A616A900E1893B /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE269940179F48D400A78B11 /* libGoogleAnalytics.a */; };
 		DE478D8D17A616F300E1893B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7ACDFB179F4812009EABF1 /* CoreData.framework */; };
 		DE478D8E17A616FC00E1893B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7ACDFD179F481E009EABF1 /* SystemConfiguration.framework */; };
 		DE478D8F17A6170200E1893B /* libGoogleAnalytics_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE269942179F48E900A78B11 /* libGoogleAnalytics_debug.a */; };
@@ -28,6 +27,8 @@
 		DE73C8BA1644EAC300E65D91 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE73C8B91644EAC300E65D91 /* Default-568h@2x.png */; };
 		DE7ACDFC179F4812009EABF1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7ACDFB179F4812009EABF1 /* CoreData.framework */; };
 		DE7ACDFE179F481E009EABF1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7ACDFD179F481E009EABF1 /* SystemConfiguration.framework */; };
+		DE8CC91917A6305000618363 /* ConvertViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8CC91817A6305000618363 /* ConvertViewControllerTests.m */; };
+		DE8CC91A17A6381C00618363 /* ConvertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* ConvertViewController.m */; };
 		DE8F8CD511D2B1F6006AFC0B /* Converter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE6CF1D810F48BAF006EC6D5 /* Converter.m */; };
 		DE9241D115EB3C0F00604F3E /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = DE9241D015EB3C0F00604F3E /* scripts */; };
 		DEA5891F10F5925B00D43BBC /* beepscoreIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DEA5891E10F5925B00D43BBC /* beepscoreIcon.png */; };
@@ -61,6 +62,7 @@
 		DE269942179F48E900A78B11 /* libGoogleAnalytics_debug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalytics_debug.a; path = "GoogleAdMobAdsSdkiOS-6.5.0/Add-ons/GoogleAnalyticsiOS_2.0beta4/Library/libGoogleAnalytics_debug.a"; sourceTree = "<group>"; };
 		DE2A7A9614A1BE5C003745EA /* convert-ui-test.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; lineEnding = 0; path = "convert-ui-test.js"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
 		DE340F7517A6298C00EEFC97 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
+		DE3CBE9317A63BC3002209D3 /* ConvertViewController_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConvertViewController_Private.h; sourceTree = "<group>"; };
 		DE478D8917A612A300E1893B /* ConvertAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConvertAppDelegateTests.m; path = ConvertTests/ConvertAppDelegateTests.m; sourceTree = "<group>"; };
 		DE595230179EFF4A00D2B18D /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainStoryboard.storyboard; path = ../MainStoryboard.storyboard; sourceTree = "<group>"; };
 		DE5D418011D2A15D00900B4A /* LogicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogicTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +80,7 @@
 		DE73C8B91644EAC300E65D91 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		DE7ACDFB179F4812009EABF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		DE7ACDFD179F481E009EABF1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		DE8CC91817A6305000618363 /* ConvertViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConvertViewControllerTests.m; path = ConvertTests/ConvertViewControllerTests.m; sourceTree = "<group>"; };
 		DE9241D015EB3C0F00604F3E /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scripts; sourceTree = "<group>"; };
 		DEA5891E10F5925B00D43BBC /* beepscoreIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beepscoreIcon.png; sourceTree = "<group>"; };
 		DEAA335515DF6D980047578D /* READMEJenkins.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = READMEJenkins.md; sourceTree = "<group>"; };
@@ -118,7 +121,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE340F7617A6298C00EEFC97 /* libOCMock.a in Frameworks */,
-				DE478D8C17A616A900E1893B /* libGoogleAnalytics.a in Frameworks */,
 				DE478D8D17A616F300E1893B /* CoreData.framework in Frameworks */,
 				DE478D8E17A616FC00E1893B /* SystemConfiguration.framework in Frameworks */,
 				DE478D8F17A6170200E1893B /* libGoogleAnalytics_debug.a in Frameworks */,
@@ -138,6 +140,7 @@
 				DE6CF1D710F48BAF006EC6D5 /* Converter.h */,
 				DE6CF1D810F48BAF006EC6D5 /* Converter.m */,
 				28D7ACF60DDB3853001CB0EB /* ConvertViewController.h */,
+				DE3CBE9317A63BC3002209D3 /* ConvertViewController_Private.h */,
 				28D7ACF70DDB3853001CB0EB /* ConvertViewController.m */,
 			);
 			path = Classes;
@@ -220,6 +223,7 @@
 			children = (
 				DE478D8917A612A300E1893B /* ConvertAppDelegateTests.m */,
 				DEF67DC917A60EB700CD9169 /* ConverterTests.m */,
+				DE8CC91817A6305000618363 /* ConvertViewControllerTests.m */,
 			);
 			name = ConvertTests;
 			sourceTree = "<group>";
@@ -400,6 +404,8 @@
 				DEF67DCA17A60EB700CD9169 /* ConverterTests.m in Sources */,
 				DE478D8A17A612A300E1893B /* ConvertAppDelegateTests.m in Sources */,
 				DE478D8B17A6164000E1893B /* ConvertAppDelegate.m in Sources */,
+				DE8CC91917A6305000618363 /* ConvertViewControllerTests.m in Sources */,
+				DE8CC91A17A6381C00618363 /* ConvertViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
