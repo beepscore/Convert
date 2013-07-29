@@ -30,6 +30,7 @@
 		DE8F8CD511D2B1F6006AFC0B /* Converter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE6CF1D810F48BAF006EC6D5 /* Converter.m */; };
 		DE9241D115EB3C0F00604F3E /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = DE9241D015EB3C0F00604F3E /* scripts */; };
 		DEA5891F10F5925B00D43BBC /* beepscoreIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DEA5891E10F5925B00D43BBC /* beepscoreIcon.png */; };
+		DEB992BB17A628E1009F5A96 /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = DEB992B417A628E1009F5A96 /* License.txt */; };
 		DEF67DCA17A60EB700CD9169 /* ConverterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF67DC917A60EB700CD9169 /* ConverterTests.m */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,13 @@
 		DE9241D015EB3C0F00604F3E /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scripts; sourceTree = "<group>"; };
 		DEA5891E10F5925B00D43BBC /* beepscoreIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beepscoreIcon.png; sourceTree = "<group>"; };
 		DEAA335515DF6D980047578D /* READMEJenkins.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = READMEJenkins.md; sourceTree = "<group>"; };
+		DEB992B417A628E1009F5A96 /* License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
+		DEB992B517A628E1009F5A96 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
+		DEB992B617A628E1009F5A96 /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
+		DEB992B717A628E1009F5A96 /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMConstraint.h; sourceTree = "<group>"; };
+		DEB992B817A628E1009F5A96 /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMock.h; sourceTree = "<group>"; };
+		DEB992B917A628E1009F5A96 /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
+		DEB992BA17A628E1009F5A96 /* OCMockRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockRecorder.h; sourceTree = "<group>"; };
 		DEC53660179F46F60033A227 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAI.h; path = "GoogleAdMobAdsSdkiOS-6.5.0/Add-ons/GoogleAnalyticsiOS_2.0beta4/Library/GAI.h"; sourceTree = "<group>"; };
 		DEC53661179F46F60033A227 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITrackedViewController.h; path = "GoogleAdMobAdsSdkiOS-6.5.0/Add-ons/GoogleAnalyticsiOS_2.0beta4/Library/GAITrackedViewController.h"; sourceTree = "<group>"; };
 		DEC53662179F46F60033A227 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITracker.h; path = "GoogleAdMobAdsSdkiOS-6.5.0/Add-ons/GoogleAnalyticsiOS_2.0beta4/Library/GAITracker.h"; sourceTree = "<group>"; };
@@ -144,6 +152,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				DEB992B317A628E1009F5A96 /* OCMock */,
 				DEC5365E179F462E0033A227 /* GoogleAnalytics */,
 				DE5F98FE14FB1F1400A9A3E0 /* tuneup */,
 				DEFA0F2811D307980094EEC0 /* README.md */,
@@ -224,6 +233,20 @@
 				DE5F990614FB1F1400A9A3E0 /* uiautomation-ext.js */,
 			);
 			path = tuneup;
+			sourceTree = "<group>";
+		};
+		DEB992B317A628E1009F5A96 /* OCMock */ = {
+			isa = PBXGroup;
+			children = (
+				DEB992B417A628E1009F5A96 /* License.txt */,
+				DEB992B517A628E1009F5A96 /* NSNotificationCenter+OCMAdditions.h */,
+				DEB992B617A628E1009F5A96 /* OCMArg.h */,
+				DEB992B717A628E1009F5A96 /* OCMConstraint.h */,
+				DEB992B817A628E1009F5A96 /* OCMock.h */,
+				DEB992B917A628E1009F5A96 /* OCMockObject.h */,
+				DEB992BA17A628E1009F5A96 /* OCMockRecorder.h */,
+			);
+			path = OCMock;
 			sourceTree = "<group>";
 		};
 		DEC5365E179F462E0033A227 /* GoogleAnalytics */ = {
@@ -331,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE595232179EFF4A00D2B18D /* MainStoryboard.storyboard in Resources */,
+				DEB992BB17A628E1009F5A96 /* License.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
