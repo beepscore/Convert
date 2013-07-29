@@ -25,6 +25,7 @@
 		DE8F8CD511D2B1F6006AFC0B /* Converter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE6CF1D810F48BAF006EC6D5 /* Converter.m */; };
 		DE9241D115EB3C0F00604F3E /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = DE9241D015EB3C0F00604F3E /* scripts */; };
 		DEA5891F10F5925B00D43BBC /* beepscoreIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DEA5891E10F5925B00D43BBC /* beepscoreIcon.png */; };
+		DEF67DCA17A60EB700CD9169 /* ConverterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF67DC917A60EB700CD9169 /* ConverterTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		DEC53662179F46F60033A227 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITracker.h; path = "GoogleAdMobAdsSdkiOS-6.5.0/Add-ons/GoogleAnalyticsiOS_2.0beta4/Library/GAITracker.h"; sourceTree = "<group>"; };
 		DEC53663179F46F60033A227 /* GAITransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITransaction.h; path = "GoogleAdMobAdsSdkiOS-6.5.0/Add-ons/GoogleAnalyticsiOS_2.0beta4/Library/GAITransaction.h"; sourceTree = "<group>"; };
 		DEC53664179F46F60033A227 /* GAITransactionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITransactionItem.h; path = "GoogleAdMobAdsSdkiOS-6.5.0/Add-ons/GoogleAnalyticsiOS_2.0beta4/Library/GAITransactionItem.h"; sourceTree = "<group>"; };
+		DEF67DC917A60EB700CD9169 /* ConverterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConverterTests.m; sourceTree = "<group>"; };
 		DEFA0F2811D307980094EEC0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -195,6 +197,7 @@
 			children = (
 				DE5D41B411D2A32000900B4A /* LogicTests.h */,
 				DE5D41B511D2A32000900B4A /* LogicTests.m */,
+				DEF67DC917A60EB700CD9169 /* ConverterTests.m */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 			files = (
 				DE8F8CD511D2B1F6006AFC0B /* Converter.m in Sources */,
 				DE5D41B611D2A32000900B4A /* LogicTests.m in Sources */,
+				DEF67DCA17A60EB700CD9169 /* ConverterTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
