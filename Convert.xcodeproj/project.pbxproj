@@ -571,7 +571,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
-					"/Users/stevebaker/Documents/projects/iOSProjects/Convert/GoogleAdMobAdsSdkiOS-6.5.0/Add-ons/GoogleAnalyticsiOS_2.0beta4/Library",
+					"$(SRCROOT)/GoogleAdMobAdsSdkiOS-6.5.0/Add-ons/GoogleAnalyticsiOS_2.0beta4/Library",
 				);
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -625,7 +625,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
-					"/Users/stevebaker/Documents/projects/iOSProjects/Convert/GoogleAdMobAdsSdkiOS-6.5.0/Add-ons/GoogleAnalyticsiOS_2.0beta4/Library",
+					"$(SRCROOT)/GoogleAdMobAdsSdkiOS-6.5.0/Add-ons/GoogleAnalyticsiOS_2.0beta4/Library",
 				);
 				OTHER_LDFLAGS = (
 					"-framework",
