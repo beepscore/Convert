@@ -48,16 +48,10 @@
                                                withLabel:@"fromTemperatureUnitSegment"
                                                withValue:[NSNumber numberWithInt:testSelectedSegmentIndex]];
 
-    // method is called with value -1, possibly because segmented control doesn't have items.
-//    [[mockAnalyticsTracker expect] sendEventWithCategory:@"uiAction"
-//                                              withAction:@"updateTemperatures"
-//                                               withLabel:@"fromTemperatureUnitSegment"
-//                                               withValue:[NSNumber numberWithInt:-1]];
-    
-    //[self.convertViewController trackUpdateTemperatures:self.convertViewController.fromTemperatureUnitSegment];
+    [self.convertViewController trackUpdateTemperatures:self.convertViewController.fromTemperatureUnitSegment];
     
     // Verify all stubbed or expected methods were called.
-    //[mockAnalyticsTracker verify];
+    [mockAnalyticsTracker verify];
 }
 
 @end
