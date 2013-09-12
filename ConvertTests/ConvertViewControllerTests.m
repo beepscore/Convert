@@ -32,7 +32,7 @@
 - (void)testTrackUpdateTemperatures
 {
     [self.convertViewController viewDidLoad];
-/*
+
     id mockAnalyticsTracker = [OCMockObject mockForProtocol:@protocol(GAITracker)];
     self.convertViewController.googleAnalyticsTracker = mockAnalyticsTracker;
     
@@ -47,7 +47,7 @@
                                               withAction:@"updateTemperatures"
                                                withLabel:@"fromTemperatureUnitSegment"
                                                withValue:[NSNumber numberWithInt:testSelectedSegmentIndex]];
-*/
+
     // method is called with value -1, possibly because segmented control doesn't have items.
 //    [[mockAnalyticsTracker expect] sendEventWithCategory:@"uiAction"
 //                                              withAction:@"updateTemperatures"
