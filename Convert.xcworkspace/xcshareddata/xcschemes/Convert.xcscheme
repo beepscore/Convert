@@ -24,7 +24,7 @@
    </BuildAction>
    <TestAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
@@ -32,13 +32,22 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DE5D417F11D2A15D00900B4A"
-               BuildableName = "LogicTests.octest"
-               BlueprintName = "LogicTests"
+               BlueprintIdentifier = "DE88C9EA17E1B3CC00F3896C"
+               BuildableName = "ConvertTests.xctest"
+               BlueprintName = "ConvertTests"
                ReferencedContainer = "container:Convert.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
+            BuildableName = "Convert.app"
+            BlueprintName = "Convert"
+            ReferencedContainer = "container:Convert.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -69,7 +78,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
       <BuildableProductRunnable>
          <BuildableReference

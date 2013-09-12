@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 Beepscore LLC. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import "ConvertAppDelegate.h"
 #import "ConvertAppDelegate_Private.h"
 
-@interface ConvertAppDelegateTests : SenTestCase
+@interface ConvertAppDelegateTests : XCTestCase
 @property ConvertAppDelegate *convertAppDelegate;
 @end
 
@@ -20,7 +20,7 @@
 - (void) setUp
 {
     self.convertAppDelegate = [[ConvertAppDelegate alloc] init];
-    STAssertNotNil(self.convertAppDelegate, @"expected convertAppDelegate not nil");
+    XCTAssertNotNil(self.convertAppDelegate, @"expected convertAppDelegate not nil");
 }
 
 - (void) tearDown

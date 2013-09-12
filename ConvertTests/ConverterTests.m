@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Beepscore LLC. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import "Converter.h"
 
-@interface ConverterTests : SenTestCase
+@interface ConverterTests : XCTestCase
 @property Converter *converter;
 @end
 
@@ -22,7 +22,7 @@
 - (void) setUp
 {
     self.converter = [[Converter alloc] init];
-    STAssertNotNil(self.converter, @"Cannot create instance of Converter");
+    XCTAssertNotNil(self.converter, @"Cannot create instance of Converter");
 }
 
 // tearDown method is called automatically after each test-case method (method whose name starts with 'test').
@@ -43,7 +43,7 @@
     inputTemperature = @0.0;
     outputTemperature = [self.converter convertTemperature:inputTemperature toKFromUnit:@"K"];
     double outputTemperatureSpec = 0.0;    
-    STAssertEqualsWithAccuracy([outputTemperature doubleValue],
+    XCTAssertEqualWithAccuracy([outputTemperature doubleValue],
                                outputTemperatureSpec,
                                0.01,
                                @"returned %g K should be %g K", [inputTemperature doubleValue], outputTemperatureSpec);
@@ -51,7 +51,7 @@
     inputTemperature = @0.0;
     outputTemperature = [self.converter convertTemperature:inputTemperature toKFromUnit:@"C"];
     outputTemperatureSpec = 273.15;
-    STAssertEqualsWithAccuracy([outputTemperature doubleValue],
+    XCTAssertEqualWithAccuracy([outputTemperature doubleValue],
                                outputTemperatureSpec,
                                0.01,
                                @"input %g C should return %g K", [inputTemperature doubleValue], outputTemperatureSpec);
@@ -59,7 +59,7 @@
     inputTemperature = @0.0;
     outputTemperature = [self.converter convertTemperature:inputTemperature toKFromUnit:@"F"];
     outputTemperatureSpec = 255.372;
-    STAssertEqualsWithAccuracy([outputTemperature doubleValue],
+    XCTAssertEqualWithAccuracy([outputTemperature doubleValue],
                                outputTemperatureSpec,
                                0.01,
                                @"input %g F should return %g K", [inputTemperature doubleValue], outputTemperatureSpec);    
@@ -78,7 +78,7 @@
     inputTemperature = @0.0;
     outputTemperature = [self.converter convertTemperature:inputTemperature fromKToUnit:@"K"];
     double outputTemperatureSpec = 0.0;    
-    STAssertEqualsWithAccuracy([outputTemperature doubleValue],
+    XCTAssertEqualWithAccuracy([outputTemperature doubleValue],
                                outputTemperatureSpec,
                                0.01,
                                @"input %g K should return %g K", [inputTemperature doubleValue], outputTemperatureSpec);
@@ -86,7 +86,7 @@
     inputTemperature = @0.0;
     outputTemperature = [self.converter convertTemperature:inputTemperature fromKToUnit:@"C"];
     outputTemperatureSpec = -273.15;    
-    STAssertEqualsWithAccuracy([outputTemperature doubleValue],
+    XCTAssertEqualWithAccuracy([outputTemperature doubleValue],
                                outputTemperatureSpec,
                                0.01,
                                @"input %g K should return %g C", [inputTemperature doubleValue], outputTemperatureSpec);
@@ -94,7 +94,7 @@
     inputTemperature = @0.0;
     outputTemperature = [self.converter convertTemperature:inputTemperature fromKToUnit:@"F"];
     outputTemperatureSpec = -459.67;    
-    STAssertEqualsWithAccuracy([outputTemperature doubleValue],
+    XCTAssertEqualWithAccuracy([outputTemperature doubleValue],
                                outputTemperatureSpec,
                                0.01,
                                @"input %g K should return %g F", [inputTemperature doubleValue], outputTemperatureSpec);
