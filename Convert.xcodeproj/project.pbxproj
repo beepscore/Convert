@@ -461,7 +461,7 @@
 				INFOPLIST_FILE = "Convert-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/stevebaker/Documents/projects/iOSProjects/Convert/**",
+					"$(SRCROOT)/**",
 				);
 				PRODUCT_NAME = Convert;
 				TEST_AFTER_BUILD = YES;
@@ -485,7 +485,7 @@
 				INFOPLIST_FILE = "Convert-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/stevebaker/Documents/projects/iOSProjects/Convert/**",
+					"$(SRCROOT)/**",
 				);
 				PRODUCT_NAME = Convert;
 				PROVISIONING_PROFILE = "";
