@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-//#import "OCMock.h"
+#import "OCMock.h"
 #import "ConvertViewController.h"
 #import "ConvertViewController_Private.h"
 #import "GAITracker.h"
