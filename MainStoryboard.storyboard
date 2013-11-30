@@ -71,6 +71,7 @@
                                     <segment title="°K"/>
                                     <segment title="°R"/>
                                 </segments>
+                                <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="updateTemperatures:" destination="d0E-dQ-YDc" eventType="valueChanged" id="7Ia-2x-pZ0"/>
                                 </connections>
@@ -83,6 +84,7 @@
                                     <segment title="°K"/>
                                     <segment title="°R"/>
                                 </segments>
+                                <color key="tintColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="updateTemperatures:" destination="d0E-dQ-YDc" eventType="valueChanged" id="LiN-Ce-EQV"/>
                                 </connections>
