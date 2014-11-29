@@ -7,9 +7,9 @@
 //
 ///  Expose properties for use by unit tests
 
-#import "GAI.h"
+//#import "GAI.h"
 
 @interface ConvertAppDelegate ()
-    @property(nonatomic, strong) GAI *googleAnalytics;
-    @property(nonatomic, strong) id<GAITracker> googleAnalyticsTracker;
+//    @property(nonatomic, strong) GAI *googleAnalytics;
+//    @property(nonatomic, strong) id<GAITracker> googleAnalyticsTracker;
 @end

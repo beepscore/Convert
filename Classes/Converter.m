@@ -154,7 +154,8 @@ const double BS_K_TO_R_OFFSET = 0.0;
     // use initWithFormat: instead of convenience method stringWithFormat:
     //return [self.tidbits valueForKey:[NSString stringWithFormat:@"%d",tidbitKeyIntFloor]];
     
-     NSString* tidbitKeyString = [[NSString alloc] initWithFormat:@"%d",tidbitKeyIntFloor];
+     NSString* tidbitKeyString = [[NSString alloc] initWithFormat:@"%lu",
+                                  (unsigned long)tidbitKeyIntFloor];
      NSString* tidbitString = [self.tidbits valueForKey:tidbitKeyString];
      return tidbitString;
 }

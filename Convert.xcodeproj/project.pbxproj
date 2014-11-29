@@ -13,8 +13,6 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		28D7ACF80DDB3853001CB0EB /* ConvertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* ConvertViewController.m */; };
-		DE269941179F48D400A78B11 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE269940179F48D400A78B11 /* libGoogleAnalytics.a */; };
-		DE269943179F48EA00A78B11 /* libGoogleAnalytics_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE269942179F48E900A78B11 /* libGoogleAnalytics_debug.a */; };
 		DE595231179EFF4A00D2B18D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE595230179EFF4A00D2B18D /* MainStoryboard.storyboard */; };
 		DE64299E17E1B59100AB80BF /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE340F7517A6298C00EEFC97 /* libOCMock.a */; };
 		DE6429A217E1B75800AB80BF /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE595230179EFF4A00D2B18D /* MainStoryboard.storyboard */; };
@@ -37,7 +35,6 @@
 		DE88CA0317E1B53800F3896C /* ConvertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* ConvertViewController.m */; };
 		DE9241D115EB3C0F00604F3E /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = DE9241D015EB3C0F00604F3E /* scripts */; };
 		DEA5891F10F5925B00D43BBC /* beepscoreIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DEA5891E10F5925B00D43BBC /* beepscoreIcon.png */; };
-		DEBB7A7C17E1CE8900F5B28A /* libGoogleAnalytics_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE269942179F48E900A78B11 /* libGoogleAnalytics_debug.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,8 +59,6 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Convert_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Convert_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Convert-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Convert-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
-		DE269940179F48D400A78B11 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalytics.a; path = "GoogleAdMobAdsSdkiOS-6.5.0/Add-ons/GoogleAnalyticsiOS_2.0beta4/Library/libGoogleAnalytics.a"; sourceTree = "<group>"; };
-		DE269942179F48E900A78B11 /* libGoogleAnalytics_debug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalytics_debug.a; path = "GoogleAdMobAdsSdkiOS-6.5.0/Add-ons/GoogleAnalyticsiOS_2.0beta4/Library/libGoogleAnalytics_debug.a"; sourceTree = "<group>"; };
 		DE2A7A9614A1BE5C003745EA /* convert-ui-test.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; lineEnding = 0; path = "convert-ui-test.js"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
 		DE340F7517A6298C00EEFC97 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
 		DE3CBE9317A63BC3002209D3 /* ConvertViewController_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConvertViewController_Private.h; sourceTree = "<group>"; };
@@ -99,11 +94,6 @@
 		DEB992B817A628E1009F5A96 /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMock.h; sourceTree = "<group>"; };
 		DEB992B917A628E1009F5A96 /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
 		DEB992BA17A628E1009F5A96 /* OCMockRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockRecorder.h; sourceTree = "<group>"; };
-		DEC53660179F46F60033A227 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAI.h; path = "GoogleAdMobAdsSdkiOS-6.5.0/Add-ons/GoogleAnalyticsiOS_2.0beta4/Library/GAI.h"; sourceTree = "<group>"; };
-		DEC53661179F46F60033A227 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITrackedViewController.h; path = "GoogleAdMobAdsSdkiOS-6.5.0/Add-ons/GoogleAnalyticsiOS_2.0beta4/Library/GAITrackedViewController.h"; sourceTree = "<group>"; };
-		DEC53662179F46F60033A227 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITracker.h; path = "GoogleAdMobAdsSdkiOS-6.5.0/Add-ons/GoogleAnalyticsiOS_2.0beta4/Library/GAITracker.h"; sourceTree = "<group>"; };
-		DEC53663179F46F60033A227 /* GAITransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITransaction.h; path = "GoogleAdMobAdsSdkiOS-6.5.0/Add-ons/GoogleAnalyticsiOS_2.0beta4/Library/GAITransaction.h"; sourceTree = "<group>"; };
-		DEC53664179F46F60033A227 /* GAITransactionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITransactionItem.h; path = "GoogleAdMobAdsSdkiOS-6.5.0/Add-ons/GoogleAnalyticsiOS_2.0beta4/Library/GAITransactionItem.h"; sourceTree = "<group>"; };
 		DEE9285117A61A3800A5C1C8 /* ConvertAppDelegate_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConvertAppDelegate_Private.h; sourceTree = "<group>"; };
 		DEF67DC917A60EB700CD9169 /* ConverterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConverterTests.m; sourceTree = "<group>"; };
 		DEFA0F2811D307980094EEC0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
@@ -114,8 +104,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE269943179F48EA00A78B11 /* libGoogleAnalytics_debug.a in Frameworks */,
-				DE269941179F48D400A78B11 /* libGoogleAnalytics.a in Frameworks */,
 				DE7ACDFE179F481E009EABF1 /* SystemConfiguration.framework in Frameworks */,
 				DE7ACDFC179F4812009EABF1 /* CoreData.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
@@ -128,7 +116,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEBB7A7C17E1CE8900F5B28A /* libGoogleAnalytics_debug.a in Frameworks */,
 				DE88C9ED17E1B3CC00F3896C /* XCTest.framework in Frameworks */,
 				DE6429A617E1B97600AB80BF /* CoreData.framework in Frameworks */,
 				DE64299E17E1B59100AB80BF /* libOCMock.a in Frameworks */,
@@ -170,7 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				DEB992B317A628E1009F5A96 /* OCMock */,
-				DEC5365E179F462E0033A227 /* GoogleAnalytics */,
 				DE5F98FE14FB1F1400A9A3E0 /* tuneup */,
 				DEFA0F2811D307980094EEC0 /* README.md */,
 				DEAA335515DF6D980047578D /* READMEJenkins.md */,
@@ -210,8 +196,6 @@
 			isa = PBXGroup;
 			children = (
 				DE340F7517A6298C00EEFC97 /* libOCMock.a */,
-				DE269942179F48E900A78B11 /* libGoogleAnalytics_debug.a */,
-				DE269940179F48D400A78B11 /* libGoogleAnalytics.a */,
 				DE7ACDFD179F481E009EABF1 /* SystemConfiguration.framework */,
 				DE7ACDFB179F4812009EABF1 /* CoreData.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
@@ -278,26 +262,6 @@
 				DEB992BA17A628E1009F5A96 /* OCMockRecorder.h */,
 			);
 			path = OCMock;
-			sourceTree = "<group>";
-		};
-		DEC5365E179F462E0033A227 /* GoogleAnalytics */ = {
-			isa = PBXGroup;
-			children = (
-				DEC5365F179F46AD0033A227 /* Library */,
-			);
-			name = GoogleAnalytics;
-			sourceTree = "<group>";
-		};
-		DEC5365F179F46AD0033A227 /* Library */ = {
-			isa = PBXGroup;
-			children = (
-				DEC53660179F46F60033A227 /* GAI.h */,
-				DEC53661179F46F60033A227 /* GAITrackedViewController.h */,
-				DEC53662179F46F60033A227 /* GAITracker.h */,
-				DEC53663179F46F60033A227 /* GAITransaction.h */,
-				DEC53664179F46F60033A227 /* GAITransactionItem.h */,
-			);
-			name = Library;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

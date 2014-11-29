@@ -7,14 +7,14 @@
 //
 ///  Expose properties for use by unit tests
 
-#import "GAITracker.h"
+//#import "GAITracker.h"
 
 @interface ConvertViewController ()
 
 @property(nonatomic, weak)IBOutlet UISegmentedControl *fromTemperatureUnitSegment;
 @property(nonatomic, weak)IBOutlet UISegmentedControl *toTemperatureUnitSegment;
 
-@property(nonatomic, strong) id<GAITracker> googleAnalyticsTracker;
+//@property(nonatomic, strong) id<GAITracker> googleAnalyticsTracker;
 
 - (void)trackUpdateTemperatures:(id)sender;
 

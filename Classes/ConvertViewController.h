@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 @class Converter;
-#import "GAITrackedViewController.h"
+//#import "GAITrackedViewController.h"
 
-@interface ConvertViewController : GAITrackedViewController <UITextFieldDelegate> {
+//@interface ConvertViewController : GAITrackedViewController <UITextFieldDelegate> {
+@interface ConvertViewController : UIViewController <UITextFieldDelegate> {
     // Xcode automatically adds instance variables to back properties
 }
 #pragma mark - properties

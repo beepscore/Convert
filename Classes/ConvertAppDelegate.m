@@ -16,18 +16,18 @@
 {
     // Override point for customization after application launch.
     
-    // Google Analytics
-    self.googleAnalytics = [GAI sharedInstance];
-    // Optional: automatically send uncaught exceptions to Google Analytics.
-    self.googleAnalytics.trackUncaughtExceptions = YES;
-    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
-    self.googleAnalytics.dispatchInterval = 20;
-    // Optional: set debug to YES for extra debugging information.
-    self.googleAnalytics.debug = YES;
-    
-    // Create tracker instance
-    self.googleAnalyticsTracker = [self.googleAnalytics trackerWithTrackingId:@"UA-42678217-1"];
-    
+//    // Google Analytics
+//    self.googleAnalytics = [GAI sharedInstance];
+//    // Optional: automatically send uncaught exceptions to Google Analytics.
+//    self.googleAnalytics.trackUncaughtExceptions = YES;
+//    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
+//    self.googleAnalytics.dispatchInterval = 20;
+//    // Optional: set debug to YES for extra debugging information.
+//    self.googleAnalytics.debug = YES;
+//    
+//    // Create tracker instance
+//    self.googleAnalyticsTracker = [self.googleAnalytics trackerWithTrackingId:@"UA-42678217-1"];
+
     return YES;
 }
 							

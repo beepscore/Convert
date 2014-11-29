@@ -9,7 +9,7 @@
 #import "ConvertViewController.h"
 #import "ConvertViewController_Private.h"
 #import "Converter.h"
-#import "GAI.h"
+//#import "GAI.h"
 
 @interface ConvertViewController ()
 #pragma mark - properties
@@ -30,7 +30,7 @@
     
     // call super so it can respond
     [super viewDidLoad];
-    
+
     self.converter = [[Converter alloc] init];
     [self updateTemperatures:self];
     
@@ -43,8 +43,8 @@
     self.toTemperatureUnitSegment.accessibilityLabel = @"toTemperatureUnitSegment";
     
     // Google Analytics
-    self.googleAnalyticsTracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-42678217-1"];
-    self.trackedViewName = @"ConvertView";
+//    self.googleAnalyticsTracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-42678217-1"];
+//    self.trackedViewName = @"ConvertView";
 }
 
 // Ref https://developer.apple.com/library/prerelease/ios/#releasenotes/General/RN-iOSSDK-6_0/_index.html
@@ -154,15 +154,15 @@
 
 - (void)trackUpdateTemperatures:(id)sender {
     if ([self.fromTemperatureUnitSegment isEqual:sender]) {
-        [self.googleAnalyticsTracker sendEventWithCategory:@"uiAction"
-                                                withAction:@"updateTemperatures"
-                                                 withLabel:@"fromTemperatureUnitSegment"
-                                                 withValue:[NSNumber numberWithInt:[sender selectedSegmentIndex]]];
+//        [self.googleAnalyticsTracker sendEventWithCategory:@"uiAction"
+//                                                withAction:@"updateTemperatures"
+//                                                 withLabel:@"fromTemperatureUnitSegment"
+//                                                 withValue:[NSNumber numberWithInt:[sender selectedSegmentIndex]]];
     } else if ([self.toTemperatureUnitSegment isEqual:sender]) {
-        [self.googleAnalyticsTracker sendEventWithCategory:@"uiAction"
-                                                withAction:@"updateTemperatures"
-                                                 withLabel:@"toTemperatureUnitSegment"
-                                                 withValue:[NSNumber numberWithInt:[sender selectedSegmentIndex]]];
+//        [self.googleAnalyticsTracker sendEventWithCategory:@"uiAction"
+//                                                withAction:@"updateTemperatures"
+//                                                 withLabel:@"toTemperatureUnitSegment"
+//                                                 withValue:[NSNumber numberWithInt:[sender selectedSegmentIndex]]];
     }
 }
 
