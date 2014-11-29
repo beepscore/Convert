@@ -10,7 +10,7 @@
 #import "OCMock.h"
 #import "ConvertViewController.h"
 #import "ConvertViewController_Private.h"
-#import "GAITracker.h"
+//#import "GAITracker.h"
 
 @interface ConvertViewControllerTests : XCTestCase
 @property ConvertViewController *convertViewController;
@@ -29,13 +29,14 @@
 {
 }
 
+/*
 - (void)testTrackUpdateTemperatures
 {
     [self.convertViewController viewDidLoad];
 
     id mockAnalyticsTracker = [OCMockObject mockForProtocol:@protocol(GAITracker)];
     self.convertViewController.googleAnalyticsTracker = mockAnalyticsTracker;
-    
+
     // initWithItems??
     UISegmentedControl *testSegmentedControl = [[UISegmentedControl alloc]
                                                 initWithItems:@[@"w", @"x", @"y", @"z"]];
@@ -53,5 +54,5 @@
     // Verify all stubbed or expected methods were called.
     [mockAnalyticsTracker verify];
 }
-
+*/
 @end
